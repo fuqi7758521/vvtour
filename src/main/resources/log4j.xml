@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='GBK'?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- 输出方式 -->
+	<!-- 控制台日志 -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%t] - %d - [%5p] - %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+		</filter>
+	</appender>
+
+	<!-- FATAL级别日志 -->
+	<appender name="LOGGER-FATAL" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="file" value="E:/web/logs/vvtour/vvtour-logger-fatal.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%t] - %d - [%5p] - %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="FATAL" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<!-- ERROR级别日志 -->
+	<appender name="LOGGER-ERROR" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="file" value="E:/web/logs/vvtour/vvtour-logger-error.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%t] - %d - [%5p] - %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="ERROR" />
+			<param name="LevelMax" value="ERROR" />
+		</filter>
+	</appender>
+
+	<!-- WARN级别日志 -->
+	<appender name="LOGGER-WARN" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="file" value="E:/web/logs/vvtour/vvtour-logger-warn.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%t] - %d - [%5p] - %l - %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="WARN" />
+			<param name="LevelMax" value="WARN" />
+		</filter>
+	</appender>
+
+	<!-- debug日志 -->
+	<appender name="FILE-DEBUG" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="file" value="E:/web/logs/vvtour/vvtour-debug.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%t] - %d - [%5p] - %l - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- 获得系统Id 日志 -->
+	<appender name="GET-SYSTEM-ID" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="file"
+			value="E:/web/logs/vvtour/vvtour-systemId-getSystemId.log" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%t] - %d - [%5p] - %l - %m%n" />
+		</layout>
+	</appender>
+
+	
+	
+	
+
+	<category name="loggerGetSystemId" additivity="false">
+		<priority value="INFO" />
+		<appender-ref ref="GET-SYSTEM-ID" />
+
+		<appender-ref ref="LOGGER-FATAL" />
+		<appender-ref ref="LOGGER-ERROR" />
+		<appender-ref ref="LOGGER-WARN" />
+	</category>
+
+	
+
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE-DEBUG" />
+		<appender-ref ref="LOGGER-ERROR" />
+		<appender-ref ref="LOGGER-FATAL" />
+	</root>
+</log4j:configuration>

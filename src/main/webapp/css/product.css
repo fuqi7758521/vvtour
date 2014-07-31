@@ -1,0 +1,342 @@
+/* 通用 */
+.cclearfix {*zoom: 1;}
+.cclearfix:before,
+.cclearfix:after { display: table;content: "";line-height: 0;}
+.cclearfix:after {clear: both;}
+.gray { color: #888 !important }
+
+/* 产品位置 */
+
+
+#warp { overflow: hidden; zoom: 1 }
+#warp { clear: both }
+#warp, .scroll_nav_ul, .scroll_pro, .h4_tit, .day, .day_img, .line_payment dd, .recommend_tabs, .dest_intelligence dl, .dest_intelligence ul, .hotel_address, .hotel_room dl, .hotel_detail, .hotel_other ul, .hotel_other li, .attractions_tictke ul, attractions_tictke li, .tictke_list dl, .dtl_boxr_tit1 { overflow: hidden; zoom: 1 }
+.main { margin: 0 auto; width: 1000px; color: #333; position: relative ;font-family: Arial, \5b8b\4f53; font-size: 12px}
+.quick-menu li { background: url(../images/s2_detail_icons.gif) no-repeat 999em 0 }
+#scroll_nav { width: 985px; position: relative; z-index: 1000; }
+*html {
+ background-image: url(/styles/new_v/ob_detail/about: blank); background-attachment: fixed }
+.scroll_nav { position: fixed; _position: absolute; top: 0; z-index: 9999; margin: 0 0 -5px -4px\9 }
+.scroll_nav_ul { background: #019934 }
+.scroll_nav_ul, .recommend_tabs { margin-bottom: 1px; height: 28px; line-height: 28px; padding: 2px 0 0 15px; font-size: 14px; font-weight: 700 }
+.recommend_tabs { background: #E5E5E5 }
+.scroll_nav_ul li, .recommend_tabs li { float: left }
+.scroll_nav_ul a { color: #fff; border-right: 1px solid #fff; padding: 0 23px }
+.scroll_nav_ul a: link, .scroll_nav_ul a: visited, .scroll_nav_ul a: hover, .scroll_nav_ul a: active { color: #fff }
+.scroll_nav_current { height: 28px; background: #fff; }
+.scroll_nav_current a { color: #019934; border: none }
+.c_m span, .c_m small { vertical-align: middle }
+.pkg-maodian { margin-top: -28px; position: absolute; width: 1px; overflow: hidden }
+.pro_special { padding: 10px 15px }
+.pro_special_mid { width: 750px }
+.pro_special_mid p { font-size: 14px; line-height: 1.6; margin: 10px 0 0 ;}
+
+/* 产品详情 */
+.qijiashuoming, a.qijiashuoming:hover {
+  background: url("../images/s2_order_icons.gif") no-repeat scroll 52px 5px transparent;
+  color: #0055ee;
+  cursor: help;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 100;
+  margin: 0 0 0 10px;
+  padding: 0 15px 0 0;
+  text-decoration: none;
+}
+.qijiashuoming {
+  border-bottom: 1px dotted #06c;
+  color: #06c;
+  margin: 0 0 0 10px;
+}
+em {
+  font-style: normal;
+}
+.statement_cost dl, .important_prompt dl, .how_order dl, .dest_intelligence dl, .visa dl, .pro_special dl, .jiaotong dl { border-bottom: 1px dashed #ccc; padding: 5px 0; word-wrap: break-word }
+.statement_cost dt, .important_prompt dt, .how_order dt, .dest_intelligence dt, .visa dt, .pro_special dt, .jiaotong dt { font-weight: 700 }
+.statement_cost td { vertical-align: top }
+
+.day { border-bottom: 1px dashed #ccc; padding: 10px 0 }
+.day_rights { float: right; width: 203px }
+.day_right { position: relative; border: 1px solid #E3E9BA; background: #FCFFED; padding: 10px 18px 10px 14px; line-height: 24px; margin-bottom: 10px }
+.day_right h6 { font-weight: 700; font-size: 14px }
+.day_left { float: left; width: 732px }
+.day_rights_none .day_left { float: none; width: 100% }
+.day_right_angle { position: absolute; top: -1px; right: -1px; width: 18px; height: 17px; background-position: -452px 0 }
+.day_tit { font-family: \5FAE\8F6F\96C5\9ED1; font-weight: 700; font-size: 18px }
+.day_tit span { margin: 0 12px }
+.day_tit strong { font-weight: 700; color: #248800; }
+.day_introduction { line-height: 26px; color: #595959; font-size: 14px }
+.day_img_left { float: left }
+.day_img_right { margin: 0 15px }
+.day_img_center { margin: 0 auto; display: block }
+.day ul { padding: 10px; line-height: 24px; background: #eee; margin: 10px 0 }
+.day li b { margin-right: 5px }
+.day p { line-height: 24px }
+
+
+#s2-site-nav { color: #333; height: 26px; line-height: 24px; padding: 2px 0 0 10px; background-color: #F0F0F0; position: relative; z-index: 30; width: 990px; margin: 0 auto }
+#site-nav .menu { position: relative }
+#s2-site-nav span { display: block; width: 108px }
+#s2-site-nav .quick-menu { position: absolute; left: 112px; top: 0px; top: 1px\9; _top: 0px }
+#s2-site-nav .quick-menu li { float: left; margin-left: -1px; padding: 1px 15px 0 0; background-position: right -447px; position: relative }
+#s2-site-nav .quick-menu li.last { background: none; width: 285px; overflow: hidden; height: 26px; line-height: 26px }
+#s2-site-nav .quick-menu li a, #s2-site-nav .quick-menu li a: hover { color: #333 }
+#s2-site-nav .menu-hd { display: inline-block; position: relative; height: 26px; margin: 0px 1px 0; padding: 0 15px 0 10px; cursor: pointer; border: 1px solid #eee; border-bottom: 0; z-index: 1002 }
+#s2-site-nav .menu-hd b { position: absolute; right: 3px; top: 7px; _top: 8px; width: 0; height: 0; padding: 0px; border-width: 4px 4px; border-style: solid; border-color: #eee #eee #666 #eee; font-size: 0; line-height: 0; -webkit-transition: -webkit-transform .2s ease-in; -moz-transition: -webkit-transform .2s ease-in; -o-transition: -webkit-transform .2s ease-in; transition: -webkit-transform .2s ease-in }
+#s2-site-nav .menu-bd-panel { padding: 5px 10px; background-color: #fff }
+#s2-site-nav .menu-bd .last { border: 0 }
+#s2-site-nav .menu-bd a { display: inline-block; line-height: 20px; height: 20px; _height: 24px; _line-height: 24px; margin-right: 10px; overflow: hidden; zoom: 1; white-space: nowrap; text-overflow: ellipsis }
+#s2-site-nav .menu-bd i { padding: 0 2px; color: #8c8c8c; font-style: normal }
+#s2-site-nav .menu-bd span { color: #8c8c8c }
+#s2-site-nav span.current-pla { display: inline }
+#s2-site-nav .menu-bd { width: 340px; background: #fff url(../images/loading_32_32.gif) no-repeat 50% 50%; overflow: hidden }
+#s2-site-nav .menu-bd { display: none; position: absolute; left: 1px;  *left: 0px;top: 27px;  *top: 26px;padding: 5px 10px; background: #fff; border: 1px solid #bfbfbf; z-index: 999 }
+.pro_number { position: absolute; top: 1px; right: 0px }
+.pro_number strong { color: #C06; font-weight: 700; margin: 0 0 0 3px }
+.h3_tit { border-bottom: 4px solid #019934; font-family: \5FAE\8F6F\96C5\9ED1; height: 26px; line-height: 26px; font-size: 16px; font-weight: 700; color: #fff; margin-top: 10px; }
+.h3_tit span { background: #019934; display: inline-block; padding: 0 20px }
+.h4_tit { position: relative; top: 2px; line-height: 26px }
+.h4_tit span { float: left; display: inline-block; border-bottom: 2px solid #D50080; font-family: \5FAE\8F6F\96C5\9ED1; font-size: 14px; font-weight: 700 }
+.hr { border-top: 2px solid #C5C5C5; display: block }
+.row { padding: 0 15px; border: 6px solid #E5E5E5; word-wrap: break-word }
+.wen { position: relative; top: 2px;  *top: 0;margin: 0 5px }
+.statement_cost, .important_prompt, .how_order, .dest_intelligence, .visa, .pro_special, .jiaotong { line-height: 24px }
+
+.icon_wen, .immediate, .immediateB, .immediateB_gray, .icon_car, .icon_aircraft, .icon_train, .icon_ship, .day_right_angle, .again, .clickShow, .clickHidenB, .icon_print, .recommend_yuding, .booking_process span, .icon_triangle, .tictke_list .clickHiden, #return_header, .close, .send_recomment, .arrow-bg, .detail-recomment { background: url(../images/free_bg.gif) no-repeat }
+.icon_wen { width: 13px; height: 13px; display: inline-block; margin-right: 5px; position: relative; top: 3px;  *top: 0px;
+background-position: -186px -25px }
+.c_score i { color: #288400; font-size: 12px }
+
+.immediate { width: 154px; height: 39px; display: inline-block; background-position: 0 0; cursor: pointer }
+.immediateB_gray { width: 152px; height: 37px;  background: url(../images/free_bg.gif) no-repeat -1px -5px;display: inline-block; float: left }
+.immediateB {width: 152px; height: 37px; border:0; background: url(../images/free_bg.gif) no-repeat 0px 0px;display: inline-block; float: left}
+.immediateB_gray { background-position: 0 -1860px }
+
+.dtl_cfd_gonggao { padding: 5px 5px 0px 15px; line-height: 18px }
+.dtl_cfd_gonggao h3 { font-size: 14px; font-weight: bold; color: #333 }
+.dtl_gonggao_list { margin: 5px 0 0; max-height: 210px; overflow-y: auto;  *height: 210px}
+.dtl_r_hint { padding: 9px; line-height: 22px; border-bottom: 1px dotted #aaa }
+
+.dtl_boxr_txt1 .dtl_morebtn { float: left; margin-top: 10px }
+.dtl_boxr_txt1 .dtl_savebtn { float: left; margin: 7px 0 0 20px }
+.dtl_savebtn { display: block; width: auto; height: 41px; line-height: 41px; padding-left: 20px; background: url(../images/free_bg.gif) no-repeat -484px -58px }
+.dtl_savebtn { display: inline-block; height: 20px; line-height: 20px; background-position: -484px -68px; margin-top: 3px }
+.detail-recomment { background-position: -484px -88px }
+.dtl_tj { padding: 9px 18px; margin-bottom: 10px; border: 1px solid #e3e9ba; background: #fdfff2 }
+.dtl_tj_tit { font-size: 14px; line-height: 30px; font-weight: bold }
+.dtl_tj_list { overflow: hidden; zoom: 1; line-height: 24px; color: #535353 }
+.dtl_tj_list li { float: left; width: 450px; padding-right: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 14px }
+
+.ewm_box { padding: 8px; border: #E7E7E7 solid 1px; width: 255px; height: 70px; position: relative }
+.ewm_box_xl { margin: 20px 0 0 85px }
+.ewm_box_jd { margin: 20px 0 0 64px }
+.ewm_box img { float: left }
+.ewm_box p { float: left; margin: 0 0 0 10px; padding-top: 11px; font-family: "微软雅黑"; font-size: 14px; color: #666; line-height: 24px }
+.ewm_box p span { display: block; color: #f60 }
+.zhiyin { display: block; width: 420px; height: 200px; position: absolute; top: 86px; background: url(../images/zhiyin.gif) no-repeat; display: none; z-index: 99 }
+.ewm_box_xl .zhiyin { right: -1px }
+.ewm_box_jd .zhiyin { left: 271px; top: auto; bottom: -1px }
+.recomment_wra { width: 310px; line-height: 24px; position: absolute; margin-top: -68px; display: none }
+.arrow-bg { display: inline-block; width: 15px; height: 9px; background-position: -291px -40px; position: absolute; top: -5px; right: 40px }
+
+.recomment_wra { padding: 3px; background: url(../images/pop_border_grey.png) repeat; box-shadow: 2px 2px 9px #eee }
+.recomment_wra_mid { padding: 5px 10px; border: 1px solid #ccc; background-color: #fff }
+.recomment_tit { font-size: 12px; color: #101010 }
+.recomment_input i { color: #e38 }
+.recomment_input label i { color: #f44 }
+.recomment_tit .close { float: right; display: inline-block; width: 15px; height: 15px; cursor: pointer; background: url(../images/close.gif) no-repeat 4px -15px }
+.recomment_input li { height: 28px; line-height: 28px; overflow: hidden }
+.recomment_input label { display: inline-block; width: 70px; text-align: right }
+.recomment_input i { font-style: normal; color: #C6005B; white-space: nowrap; overflow: hidden; text-overflow: ellipsis }
+.recomment_input li b { font-weight: 500 }
+.recomment_input input { width: 140px; padding: 3px; margin-right: 5px; border: 1px solid #abc; color: #888 }
+.recomment_margin input, .send_recomment { margin-left: 70px }
+
+.play_date .dtl_r_hint span { color: #c06; font-weight: 700 }
+.play_date { padding: 10px }
+.play_date dl { line-height: 24px; margin-left: 11px }
+.play_date dt, .play_date p { overflow: hidden; zoom: 1 }
+.play_date dd, .play_date dt { float: left }
+.play_date dt { color: #000; margin-right: 4px; font-weight: bold }
+.play_date select { width: 180px }
+.play_date p { margin-bottom: 5px }
+.play_date p strong { width: 80px; text-align: center; display: inline-block; font-weight: 700 }
+.play_date .immediateB, .play_date .immediateB_gray { margin: 8px 10px 0 0 }
+
+.free_dtl_pro_tab td dfn { color: #f60 }
+.free_dtl_pro_tab td .product_117875_price { font-size: 14px }
+.zxerror { display: none }
+.zxerror-text { position: relative; z-index: 10; padding: 2px 10px; line-height: 22px; font-size: 12px; color: #f55; display: inline-block; vertical-align: middle; white-space: nowrap; background: #fff6f6; border: 1px solid #fcc; margin-left: 3px }
+.zxerror-text .error-arrow { position: absolute; top: 50%; left: -8px; width: 16px; height: 14px; margin-top: -7px }
+.zxerror-text .error-arrow i, .zxerror-text .error-arrow em { position: absolute; font-size: 14px; font-family: SimSun, Tahoma, Arial, \5b8b\4f53, sans-serif; line-height: 1; font-style: normal; font-weight: normal }
+.zxerror-text .error-arrow em { color: #fcc }
+.zxerror-text .error-arrow i { left: 1px; color: #fff6f6 }
+.zxerror-text p { margin: 0 }
+
+.quick-list { display: none; overflow: hidden; position: absolute; top: 27px; z-index: 10; width: 275px; border: 1px solid #ccc; background: #FFF; padding-left: 5px }
+.quick-list a { display: block; color: #000; cursor: pointer }
+.quick-list li { line-height: 16px }
+.quick-list a: hover { text-decoration: none; color: #fff; background: #39f }
+.quick_select { position: relative; overflow: hidden; width: 215px; height: 24px; padding-left: 5px; border: 1px solid #ccc }
+.quick-wrap { position: relative; width: 280px; padding-bottom: 10px }
+.quick-error { position: absolute; left: 187px; top: -2px }
+
+.dtl_box_r_topbox { padding: 5px; position: relative; font-family: Arial, \5b8b\4f53 }
+.dtl_boxr_tit1 { height: 36px; line-height: 36px; padding-left: 9px; border: 1px solid #e2eaad; background: #fdfff2 }
+.dtl_boxr_txt1 { overflow: hidden; zoom: 1; padding: 10px 25px 0 0; line-height: 24px }
+.dtl_boxr_tit1 b { float: left; color: #000 }
+.dtl_boxr_txt1 b.cmtBonus { color: #F60 }
+.dtl_boxr_tit1 ul { float: left; margin-left: 5px; width: 285px }
+.dtl_boxr_txt1 strong { font-size: 16px; font-weight: bold }
+.dtl_boxr_txt1 strong em { font-size: 30px }
+.dtl_boxr_txt1 strong { font-family: Arial, Helvetica, sans-serif; color: #f60 }
+.dtl_boxr_txt1 b { color: #06c; font-weight: 500 }
+
+.c_line_num strong, .c_shadebg s, .c_shadebg a { display: inline-block }
+.c_line_pro { position: relative; overflow: hidden; _zoom: 1; font-size: 12px }
+.c_line_pro .c_w_score { margin-top: 20px }
+.c_line_ct strong { font-weight: 700; color: #333 }
+.c_line_num { font-family: "Microsoft YaHei"; font-size: 14px; border-bottom: 2px solid #c4c4c4; white-space: nowrap; _width: 100% }
+.c_line_num strong { color: #288400; border-bottom: 2px solid #288400; margin-bottom: -2px; position: relative; font-weight: 500 }
+.c_line_num span { color: #666 }
+
+.calendar_free { clear: both; width: 550px; height: 380px; margin: 0 auto; }
+.calendar_active { float: right }
+.calendar_active { height: 13px; width: 12px; line-height: 14px; padding: 0 1px;  *padding-top: 1px;margin: 1px 0 -1px; color: #fff; background: #019934 }
+.search_pp_calendar_d_crt .search_pp_calendar_d_box { border: 2px solid #ffec91; background: #faffdb }
+.search_pp_calendar_d_over .search_pp_calendar_d_box { border: 2px solid #a1bb71; background: #faffdb }
+.search_pp_calendar_box { overflow: hidden; zoom: 1; width: 550px; padding-bottom: 5px; background: #f0f0f0; font-family: "Microsoft YaHei" }
+.search_pp_calendar_tit { height: 44px; line-height: 44px; font-size: 18px; font-weight: bold; color: #666; text-align: center; border-bottom: 1px solid #fff; border-top: 3px solid #e3e3e3;}
+.search_pp_calendar_m { float: left; width: 60px }
+.search_pp_calendar_t, .search_pp_calendar_d { overflow: hidden; zoom: 1; float: right; width: 490px }
+.search_pp_calendar_t li { float: left; width: 69px; height: 22px; line-height: 22px; text-align: center; color: #999; padding: 0 }
+.search_pp_calendar_d li { float: left; width: 68px; height: 49px; border-right: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; padding: 0 }
+.search_pp_calendar_d_box { overflow: hidden; zoom: 1; padding: 3px; height: 38px; _height: 38px; border: 2px solid #fff; font-family: Arial, Helvetica, sans-serif; cursor: pointer }
+.search_pp_calendar_d_box: hover { border: 2px solid #a1bb71; background: #faffdb }
+.search_pp_calendar_d_box_no_hover { overflow: hidden; zoom: 1; padding: 4px; height: 36px; _height: 36px; border: 2px solid #fff; font-family: Arial, Helvetica, sans-serif }
+.search_pp_calendar_d_box_selected { border: 2px solid #a1bb71; background: #faffdb }
+.search_pp_calendar_day, .search_pp_calendar_balance, .search_pp_calendar_balance1 { display: block; height: 22px; line-height: 16px }
+.search_pp_calendar_day { float: left; width: 21px }
+.search_pp_calendar_balance, .search_pp_calendar_balance1 { float: right; width: 35px; text-align: right; color: #9c9; height: 14px }
+.search_pp_calendar_balance1 { color: #f00 }
+.search_pp_calendar_price, .search_pp_calendar_price1 { float: right; width: 100%; text-align: right; color: #f60; line-height: 15px }
+.search_pp_calendar_price1 { color: #f00; width: 35px }
+.search_pp_calendar_m { line-height: 36px; font-size: 20px; font-weight: bold; color: #999; text-align: center }
+.search_pp_calendar_m span { display: block }
+.search_pp_cal_nevm, .search_pp_cal_nextm { width: 45px; margin: auto; height: 150px; overflow: hidden }
+.search_pp_cal_nevm_icon { width: 33px; height: 20px; margin: 50px auto 30px; background: url(../images/global.gif) no-repeat -220px -376px; cursor: pointer }
+.search_pp_cal_nextm_icon { width: 33px; height: 20px; margin: 30px auto 0; background: url(../images/global.gif) no-repeat -155px -376px; cursor: pointer }
+.search_pp_cal_nevm_no_icon { width: 33px; height: 20px; margin: 50px auto 30px; background: url(../images/global.gif) no-repeat -187px -376px }
+.search_pp_cal_nextm_no_icon { width: 33px; height: 20px; margin: 30px auto 0; background: url(../images/global.gif) no-repeat -251px -376px }
+.search_pp_cal_nextm_text { margin-top: 60px }
+.search_pp_lastm_d .search_pp_calendar_day { color: #ddd }
+.search_pp_calendar_d li.search_pp_calendar_d_nextm { background: #f5ffdd }
+.search_pp_cal_nevm_center { padding-bottom: 60px }
+.search_pp_lastm_d .search_pp_calendar_day { color: #ddd }
+.search_pp_calendar_d li.search_pp_calendar_d_nextm { background: #f5ffdd }
+.month_1 { background: #fff }
+.month_2, .month_3, .month_4, .month_5, .month_6 { background: #f5ffdd }
+
+.xh-youhui { overflow: hidden }
+
+.dtl_infobox { position: relative; zoom: 1; padding: 10px; border: 6px solid #e5e5e5; font-family: "Microsoft YaHei"; margin: 10px auto }
+.dtl_zyx_icon, .dtl_zyx_icon_gn, .dtl_zyx_icon_cj, .dtl_zyx_icon_mp, .dtl_zyx_icon_jd, .dtl_zyx_icon_super { position: absolute; z-index: 9; top: -7px; right: -7px; width: 83px; height: 81px; background: url(../images/free_bg.gif) no-repeat -180px -70px }
+.dtl_tit { overflow: hidden; zoom: 1; padding-left: 13px; line-height: 22px; border-left: 6px solid #999 }
+.dtl_tit_txt { float: left; width: 730px; overflow: hidden; font-size: 20px; color: #000; font-weight: 700 }
+
+.dtl_boxinner { zoom: 1; margin-top: 10px }
+.dtl_box_left { float: left; width: 554px; overflow: hidden }
+.dtl_box_right { float: right; width: 398px; border: 1px solid #ededed; color: #666; font-family: "宋体" }
+
+.dtl_focusbox { overflow: hidden; zoom: 1; border: 6px solid #e5e5e5 }
+.dtl_focuslist { float: right; width: 98px; background: #ccc }
+.dtl_focuslist li { position: relative; zoom: 1; border-left: 1px solid #000; border-bottom: 1px solid #000 }
+.dtl_focuslist li, .dtl_focuslist li img, .zz_panel { width: 97px; height: 54px; overflow: hidden }
+.dtl_focuslist li.dtl_focus_crt, .dtl_focuslist li.dtl_focus_crt img { width: 97px; height: 71px }
+.dtl_focuslist li img { filter: alpha(opacity=50); opacity: 0.5 }
+.dtl_focuslist li.dtl_focus_crt img { filter: alpha(opacity=100); opacity: 1 }
+.zz_panel { display: block; position: absolute; left: 0; top: 0; z-index: 10; background: #000; filter: alpha(opacity=50); opacity: 0.5 }
+.dtl_focus_crt .zz_panel { width: 0; background: none }
+.dtl_crtimg { display: block; position: relative; zoom: 1; float: left }
+
+.dtl_zyx_icon_gn { background-position: -180px -70px } }
+.dtl_zyx_icon_cj { background-position: -264px -72px }
+.dtl_zyx_icon_mp { background-position: -15px -151px }
+.dtl_zyx_icon_jd { background-position: -181px -151px }
+
+span.xc_star, span.xc_star i, span.xcm_star, span.xcm_star i, span.big_star, span.big_star i, span.b_star, span.b_star i, span.sm_star, span.sm_star i, span.t_star, span.t_star i, span.k_star i, span.mt_star, span.mt_star i, span.mk_star i, .re-star, .starbg, .starbg i, span.c_star, span.c_star i { background: url(../images/ico_s_result.gif) no-repeat; display: inline-block;  *display: inline;
+ *zoom: 1;
+overflow: hidden }
+span.c_star, span.c_star i { width: 80px; height: 20px; background-position: -140px -122px }
+span.t_star, span.k_star { display: inline-block; overflow: hidden; height: 10px }
+span.t_star, span.k_star { width: 62px }
+span.t_star, span.t_star i, span.k_star i { height: 10px; background-position: -50px -100px }
+span.t_star i { background-position: -50px -111px }
+span.t_star i, span.k_star i, span.mt_star i, span.mk_star i { float: left }
+span.sm_star, span.sm_star i { width: 68px; height: 12px; background-position: -180px -100px }
+span.sm_star i { background-position: -180px -111px; float: left }
+span.big_star, span.big_star i { width: 69px; height: 13px; background-position: -24px 0 }
+span.big_star i { background-position: -24px -16px; float: left }
+span.b_star, span.b_star i { width: 78px; height: 12px; background-position: -27px -124px }
+span.b_star i { background-position: -27px -138px; float: left }
+.re-star, .starbg, .starbg i { background-position: -250px -100px; width: 80px; height: 20px }
+.re-star { padding: 0 7px; overflow: hidden; vertical-align: middle }
+.starbg { background-position: -257px -100px }
+.starbg i { float: left; background-position: -257px -120px }
+span.star1 { width: 12px }
+span.star2 { width: 24px }
+span.star3 { width: 37px }
+span.star4 { width: 49px }
+span.star5 { width: 62px }
+.b_star .star1 { width: 16px }
+.b_star .star2 { width: 32px }
+.b_star .star3 { width: 48px }
+.b_star .star4 { width: 64px }
+.b_star .star5 { width: 80px }
+
+
+.visa_info_xh { padding: 10px 20px; line-height: 20px; overflow: hidden }
+.visa_info_xh h5 { font-weight: bold; font-size: 12px; margin-bottom: 5px }
+.visa_content .tabcon { display: none }
+.visa_nav_a, .visa_subnav_a { clear: both }
+.visa_nav_a li, .visa_subnav_a li { float: left; display: inline; cursor: pointer }
+.visa_nav_a { border-bottom: 1px solid #c7b6b3; padding: 10px 0 0 10px; height: 30px }
+.visa_nav_a li { height: 29px; line-height: 29px; padding: 0 10px; color: #7f695f; background: #dcd2ca; border: 1px solid #c7b6b3; margin-left: -1px }
+.visa_nav_a .selected { color: #442a20; background: #fff; border-bottom: 1px solid #fff }
+.visa_subnav_a { padding: 0 0 10px; margin-top: 10px }
+.visa_subnav_a li { color: #06c; margin-right: 10px; padding: 0 10px; height: 24px; line-height: 24px; position: relative }
+.visa_subnav_a .selected { background: #ece8e4; color: #442a20 }
+.visa_subnav_a .selected i { border-width: 6px; width: 0; line-height: 0; font-size: 0; overflow: hidden;  *zoom: 1;border-style: solid dashed dashed dashed; border-color: #ece8e4 transparent transparent transparent; position: absolute; bottom: -11px; left: 50%; margin-left: -5px }
+.visa_content { padding: 10px 20px 10px }
+.visa_info_box { overflow: hidden }
+.visa_info_item b { font-weight: bold; float: left; width: 190px }
+.visa_info_item .text { overflow: hidden }
+.visa_info_item { border-top: 1px dotted #d8d8d8; margin-top: -1px; padding: 10px 0 }
+
+.bookNotes {
+  color: #bbb;
+  margin-bottom: 10px;
+}
+.icon-item, .icon-item-last, .icon-tag, .icon-tag2, .icon-type1, .icon-type2, .icon-type3, .icon-01, .icon101, .icon102, .icon103, .icon104, .icon105, .icon106, .icon07, .icon201, .icon202, .icon203, .icon204, .icon205, .icon301, .icon302, .icon-sp1, .icon-sp2, .icon-sp3, .icon-sp4, .icon-sp5, .icon-sp6 { background: url(../images/combo.gif) no-repeat; display: inline-block;  *display: inline;
+ *zoom: 1;
+vertical-align: top;  *vertical-align: middle;
+font-family: Tahoma, Arial, \5b8b\4f53; text-indent: 0 }
+
+.icon-type1 { background-position: -190px -34px }
+.icon-type2 { background-position: -190px -47px }
+.icon-type3 { background-position: -190px -62px }
+
+.tags101, .tags102, .tags103, .tags104, .tags105, .tags106, .tags107, .tags108, .tags109 { display: inline-block; margin: 0 2px; font-size: 12px; font-style: normal; font-weight: normal !important; text-indent: 0; cursor: default; padding: 0 4px; background: #ff9614; color: #fff; height: 16px; line-height: 16px }
+.tags101 { background: #288400 }
+.tags102 { background: #fa65b0 }
+.tags103 { background: #f44 }
+.tags104 { background: #6bbd00 }
+.tags105 { background: #d17 }
+
+[class^="tags"], [class*=" tags"], .tagscc, .tagsback, .tagsgift, .tags101, .tags102, .tags103, .tags104, .tags105, .tags106, .tags107, .tags108, .tags109, .tags301, .tags302 {
+ vertical-align: middle;
+ *vertical-align: top;
+ position: relative;
+ top: -1px;
+ *top: 0px
+}

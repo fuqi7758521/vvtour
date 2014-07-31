@@ -1,0 +1,2995 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>好时光之旅：美国东西海岸大瀑布+夏威夷14天</title>
+<meta name="keywords" content="美国_夏威夷_纽约_华盛顿_洛杉矶"/>
+<meta name="description" content="1.	国航往返国际段直飞，可配联运。东进西出时差合理，节约飞行时间。
+2.	独家赠送：好时Kisses巧克力诞生地——好时镇，探访Kisses的秘密。
+3.	特别赠送：乘坐自由女神游船，体验纽约水路风情。更可以全方位领略曼哈顿岛地标性建筑。
+4.	特别安排：前往圣塔莫妮卡海滩，感受当地美国人民的悠闲生活。
+5.	前往世界三大跨国瀑布之一的尼亚加拉大瀑布，感受大自然带给我们的震撼。
+"/>	
+<link href="http://127.0.0.1//css/common.css" rel="stylesheet" type="text/css" />
+<link href="http://127.0.0.1//css/main.css" rel="stylesheet" type="text/css" />
+<link href="http://127.0.0.1//css/product.css" rel="stylesheet" type="text/css" />
+<link href="http://127.0.0.1//css/ui-components.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript"  src="http://127.0.0.1//js/setTab.js"></script>
+<script type="text/javascript" src="http://127.0.0.1//js/jquery/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="http://127.0.0.1//js/chengtourUI.js" ></script>
+
+<script type="text/javascript">
+	
+	$(function(){
+		$('.dropdown').hover(function(e) {
+			$(this).children('span').siblings('.lv_div').toggle();
+			$(this).children('span').toggleClass('link_hover');
+		});	
+		$('.lv_div').mouseover(function(e) {
+			$('.lv_div').show();
+		});	
+		
+		$('.join-weixin .lvlink').hover(function(e) {
+			$(this).siblings('.top-sub').toggle();
+		});	
+		
+		
+		$('#goTopBtn').click(function(e) {
+			$('body,html').animate({scrollTop:0},1000);
+		});
+		
+		$('.quick-menu li a').hover(function(e) {
+			$(this).toggleClass('current-crumb');
+			$(this).siblings('.menu-bd').toggle();
+		});
+		$('.ewm_box_xl').hover(function(e) {
+			$(this).children('.zhiyin').toggle();
+		});
+		$('.search_pp_calendar_d li').hover(function(e) {
+			$(this).children('.search_pp_calendar_d_box').css('border','2px solid #abba88');
+		},function(){
+			$(this).children('.search_pp_calendar_d_box').css('border','2px solid #fff');
+		});
+		
+		
+		var divindex=0;
+		$('.search_pp_cal_nextm_icon').click(function(e) {
+			divindex++;
+			if(divindex>2){
+				divindex=2;
+			}
+		   $('.search_pp_calendar_box').eq(divindex).show().siblings('.search_pp_calendar_box').hide();
+		});
+		
+		$('.search_pp_cal_nevm_icon').click(function(e) {
+			divindex--;
+			if(divindex<0){
+				divindex=0;
+			}
+		   $('.search_pp_calendar_box').eq(divindex).show().siblings('.search_pp_calendar_box').hide();
+		});
+		
+		
+		var topzhi=$('#scroll_nav').position().top;
+		$(window).scroll(function(e) {
+			var thescrolltop=$(document).scrollTop();
+			if(thescrolltop>topzhi){
+				$('#scroll_nav').css({position:'fixed',top:0});
+			}else{
+				$('#scroll_nav').css({position:'static'});
+			}
+		});
+		
+		
+		
+		$('.p_join-weixin').hover(function(e) {
+			$(this).children('.p_weixin').toggle();
+		});
+		
+		$('.firstli').hover(function(e) {
+			$(this).children('.p_lvlink').toggleClass('weixin');
+		});
+		
+		$('.fu_top span').click(function(e) {
+			$('.fu_top').hide();
+		});
+		
+		var one=$('.qiehuana').position().top;
+		var two=$('.qiehuanb').position().top;
+		var three=$('.qiehuanc').position().top;
+		var four=$('.qiehuane').position().top;
+		var five=$('.qiehuang').position().top;
+		
+		$(window).scroll(function(e) {
+			var htop=$(document).scrollTop();
+			if(htop>400){
+				$('.fuchuang').show();
+			}else{
+				$('.fuchuang').hide();
+			}
+			});
+			
+			
+		$(window).scroll(function(e) {
+			var htop=$(document).scrollTop();
+			if(htop>one){
+				$('#scroll_nav li').eq(0).addClass('scroll_nav_current').siblings().removeClass('scroll_nav_current');
+			}
+			
+			if(htop>two){
+				$('#scroll_nav li').eq(1).addClass('scroll_nav_current').siblings().removeClass('scroll_nav_current');
+			}
+			
+			if(htop>three){
+				$('#scroll_nav li').eq(2).addClass('scroll_nav_current').siblings().removeClass('scroll_nav_current');
+			}
+			
+			if(htop>four){
+				$('#scroll_nav li').eq(3).addClass('scroll_nav_current').siblings().removeClass('scroll_nav_current');
+			}
+			
+			if(htop>five){
+				$('#scroll_nav li').eq(4).addClass('scroll_nav_current').siblings().removeClass('scroll_nav_current');
+			}
+
+		});
+			
+		
+		$('#scroll_nav li').click(function(e) {
+			$(this).addClass('scroll_nav_current').siblings().removeClass('scroll_nav_current');
+		});
+		
+		
+		$('.pnav-main li a').click(function(e) {
+			$(this).parent().addClass('current_nav').siblings().removeClass('current_nav');
+			return false;
+		});
+		
+		$('.return_top').click(function(e) {
+		   
+		$('body,html').animate({scrollTop:0},1000);
+		});
+		
+	});
+
+	$(function(){
+	$(".qijiashuoming").ui('lvtip',{ 
+	hovershow: 200 
+	});
+});
+    </script>
+</head>
+
+<body>
+<!-- 引入头部 start -->
+
+
+
+
+<div class="ctop">
+     <div class="top01 clearfix">
+       <div class="topl">您好，欢迎来到诚途旅游网！<!-- <a href="#" target="_blank" class="blue ml20">登录</a><span>|</span><a href="#" target="_blank" class="blue">注册</a> --></div>
+        <!--   
+        <div class="topl">您好，<a href="#" target="_blank" class="blue ml20">hellowuyao</a><span>|</span><a href="#" target="_blank" class="blue">退出</a></div>
+        -->  
+         <ul class="topr">
+         	<li style="width: 300px;float: left;">&nbsp;</li>
+         	
+         	<!-- 
+           <li class="r01"><a href="#" class="hide">我的诚途</a>
+               <ul>
+                  <li><a href="#">我的订单</a></li>
+                  <li><a href="#">我的积分</a></li>
+                  <li><a href="#">我的优惠券</a></li>
+                  <li><a href="#">我的会员卡</a></li>
+                  <li><a href="#">我的礼品卡</a></li>
+               </ul>
+               
+           </li>
+           <li class="li tc"><a href="#">积分商城</a></li>
+           <li class="li tc"><a href="#">团购预约</a></li>
+            -->
+           <li class="li02 tc"><a href="/help/about_us.html" target="_blank">帮助</a></li>
+           <li class="li01">
+               <span class="sp1"></span><a href="javascript:void(0)" class="a1">+微信</a>
+               <ul>
+                   <li><img src="http://127.0.0.1//images/wb.jpg" width="220" height="90" /></li>
+               </ul>
+           </li>
+           <li class="li"><span class="sp2"></span><a href="#">+微博</a></li>
+           <!-- <li class="li li03"><span class="sp3"></span><a href="#">手机版</a></li>-->
+         </ul>
+     </div>
+</div>
+<div class="logo1 clearfix">
+   <div class="left"><img src="http://127.0.0.1//images/logo.png" width="395" height="37" /></div>
+   <div class="right">400-6966-706</div>
+   <div class="middle">
+   <!-- 
+   	<a href="#"><img src="http://127.0.0.1//images/ad1.png" width="300" height="60" /></a> -->
+   	</div>
+</div>
+<div class="list">
+     <div class="w1000 clearfix">
+         <script type="text/javascript"  src="/js/header.js"></script>
+     </div>
+</div>
+<!-- -->
+
+<!-- 引入头部 end -->
+<div class="w1000">
+  <div class="mt10">您当前所处的位置：<a href="http://www.chengtour.com" class="blue">首页</a> &gt; <a href="javascript:void(0)" class="blue">夏威夷</a> &gt; 夏威夷</div>
+</div>
+
+
+<!-- 诚途产品内容 -->
+<div id="warp">
+<div class="main">
+
+<!-- 产品首屏 start -->
+<div class="dtl_infobox cclearfix">
+
+		<!--主页右上角图标-->
+		<div class="dtl_zyx_icon_cj" id="dtl_zyx"></div>
+		<p class="bookNotes">本产品由诚途旅游网指定北京青年旅行社股份有限公司及具有相关资质的合作旅行社提供相关资讯及服务</p>
+
+		<div class="dtl_tit">
+			<h1 class="dtl_tit_txt">好时光之旅：美国东西海岸大瀑布+夏威夷14天</h1>
+			<!-- Baidu Button BEGIN -->
+			<div data-bd-bind="1406180667635" class="bdsharebuttonbox bdshare-button-style0-16">
+				<a hidefocus="false" data-cmd="more" class="bds_more" href=""></a>
+				<a hidefocus="false" title="分享到QQ空间" data-cmd="qzone" class="bds_qzone" href=""></a>
+				<a hidefocus="false" title="分享到新浪微博" data-cmd="tsina" class="bds_tsina" href=""></a>
+				<a hidefocus="false" title="分享到腾讯微博" data-cmd="tqq" class="bds_tqq" href=""></a>
+				<a hidefocus="false" title="分享到人人网" data-cmd="renren" class="bds_renren" href=""></a>
+				<a hidefocus="false" title="分享到微信" data-cmd="weixin" class="bds_weixin" href=""></a>
+			</div>
+			<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+			<!-- Baidu Button END -->
+		</div>
+		<!--infobox-tit-->
+<script type="text/javascript">
+	$(function(){
+		$('.dtl_focuslist li').hover(function(e) {
+			var this_index=$(this).index();
+            $(this).children('span').removeClass('zz_panel');
+			$(this).siblings().children('span').addClass('zz_panel');
+            $(this).addClass('dtl_focuslist').siblings().removeClass('dtl_focuslist');
+			$('.dtl_crtimg li').eq(this_index).stop().fadeIn(500).siblings().hide();
+			li_num=this_index;
+        });
+		
+		var timer2=setInterval(banner_autoplay,3000)
+		var li_num=0;
+		function banner_autoplay(){
+			li_num++;
+			if(li_num > 3){
+			   li_num=0;
+			}
+            $('.dtl_focuslist li').eq(li_num).children('span').removeClass('zz_panel');
+			$('.dtl_focuslist li').eq(li_num).siblings().children('span').addClass('zz_panel');
+            $('.dtl_focuslist li').eq(li_num).addClass('dtl_focuslist').siblings().removeClass('dtl_focuslist');
+			$('.dtl_crtimg li').eq(li_num).stop().fadeIn(500).siblings().hide();
+		} 
+		
+		$('.dtl_focusbox').hover(function(e) {
+            clearInterval(timer2);
+        },function(){
+			timer2=setInterval(banner_autoplay,3000);
+		});
+		
+		
+	})
+</script>
+		<div class="dtl_boxinner">
+			<div class="dtl_box_left">
+				<div class="dtl_focusbox">
+					<ul class="dtl_crtimg">
+						<li style="display: none; opacity: 1;">
+							<img width="440px" height="220px" src="/upload/web_pic/10043/aab34b8a04d25f62e81fa8ef11958acd.jpg"/></li>
+						<li style="display: none; opacity: 1;">
+							<img width="440px" height="220px" src="/upload/web_pic/10043/b7621d188a64dc8515f6f25fa5c10a9f.jpg"/></li>
+						<li style="display: none; opacity: 1;">
+							<img width="440px" height="220px" src="/upload/web_pic/10043/46998d8250d37c54387d0c4795b9171b.jpg"/></li>
+						<li style="display: list-item; opacity: 1;">
+							<img width="440px" height="220px" src="/upload/web_pic/10043/919954eccad58570762b5309fe1a74be.jpg"/></li>
+					</ul>
+					<ul class="dtl_focuslist">
+						<li class="">
+							<img width="97" height="71" rev="/upload/web_pic/10043/aab34b8a04d25f62e81fa8ef11958acd.jpg" src="/upload/web_pic/10043/aab34b8a04d25f62e81fa8ef11958acd.jpg"/>
+							<span class="zz_panel"></span>
+						</li>
+						<li class="">
+							<img width="97" height="71" rev="/upload/web_pic/10043/b7621d188a64dc8515f6f25fa5c10a9f.jpg" src="/upload/web_pic/10043/b7621d188a64dc8515f6f25fa5c10a9f.jpg"/>
+							<span class="zz_panel"></span>
+						</li>
+						<li class="">
+							<img width="97" height="71" rev="/upload/web_pic/10043/46998d8250d37c54387d0c4795b9171b.jpg" src="/upload/web_pic/10043/46998d8250d37c54387d0c4795b9171b.jpg"/>
+							<span class="zz_panel"></span>
+						</li>
+						<li class="dtl_focuslist">
+							<img width="97" height="71" rev="/upload/web_pic/10043/919954eccad58570762b5309fe1a74be.jpg" src="/upload/web_pic/10043/919954eccad58570762b5309fe1a74be.jpg"/>
+							<span class=""></span>
+						</li>
+					</ul>
+				</div>
+				<!--focus-->
+				<!--不定期产品时间价格表 start -->
+				<div data-bid="60971" data-pid="60971" class="time-price-one">
+					<div data-sub-product-type="FREENESS_FOREIGN" data-product-type="ROUTE" data-super-free="false" class="calendar_free">
+						<div class="search_pp_calendar_box">
+							<h2 class="search_pp_calendar_tit">出行日价格表</h2>
+							<div class="search_pp_calendar_m">
+								<div class="search_pp_cal_nevm">
+									<span class="search_pp_cal_nevm_no_icon"></span>
+									<span class="search_pp_cal_nevm_text">7月</span>
+								</div>
+								<div class="search_pp_cal_nextm">
+									<span class="search_pp_cal_nextm_text">8月</span>
+									<span class="search_pp_cal_nextm_icon"></span>
+								</div>
+							</div>
+							<!--mounth-->
+
+							<ul class="search_pp_calendar_t">
+								<li>星期日</li>
+								<li>星期一</li>
+								<li>星期二</li>
+								<li>星期三</li>
+								<li>星期四</li>
+								<li>星期五</li>
+								<li>星期六</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">01</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-01</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">02</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-02</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">03</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-03</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">04</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-04</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">05</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-05</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">06</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-06</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">07</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-07</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">08</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-08</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">09</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-09</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">10</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-10</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">11</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-11</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">12</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-12</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">13</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-13</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1">
+										<span class="search_pp_calendar_day">14</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-14</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">15</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-15</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">16</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-16</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">17</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-17</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">18</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-18</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1" >
+										<span class="search_pp_calendar_day">19</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-19</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">20</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-20</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">21</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-21</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">22</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-22</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">23</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-23</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">24</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-24</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">25</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-25</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">26</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-26</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">27</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-27</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1" >
+										<span class="search_pp_calendar_day">28</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-28</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">29</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-29</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">30</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-30</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">01</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-01</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">02</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-02</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">03</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-03</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">04</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-04</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">05</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-05</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">06</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-06</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">07</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-07</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">08</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-08</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2"  style="border: 2px solid rgb(255, 255, 255);">
+										<span class="search_pp_calendar_day">09</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-09</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">10</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-10</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">11</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-11</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">12</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-12</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div style="display:none;" class="search_pp_calendar_box">
+							<h2 class="search_pp_calendar_tit">出行日价格表</h2>
+							<div class="search_pp_calendar_m">
+								<div class="search_pp_cal_nevm">
+									<span class="search_pp_cal_nevm_icon"></span>
+									<span class="search_pp_cal_nevm_text">8月</span>
+								</div>
+								<div class="search_pp_cal_nextm">
+									<span class="search_pp_cal_nextm_text">9月</span>
+									<span class="search_pp_cal_nextm_icon"></span>
+								</div>
+							</div>
+							<!--mounth-->
+
+							<ul class="search_pp_calendar_t">
+								<li>星期日</li>
+								<li>星期一</li>
+								<li>星期二</li>
+								<li>星期三</li>
+								<li>星期四</li>
+								<li>星期五</li>
+								<li>星期六</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1" >
+										<span class="search_pp_calendar_day">29</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13280起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-29</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">30</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-06-30</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">01</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-01</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">02</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-02</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">03</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-03</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">04</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-04</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">05</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-05</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">06</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-06</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">07</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-07</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">08</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-08</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">09</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-09</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">10</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-10</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">11</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-11</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">12</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-12</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">13</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-13</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">14</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-14</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">15</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-15</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">16</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-16</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">17</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-17</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">18</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-18</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">19</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-19</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">20</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-20</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">21</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-21</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">22</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-22</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">23</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-23</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">24</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-24</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">25</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-25</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">26</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-26</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">27</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13580起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-27</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">28</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-28</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">29</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-29</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">30</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13950起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-30</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">31</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14400起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-31</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">01</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-01</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_3" >
+										<span class="search_pp_calendar_day">02</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-02</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_3" >
+										<span class="search_pp_calendar_day">03</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-03</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">04</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-04</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">05</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-05</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_3" >
+										<span class="search_pp_calendar_day">06</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-06</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_3" >
+										<span class="search_pp_calendar_day">07</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-07</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">08</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-08</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_3" >
+										<span class="search_pp_calendar_day">09</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-09</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div style="display:none;" class="search_pp_calendar_box">
+							<h2 class="search_pp_calendar_tit">出行日价格表</h2>
+							<div class="search_pp_calendar_m">
+								<div class="search_pp_cal_nevm">
+									<span class="search_pp_cal_nevm_icon"></span>
+									<span class="search_pp_cal_nevm_text">9月</span>
+								</div>
+								<div class="search_pp_cal_nextm">
+									<span class="search_pp_cal_nextm_text">10月</span>
+									<span class="search_pp_cal_nextm_no_icon"></span>
+								</div>
+							</div>
+							<!--mounth-->
+
+							<ul class="search_pp_calendar_t">
+								<li>星期日</li>
+								<li>星期一</li>
+								<li>星期二</li>
+								<li>星期三</li>
+								<li>星期四</li>
+								<li>星期五</li>
+								<li>星期六</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1" >
+										<span class="search_pp_calendar_day">27</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥1000起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-27</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">28</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-28</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_1">
+										<span class="search_pp_calendar_day">29</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-29</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1" >
+										<span class="search_pp_calendar_day">30</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13950起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-30</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_1" >
+										<span class="search_pp_calendar_day">31</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14400起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-07-31</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">01</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-01</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">02</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-02</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">03</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-03</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">04</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-04</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">05</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-05</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">06</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-06</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">07</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-07</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">08</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-08</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">09</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-09</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">10</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-10</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">11</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-11</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">12</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-12</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">13</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-13</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">14</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-14</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">15</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-15</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">16</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14850起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-16</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">17</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14150起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-17</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">18</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-18</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">19</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-19</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">20</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14150起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-20</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">21</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14150起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-21</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">22</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-22</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">23</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14150起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-23</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">24</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥14150起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-24</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">25</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-25</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">26</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-26</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">27</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13350起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-27</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">28</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13350起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-28</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_2">
+										<span class="search_pp_calendar_day">29</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-29</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2" >
+										<span class="search_pp_calendar_day">30</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥13050起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-30</span>
+									</div>
+								</li>
+							</ul>
+							<ul class="search_pp_calendar_d">
+
+								<li>
+									<div class="search_pp_calendar_d_box month_2">
+										<span class="search_pp_calendar_day">31</span>
+
+										<span class="search_pp_calendar_price1"></span>
+										<span class="calendar_active">促</span>
+										<span class="search_pp_calendar_price">¥12800起</span>
+
+										<!--日历上展示的优惠信息参数-->
+										<input type="hidden" name="tipData" value="[{&quot;index&quot;:&quot;7&quot;}]"/>
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-08-31</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">01</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-09-01</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">02</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-09-02</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">03</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-09-03</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">04</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-09-04</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">05</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-09-05</span>
+									</div>
+								</li>
+
+								<li>
+									<div class="search_pp_calendar_d_box_no_hover month_3">
+										<span class="search_pp_calendar_day">06</span>
+
+										<span class="search_pp_calendar_day_date" style="display:none;">2014-09-06</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					
+
+					<!--日历上展示的优惠信息模板-->
+					</div>
+				<!-- 不定期产品的时间价格表 end -->
+
+			</div>
+			<!--boxleft-->
+			<div class="dtl_box_right cclearfix">
+				<div class="dtl_box_r_topbox">
+					<div class="dtl_boxr_txt1">
+						<p>
+							<label>市 场 价：</label>
+							<span class="dtl_linetxt">¥18850起</span>
+							<br/>
+							<label>诚途会员价：</label> <strong>¥ <em>18700</em></strong> 
+							<span class="qijia">起 &nbsp; <em tip-content="本起价是指未包含附加服务（如单人房差、保险费等）的基本价格。您最终确认的价格将会随所选出行日期、人数及服务项目而相应变化。 " class="qijiashuoming">起价说明</em></span>
+						</p>
+						<div class="xh-youhui;">
+							<label>特色标签：</label>
+							<div style="overflow:hidden;display:inline;">
+							
+								<span class="tags101">国航直飞,青旅成团</span>
+							
+								<ul style="color:#f60;padding-left:4px;" class="youhui_tab"></ul>
+							</div>
+						</div>
+
+						<div style="clear:both;"></div>
+						<label>出发/目的地：</label>
+						北京
+						<img width="32" height="5" align="absmiddle" src="http://127.0.0.1//images/arrow.gif" alt=" " class="dtl_goto_icon"/>
+						夏威夷
+						<br>
+						<label>支付方式：</label>
+								<span class="tags103">现金支付</span>
+								<span class="tags103">转账汇款</span>
+								<span class="tags103">支付宝</span>
+						<p></p>
+
+					</div>
+					<!--txt1-->
+					<div class="play_date">
+							<dl class="cclearfix">
+								<!--非不定期产品才显示游玩日期-->
+								<dt id="date_type">
+									<em>*</em>
+									发团日期：
+								</dt>
+								<dd class="quick-wrap">
+									<p>
+										
+										
+										
+										
+										
+										<select class="quickBooker_select" style="width: 240px;" id="start_dates" name="start">
+											<option value="0">请选择游玩日期</option>
+											
+												
+													
+													
+													<option value="2014-10-23">2014-10-23  成人¥18700 ...儿童¥16830</option>
+												
+												
+											
+												
+												
+												
+												<option value="2014-10-05">2014-10-05  成人¥19200 ...儿童¥17280}</option>
+												
+											
+											</select>
+										
+									</p>
+								</dd>
+							</dl>
+							<dl class="cclearfix">
+							<!-- 
+								<dt>
+									<em>*</em>
+									预订数量：
+								</dt> -->
+								<dd style="position: relative;">
+								
+									<div id="quickBooker1_tab2">
+									<!-- 
+										<table class="free_dtl_pro_tab">
+											
+											<tbody>
+												<tr class="p_60971">
+													<td>
+														<span title="2沙beach bungalow+2水 water bungalow">2沙beach ...</span>
+
+													</td>
+													<td>
+														<span class="price-wrap">
+															<em onclick="updateOperator('60971','miuns',this)" class="minus price-disable">-</em>
+															<input type="text" branchid="60971" people="1" textnum="textNum60971" maxamt="100" minamt="0" onchange="updateOperator('60971','input',this)" ordnum="ordNum" value="0" class="number prod-num" size="2" id="param60971" name="buyInfo.buyNum.product_60971" seq="1">
+															<em onclick="updateOperator('60971','add',this)" class="plus">+</em>
+														</span>
+													</td>
+													<td>
+														<span>
+															(单价 <dfn>¥ <font id="product_60971_price" class="product_60971_price">12800</font></dfn> )
+														</span>
+													</td>
+												</tr>
+												
+												<tr class="p_100232">
+													<td>
+														<span title="4晚水屋water Bungalow">4晚水屋wate...</span>
+
+													</td>
+													<td>
+														<span class="price-wrap">
+															<em onclick="updateOperator('100232','miuns',this)" class="minus price-disable">-</em>
+															<input type="text" branchid="100232" people="1" textnum="textNum100232" maxamt="100" minamt="0" onchange="updateOperator('100232','input',this)" ordnum="ordNum" value="0" class="number prod-num" size="2" id="param100232" name="buyInfo.buyNum.product_100232" seq="1">
+															<em onclick="updateOperator('100232','add',this)" class="plus">+</em>
+														</span>
+													</td>
+													<td>
+														<span>
+															(单价 <dfn>¥ <font id="product_100232_price" class="product_100232_price">12900</font></dfn> 
+															)
+														</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										-->
+									</div>
+									<!--  end-->
+									<!--按钮-->
+									<!-- 非超级自由行-->
+									<!-- 可售-->
+									<span class="bookerBtn"><input type="submit" style="cursor:pointer" value="" class="immediateB"/></span>
+									<a href="javascript:addBookmark();" style="display:none" class="dtl_savebtn">收藏该商品</a>
+									<br/>
+									<a href="javascript:void(0)" style="display:none" class="dtl_savebtn detail-recomment">推荐给好友</a>
+								</dd>
+
+							</dl>
+						<div class="ewm_box ewm_box_xl">
+							<img width="75" height="75" alt="手机订购二维码" src="http://127.0.0.1//images/weixin.gif"/>
+							<p>
+								扫描二维码 关注官方微信
+								<span>订购更优惠</span>
+							</p>
+							<span class="zhiyin" style="display: none;"></span>
+						</div>
+
+						<p class="dtl_r_hint"></p>
+
+						<!--recomment_wra end-->
+						</div>
+
+				</div>
+				<!--topbox-->
+				<div class="dtl_cfd_gonggao">
+					<h3>
+						<b>公告</b>
+					</h3>
+					<ol class="dtl_gonggao_list">
+						<li>12岁以下儿童、外籍、单房差价格请来电咨询客服</li>
+						<li>北京诚途旅游网官方电话：400-6966-6936</li>
+					</ol>
+				</div>
+				<!--gonggao-->
+
+			</div>
+			<!--boxright-->
+		</div>
+		<!--boxinner-->
+	</div>
+
+<!-- 产品首屏 end -->
+
+<!--产品经理推荐infobox-->
+<!-- 
+	<div class="dtl_tj">
+		<h3 class="dtl_tj_tit">产品经理推荐</h3>
+		<ul class="dtl_tj_list">
+			<li>★马尔代夫哈库拉岛距离首都马列130公里处</li>
+			<li>★性价比很高的一价全含，包括了三餐以及下午的点心和夜宵</li>
+			<li>★免费浮潜设备租用</li>
+			<li>★现代装修风格，舒适住宿环境</li>
+		</ul>
+	</div>
+-->
+<!--产品经理推荐end-->
+
+<!--下部(产品经理推荐以下部分)-->
+<b  style="display:inline-block; width:10px; height:10px; margin-bottom:10px;"><a name="tese"></a></b>
+
+<!-- 详情导航框 start -->
+<ul selfpack="false" id="scroll_nav" class="scroll_nav_ul" style="position: static;">
+		<li class="row_1 scroll_nav_current">
+			<a href="#tese">行程特色</a>
+		</li>
+
+		<li class="row_2">
+			<a href="#xingcheng">行程安排</a>
+		</li>
+
+		<li class="row_3">
+			<a href="#feiyong">费用说明</a>
+		</li>
+
+		<li class="row_4">
+			<a href="#tishi">重要提示</a>
+		</li>
+
+		<li class="row_5">
+			<a href="#qianzheng">签证/签注</a>
+		</li>
+
+</ul>
+
+<!-- 详情导航框end -->
+
+<!-- 产品特色 start -->
+	<i id="row_1" class="pkg-maodian">&nbsp;</i>
+	<h3 class="h3_tit qiehuana" >
+		<span><a style="color:#fff;">产品特色</a></span>
+	</h3>
+
+<div style="position:relative;" class="row pro_special">
+		<div class="pro_special_mid">
+			<p>
+	1.&nbsp;&nbsp; &nbsp;国航往返国际段直飞，可配联运。东进西出时差合理，节约飞行时间。
+</p>
+<p>
+	<br />
+</p>
+<p>
+	2.&nbsp;&nbsp; &nbsp;独家赠送：好时Kisses巧克力诞生地——好时镇，探访Kisses的秘密。
+</p>
+<p>
+	<br />
+</p>
+<p>
+	3.&nbsp;&nbsp; &nbsp;特别赠送：乘坐自由女神游船，体验纽约水路风情。更可以全方位领略曼哈顿岛地标性建筑。
+</p>
+<p>
+	<br />
+</p>
+<p>
+	4.&nbsp;&nbsp; &nbsp;特别安排：前往圣塔莫妮卡海滩，感受当地美国人民的悠闲生活。
+</p>
+<p>
+	<br />
+</p>
+<p>
+	5.&nbsp;&nbsp; &nbsp;前往世界三大跨国瀑布之一的尼亚加拉大瀑布，感受大自然带给我们的震撼。
+</p>
+		</div>
+        
+    	<b style="display:inline-block; width:10px; height:10px; position:absolute; left:0; bottom:0; "><a name="xingcheng"></a></b>
+		<!--pro_special_mid end-->
+	</div>
+
+<!-- 产品特色end -->
+
+<!-- 行程安排start -->
+	<i id="row_2" class="pkg-maodian">&nbsp;</i>
+	<h3 class="h3_tit qiehuanb">
+		<span><a style="color:#fff;">行程安排</a></span>
+	</h3>
+	<div style="position:relative;" class="row recommend_travel">
+		
+		<!-- 多行程 -->
+		<!--day star-->
+		<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第1天</strong> <span>北京—纽约 10月5日周日 航班：CA989  SU05OCT   PEKJFK   0900  1020飞行时间约13.5小时 </span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			早6点首都机场T3航站楼集合，办理登机手续，乘坐9点左右起飞的国航航班直飞纽约，由于时差，当天10点20分抵达纽约肯尼迪机场，乘车赴餐厅用午餐。之后前往曼哈顿岛，主要游览景点：赠送乘自由女神船（不少于1小时，不上岛），于船上一览曼哈顿岛上的众多地标性建筑，如新世贸大楼，世界金融中心，帝国大厦，布鲁克林大桥等等，同时近距离欣赏象征美国自由民主精神、高举火炬的巨型【自由女神像】。随后游览纽约的经济心脏【华尔街】（不少于20分钟），于【纽约证券交易所】前留影，参观【联合国大厦】（不少于20分钟，不进会议室），【洛克菲勒广场】（不少于20分钟），流连于世界闻名的【第五大道】（不少于1小时），多数世界顶尖名牌都在这里设有店铺，展出最新款的商品。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/aab34b8a04d25f62e81fa8ef11958acd.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/6c9790bdcec427bde08b3ec5ff3fbadc.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：敬请自理 午餐：含  晚餐：含
+			</li>
+			<li>
+				<b>住宿</b> 新泽西州Days Inn或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第2天</strong> <span>纽约 10月6日周一 </span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			不含用车及导游服务，午晚餐客人自理，只包含早餐
+纽约位于纽约州东南部，是美国最大的城市，美国第一大港。既是整个美国的金融经济中心，也是全世界的经济中心，它的一举一动无时无刻不在影响着世界。纽约市下辖五个区。曼哈顿虽然是其中最小的一个区，但却是纽约市中央商务区所在地，世界上摩天大楼最集中的地区，在曼哈顿57.7平方公里的土地上，耸立着超过5500栋高楼，其中35栋超过了200米，世界500强中绝大部分公司的总部都位于这里。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/b7621d188a64dc8515f6f25fa5c10a9f.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/aab34b8a04d25f62e81fa8ef11958acd.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：敬请自理 晚餐：敬请自理
+			</li>
+			<li>
+				<b>住宿</b> 新泽西州Days Inn或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第3天</strong> <span>纽约—华盛顿 车程约4小时</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			早餐后乘车赴华盛顿。华盛顿是美国首都，市内林荫大道整齐宽阔，建筑宏伟华丽。抵达后游览著名的【白宫】（外观，不少于10分钟）-美国历任总统的行宫；远观为纪念开国元勋，美国首任总统乔治•华盛顿，而建造的【华盛顿总统纪念碑】；坐落在市中心高地上用白色大理石建成的【国会大厦】（外观，不少于20分钟）-联邦立法最高权力机构；【林肯总统纪念堂】（不少于20分钟）；为纪念撰写美国独立宣言的美国第三任总统托马斯•杰佛逊而建的【杰佛逊总统纪念堂】（车上看）。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/71484e83149345cdb95ef29a1ad326bd.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/567340688528d6ac216ee3ee76af6fcb.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：含 晚餐：含
+			</li>
+			<li>
+				<b>住宿</b> 马里兰州或弗吉尼亚州Comfort Inn或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第4天</strong> <span>华盛顿—好时镇-哈里斯堡 10月8日周三 车程约2.5小时</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			早餐后前往【好时镇】，好时镇是世界著名的巧克力KISSES的故乡，这里群山环绕、林森水绿，郁郁葱葱，优美的自然环境会给您留下深刻的印象，车辆行驶在巧克力大道上，您会发现，连路灯都是KISSES巧克力的形状。驻足于【好时巧克力世界】（不少于1.5小时），您可乘坐小型观览车观看巧克力制作过程，体验那香浓甜美的滋味。
+之后继续驱车前往哈里斯堡，赴酒店休息。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/ce5f13f3bb022277100ea882c6db1351.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/6b671addb604cf1e79245900bda8791d.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：含 晚餐：含
+			</li>
+			<li>
+				<b>住宿</b> 宾夕法尼亚州Days Inn或同等级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第5天</strong> <span>哈里斯堡—布法罗 10月9日周四 车程约5小时</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			早餐后乘车赴瀑布市，游览三大跨国瀑布之一【尼亚加拉瀑布】（不少于2小时），这个举世闻名的大瀑布是位于南面美国的伊利湖湖水从180英尺高流入北面加拿大的安大略湖，骤然下泻，惊心动魄，水势汹涌澎湃，气势浩瀚，宛如万马奔腾。晚餐后赴酒店入住。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/2607aca9dd788ccdf74148eb57afa42a.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/c232856e4b2ce2ba8a1c3d07b6b797c9.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：含 晚餐：含
+			</li>
+			<li>
+				<b>住宿</b> 布法罗周边Red Roof Inn或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第6天</strong> <span>布法罗-转机城市—拉斯维加斯 航班：待定</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			飞行时间约5小时（不含转机时间），早午晚餐飞机上客人自理
+早赴机场乘机经转机飞往拉斯维加斯。抵达后入住酒店。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/f731fe723931a7e2f47d75cbf2de2383.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/4abbb7ed980106a7aaa8d71dfbb4ceed.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：飞机 午餐：飞机 晚餐：飞机
+			</li>
+			<li>
+				<b>住宿</b> 拉斯FiestaHotel或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第7天</strong> <span>拉斯维加斯 10月11日周六</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			不含用车及导游服务，午晚餐客人自理，只包含早餐
+拉斯维加斯拥有全世界顶尖的度假酒店，世界一流的大型表演及高科技的娱乐设施，是世界上最有名的娱乐中心。在拉斯大道上有高级的酒店和秀场。在这里有很壮观酒店如海市蜃楼、威尼斯人、纽约纽约、火烈鸟、凯萨皇宫、米高梅及马戏团等。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/2607aca9dd788ccdf74148eb57afa42a.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/f731fe723931a7e2f47d75cbf2de2383.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：敬请自理 晚餐：敬请自理
+			</li>
+			<li>
+				<b>住宿</b> 拉斯FiestaHotel或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第8天</strong> <span>拉斯维加斯—洛杉矶 10月12日周日</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			车程约4小时
+早餐后乘车赴洛杉矶，前往一个悠闲的海边小镇——【圣塔莫尼卡】（不少于1小时），这里有洛杉矶最有名的海滩——圣塔莫妮卡海滩，以及著名的圣塔莫尼卡码头，这个码头最早是建于 1908年，在突堤码头上有一个游乐场和一些很有当地特色的餐厅。码头上充满了欢乐的气氛，大型游乐场里传出一阵阵惊呼，除了摩天轮外，还有云霄飞车，海盗船，跟其它码头不同的是，这里常常还会有从第三街来的街头艺人吸引一大群人围观。第三街徒步区从圣塔摩尼加广场一直延续三个街道，步行街两侧餐厅、咖啡店、艺廊、书店等上百家商店，人行道上还有各色风格的花车摊，卖艺人陶醉在自己的绝技中……来到这里，让您真正体会到美国人民悠闲的生活。之后赴酒店入住。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/31f896df98fbe2675d58a4b70ef1cebc.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/ab196c8bf0645540a635340c2642ff54.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：含 晚餐：含
+			</li>
+			<li>
+				<b>住宿</b> 洛杉矶地区Crystal Park或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第9天</strong> <span>洛杉矶 10月13日周一</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			不含用车及导游服务，午晚餐客人自理，只包含早餐
+洛杉矶市区广阔，布局分散，整座城市是以千千万万栋一家一户的小住宅为基础。绿荫丛中，鳞次栉比的庭院式建筑，色彩淡雅，造型精巧，风格各异，遍布于平地山丘上。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/46998d8250d37c54387d0c4795b9171b.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/4abbb7ed980106a7aaa8d71dfbb4ceed.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：敬请自理 晚餐：敬请自理
+			</li>
+			<li>
+				<b>住宿</b> 洛杉矶地区Crystal Park或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第10天</strong> <span>洛杉矶 10月14日周二</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			不含用车及导游服务，午晚餐客人自理，只包含早餐
+“天使之城”洛杉矶一望无垠的沙滩和明媚的阳光、闻名遐迩的“电影王国”好莱坞、峰秀地灵的比佛利山庄使洛杉矶成为一座举世闻名的“电影城”和“旅游城”。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/f731fe723931a7e2f47d75cbf2de2383.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/ab196c8bf0645540a635340c2642ff54.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：含 晚餐：含
+			</li>
+			<li>
+				<b>住宿</b> 洛杉矶地区Crystal Park或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第11天</strong> <span>洛杉矶—夏威夷 10月15日周三 航班：待定 </span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			飞行时间约5-6小时，早餐飞机上客人自理。
+乘机飞往夏威夷。抵达后参观【珍珠港纪念公园】（不少于1.5小时），珍珠港是第二次世界大战期间美国舰队受到轰炸之军事港口。远眺建在战役中沉没的亚利桑拿号的残骸上的【亚利桑拿纪念堂】。外观全美唯一的皇宫【艾奥拉尼皇宫】（不少于15分钟），代表夏威夷形象的【州政府】（车上看）。游览结束后赴酒店办理入住。前往大型免税商场DFS，尽情挑选免税商品。之后自由活动（晚餐自理）。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/1d9d88579282a9461955b3ebeb70d8a0.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/bc1cab2276d97b7b2e99df27dbe8cf82.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：敬请自理 午餐：含 晚餐：敬请自理
+			</li>
+			<li>
+				<b>住宿</b> 夏威夷Maile SkyCourt或同级
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第12天</strong> <span>夏威夷—北京  10月16日周四 航班：CA838     TH16OCT   HNLPEK    2330 0455+2 飞行时间约11.5小时</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			餐后参观【卡哈拉高级住宅区】（车上看），遥望【钻石山】。【喷水口】（不少于20分钟）是火山运动留下的天然奇景，在巨浪的推力下，海水通过火山熔岩上的气孔喷出水柱，因此得名。俯瞰风景优美的【恐龙湾】（不少于15分钟）。参观风力非凡的【大风口】（不少于20分钟）。
+之后返回酒店办理退房手续，行李寄存酒店前台（费用自理），午餐后自由活动（不含用车导游服务）。
+晚餐前酒店前台集合，取行李，赴餐厅用晚餐后乘车赴机场，乘机飞回北京。
+		</div>
+		<div class="day_img">
+			<img alt="北京" title="北京" src="/upload/web_pic/10043/18a72ad67289a5ab03ecad4d2b34b81e.jpg" class="day_img_left" align="" height="240" width="320" /> <img alt="纽约" title="纽约" src="/upload/web_pic/10043/919954eccad58570762b5309fe1a74be.jpg" class="day_img_right" align="" height="240" width="320" /> 
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：含 晚餐：含
+			</li>
+			<li>
+				<b>住宿</b> 飞机
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第13天</strong> <span>夏威夷—北京 10月17日周五</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			飞机上
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 早餐：含 午餐：含 晚餐：飞机
+			</li>
+			<li>
+				<b>住宿</b> 飞机
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+<div class="day day_rights_none">
+	<div class="day_rights">
+	</div>
+<!--day_rights end-->
+	<div class="day_left">
+		<div class="day_tit">
+			<b><strong>第14天</strong> <span>北京 10月18日周六</span></b> 
+		</div>
+<!--day_tit end-->
+		<div class="day_introduction">
+			早4点55分左右抵达北京，结束愉快旅程。
+		</div>
+		<div class="day_img">
+			<br />
+		</div>
+		<ul>
+			<li>
+				<b>用餐</b> 无
+			</li>
+			<li>
+				<b>住宿</b> 无
+			</li>
+		</ul>
+	</div>
+<!--day_left end-->
+</div>
+		<!--day end-->
+        
+    	<b style="display:inline-block; width:10px; height:10px; position:absolute; left:0; bottom:0; "><a name="feiyong"></a></b>
+	</div>
+
+<!-- 行程安排end -->
+
+<!-- 费用说明start -->
+<i id="row_3" class="pkg-maodian">&nbsp;</i>
+	<h3 class="h3_tit qiehuanc">
+		<span><a style=" color:#fff;">费用说明</a></span>
+	</h3>
+	<div style="position:relative;" class="row statement_cost">
+		<p class="MsoNormal">
+	<b><span style="font-size:12.0pt;font-family:宋体;">一、项目包含<span>:</span></span></b> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">1</span><span style="font-family:宋体;">． 行程中所列国际段及美国境内段航班经济舱团体机票及相关税费；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">2</span><span style="font-family:宋体;">． 境外旅游巴士（每人<span>1</span>正座），其中<span>15</span>至<span>25</span>人（<span>25</span>座<span>-29</span>座<span>),26</span>至<span>30</span>人（<span>34</span>座<span>-36</span>座）；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">3</span><span style="font-family:宋体;">． 领队、导游、司机服务费及小费人民币<span>880 /</span>人；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">4</span><span style="font-family:宋体;">． 行程中所列美国段酒店标准间两人一间（由于美洲无统一的酒店星级评定标准，为保证酒店品质，我社多选用当地连锁酒店集团旗下酒店，如<span>Comfort Inn</span>，<span>Days Inn</span>等）；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">5</span><span style="font-family:宋体;">． 行程中标明的景点首道门票；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">6</span><span style="font-family:宋体;">． 行程中所列午，晚餐以中式餐食为主（桌餐标准为<span>10</span>人<span>-9</span>人<span>1</span>桌<span>6</span>菜<span>1</span>汤，<span>8</span>人<span>-7</span>人<span>1</span>桌为<span>5</span>菜<span>1</span>汤，<span>6</span>人为<span>4</span>菜<span>1</span>汤；自助餐标准为中式自助餐），早餐西式，多为冷早餐自助形式，拉斯维加斯为打包中式早餐送至房间内，夏威夷为酒店外早餐，用餐时间在机船上以机船餐为准，不再另退餐费，转机期间用餐自理；美国内陆航班不提供免费餐食；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">7</span><span style="font-family:宋体;">． 旅行社责任保险，另代购旅游安全人身意外保险（太平洋人寿保险股份有限公司）总保额<span>50</span>万元（其中医疗保险金<span>3</span>万元）。理赔报案咨询电话<span>95500</span>。<span></span></span> 
+</p>
+<p class="MsoNormal">
+	<span style="font-family:宋体;"> </span> 
+</p>
+<p class="MsoNormal">
+	<b><span style="font-size:12.0pt;font-family:宋体;">二、项目不含<span>:</span></span></b> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">1</span><span style="font-family:宋体;">． 办理护照费、签证费，以及申请签证中准备相关材料所需的制作、手续费，如未成年人所需的公证书；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">2</span><span style="font-family:宋体;">． 原住宿地至集中地往返交通<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">3</span><span style="font-family:宋体;">． 国际段超出免费托运行李标准的费用，行李超大、超重的附加费，美国境内段航班行李托运费以及任何一段超出免费托运行李标准的费用，海关课税；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">4</span><span style="font-family:宋体;">． 在机场内转机、候机或在飞机上的用餐由客人自理，美国国内的航班没有免费餐食，需另外购买，约为<span>10</span>美金左右；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">5</span><span style="font-family:宋体;">． 因气候或飞机、车辆、船只等交通工具发生故障导致时间延误或行程更改引起的经济损失和责任；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">6</span><span style="font-family:宋体;">． 因单人入住所产生的房费差价；（单数报名者我社保留收取单房差的权利）；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">7</span><span style="font-family:宋体;">． 行李在航班托运期间的造成损坏的经济损失和责任；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">8</span><span style="font-family:宋体;">． 因个人疏忽、违章或违法引起的经济损失或赔偿费用；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">9</span><span style="font-family:宋体;">． 自由活动期间不提供餐、车、导游服务，如脱团请务必提前告知领队，如因客人自身原因未能按时归团，造成航班或行程延误后果自负。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">10</span><span style="font-family:宋体;">．一切私人费用（例如洗衣、电话、传真、上网、收费电视节目、游戏、宵夜、酒水、邮寄、机场和酒店行李搬运服务、购物、行程列明以外的用餐或宴请等费用）；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">11</span><span style="font-family:宋体;">．客人自身原因造成回程航班延误或因个人原因滞留产生的一切费用；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">12</span><span style="font-family:宋体;">．根据美国法律规定，导游和司机每天工作时间不得超过<span>10</span>小时，司机及导游超时加班费另付；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">13</span><span style="font-family:宋体;">．包含项目中未提及的一切额外费用；<span></span></span> 
+</p>
+    	<b style="display:inline-block; width:10px; height:10px; position:absolute; left:0; bottom:0; "><a name="tishi"></a></b>
+	</div>
+<!-- 费用说明end -->
+
+<!-- 重要提示start -->
+<i id="row_4" class="pkg-maodian">&nbsp;</i>
+<h3 class="h3_tit qiehuane">
+<span><a style="color:#fff;">重要提示</a></span>
+</h3>
+
+<div style="position:relative;" class="row important_prompt">
+
+	<p class="MsoNormal">
+	<b><span style="font-size:12.0pt;font-family:宋体;">四、温馨提示：<span></span></span></b> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">1</span><span style="font-family:宋体;">． 当您从中国离境和入境时，一定检查海关是否给您的护照盖了清晰的离境章和入境章，它是您已经回到中国的唯一凭证。由此造成不必要的损失，非常抱歉只能由本人承担！
+请您谅解的同时也请您自己务必仔细留意！<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">2</span><span style="font-family:宋体;">． 美国共有<span>5</span>个时区（航班时间均以当地到达时间为准）。相关城市与北京时间时差如下：夏威夷时间比北京时间慢<span>18</span>小时，洛杉矶、拉斯维加斯——比北京晚<span>15</span>小时（冬令时一般为<span>11-3</span>月，晚<span>16</span>小时）；华盛顿、纽约——比北京晚<span>12</span>小时（冬令时<span>11-3</span>月晚<span>13</span>小时）<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">3</span><span style="font-family:宋体;">． 行程中所注明的城市间距离，参照境外地图，仅供参考，视当地交通状况进行调整；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">4</span><span style="font-family:宋体;">． 根据美国法律规定，导游和司机每天工作时间不得超过<span>10</span>小时；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">5</span><span style="font-family:宋体;">． 请您在境外期间遵守当地的法律法规，以及注意自己的人身安全；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">6</span><span style="font-family:宋体;">． 依照旅游业现行作业规定，本公司有权依据最终出团人数情况，调整房间分房情况；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">7</span><span style="font-family:宋体;">． 由于美国各州情不同，您在美国旅游时除了准备信用卡及银联卡外，请尽量多准备一些现金。以方便支付服务人员的小费（如在酒店和餐厅）。并且有些商店不能刷卡只接受现金。美国仍有部分城市无法使用银联卡，提醒您如果您携带信用卡，请在国内确认好已经激活可以在境外使用；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">8</span><span style="font-family:宋体;">． 全程机票为团队票，任意一段放弃，后续段将自动取消。不退还任何费用。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:63.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">全程任意一段机票均不可退、改、签。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:63.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">全程任意一段机票都无法提前确认座位号。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">9</span><span style="font-family:宋体;">． 出境时如有贵重物品请及时申报。（请咨询申报处何种物品需要申报）<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">10</span><span style="font-family:宋体;">． 在境外购买物品请按相关规定及时申报，所产生的相应费用需自行承担。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">11</span><span style="font-family:宋体;">． 由于行程紧凑，旅途较疲劳，<span>65</span>岁以上老人建议提供健康证明并自行增加高额保险<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">12</span><span style="font-family:宋体;">． 境外酒店内禁止吸烟（包括阳台）。如违反将被处以高额罚款，费用由客人自行承担。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">13</span><span style="font-family:宋体;">． 境内段航班不安排餐食。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">14</span><span style="font-family:宋体;">． 因个人疏忽丢失任何财物（机票、护照、钱财、衣物等），我社将不负任何责任；并且不可以因此耽误团队中其他客人的行程。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">15</span><span style="font-family:宋体;">． 美国四季分明，气候、温度、环境宜人，因此很适应各种虫类繁育与生长。建议客人准备些驱除蚊虫的药水。皮肤敏感的客人请保护好自己，防止被蚊虫叮咬。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">16</span><span style="font-family:宋体;">． 美国国土安全局拥有开箱检查入境行李的权力，请您的行李上不要上锁，以免造成锁头被撬、行李箱受损。如您的物品在开箱检查中丢失，我社不承担任何责任<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">17</span><span style="font-family:宋体;">． 行李在航空公司托运期间造成的损坏或遗失，我社不承担任何责任。我社可协助游客与航空公司进行交涉，但处理结果一律按照航空公司相关规定办理。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">18</span><span style="font-family:宋体;">． 出门旅行，衣服应该以轻便和多用途为主。准备衣物要根据季节变化而定；请务必带件保暖外衣；建议客人出发前收看或收听国际气象预报；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">19</span><span style="font-family:宋体;">． 游客责任： <span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:68.25pt;text-indent:-26.25pt;">
+	<span style="font-family:宋体;">（<span>1</span>）此团是集体活动，集体出发、集体返回，请遵守时间，任何人不得逾期或滞留不归；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:68.25pt;text-indent:-26.25pt;">
+	<span style="font-family:宋体;">（<span>2</span>）参团旅客，所持护照均为自备因私护照，出入境如遇到因护照引起的问题而影响行程，由此引起的一切损失（包括团费），均由客人自负。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:68.25pt;text-indent:-26.25pt;">
+	<span style="font-family:宋体;">（<span>3</span>）如客人不参加我公司的赠送项目，用餐、门票等费用不退。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:68.25pt;text-indent:-26.25pt;">
+	<span style="font-family:宋体;">（<span>4</span>）旅游期间遇到特殊情况如交通，天气等旅行社认为不可控原因，本公司有权增减或更改某些行程和旅游项目；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:68.25pt;text-indent:-26.25pt;">
+	<span style="font-family:宋体;">（<span>5</span>）由于不可抗拒的原因，如政变、罢工、水灾地震、交通意外等所引起的旅游天数和费用的增加，本公司将按实际情况向旅客予以收费。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:68.25pt;text-indent:-26.25pt;">
+	<span style="font-family:宋体;">（<span>6</span>）请自备签证和境外参团的客人自行检查签证是否符合本行程的要求，若因自身原因不能按时参团，本社概不负责；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:宋体;">20</span><span style="font-family:宋体;">．由于航空公司原因或不抗力导致航班临时出现调整，我社将不承担任何责任。<span></span></span> 
+</p>
+	
+    <b style="display:inline-block; width:10px; height:10px; position:absolute; left:0; bottom:0; "><a name="qianzheng"></a></b>
+
+</div>
+
+<!-- 重要提示end -->
+
+<!-- 签证/签注start -->
+
+<i id="row_5" class="pkg-maodian">&nbsp;</i>
+
+<h3 class="h3_tit qiehuang">
+<span><a style="color:#fff;">签证/签注</a></span>
+</h3>
+
+<div style="margin-bottom: 10px; position:relative;" class="l_row row">
+<div class="visa_info_xh">
+
+<ul class="visa_nav_a cclearfix">
+	<li class="selected">
+		签证说明</li>
+</ul>
+<div class="visa_content">
+	<div style="display:block" class="tabcon">
+		<ul class="visa_subnav_a J_tab_subnav cclearfix">
+			<li class="selected">
+				所有人员
+				<input type="hidden" id="ssrq_0" value="所有人员"/>
+				<i></i>
+				<style>
+							.visa_mail{
+							   width:16px;
+							   height:15px;
+							   background:url("http://127.0.0.1//images/combo.png") no-repeat -24px -71px;
+							   margin-left:5px;
+							   display:inline-block;
+							}
+							</style>
+				<br/></li>
+		</ul>
+		<div class="J_tab_subswitch">
+			<div style="display:block" class="tabcon">
+				<div class="visa_info_box">
+					<div class="visa_info_item">
+						<p class="MsoNormal" style="margin-left:25.5pt;text-indent:-25.5pt;">
+	<b><span style="font-size:12.0pt;font-family:宋体;"><span>七、</span></span></b><b><span style="font-size:12.0pt;font-family:宋体;">赴美旅游须知<span></span></span></b> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>1.<span> </span></span></span><span style="font-family:宋体;">美国为付小费国家，服务人员的主要收入来源于小费，请您入乡随俗：酒店客房服务生：<span>1</span>美元<span>/</span>人，行李搬运：<span>1-2</span>美元<span>/</span>件。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>2.<span> </span></span></span><span style="font-family:宋体;">美国法律规定，司机每行驶三小时后必须休息<span>20</span>分钟，每天开车时间最多不得超过<span>10</span>小时；美国法律对于司机、导游的工作时间有严格的限制，<span style="color:black;">因</span>此晚上如要求司机加班即使额外付费亦有可能遭到拒绝；同时敬请团员配合导游及司机的全程安排按导游的指定时间准时集合。如果您有额外服务要求需要超时服务的，请您提前与司机、导游协商，征得当地司机、导游的同意，同时要支付一定的额外费用。此费用由需要导游增时服务的客人境外自理。请您尊重并配合导游司机的工作，以便行程的顺利进行。车上不可吃冰淇淋、带果皮食物、抽烟等。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>3.<span> </span></span></span><span style="font-family:宋体;">护照、机票、证件、现金及贵重物品无论何时何地请务必随身携带，并注意保管。（如：乘做交通工具时、离开酒店房间时、下车游览时）请不要在托运的行李中存放现金、首饰及其它贵重物品，因一旦行李丢失，上述物品均不在赔付范围之内。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>4.<span> </span></span></span><span style="font-family:宋体;">根据航空公司惯例，行李被损坏或丢失，按重量赔偿；名牌行李箱或价格昂贵的行李被损坏或丢失，按普通箱补偿，不另价赔偿。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>5.<span> </span></span></span><span style="font-family:宋体;">酒店大堂、餐厅、机场、旅游景点均为小偷经常光顾之地，如有陌生人搭话请保持距离<span style="color:black;">(</span><span style="color:black;">尤其是墨西哥人或黑人<span>)</span></span>，以防偷窃或抢劫。外出时请注意人身安全和财产安全。建议您务必随同导游带领并注意结伴而行，<span style="color:black;">护照、机票、钱及贵重物品必须贴身携带，挎包最好斜挎，以防歹徒乘摩托车从背后抢劫</span>。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>6.<span> </span></span></span><span style="font-family:宋体;">美国通常车速较快，过马路请走人行横道，并等候绿灯。否则一旦发生事故，责任由行人自己承担；<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>7.<span> </span></span></span><span style="font-family:宋体;">美国交通安全局规定，乘客乘车途中每人都需系上安全带（<span>25</span>座以下小型旅游车），否则将被罚款。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>8.<span> </span></span></span><span style="font-family:宋体;">请谨记并遵守旅程中的集合时间及地点，旅程中如遇到特殊情况须调整，当以导游安排通知为准。<span></span></span> 
+</p>
+<p class="MsoNormal" style="margin-left:42.0pt;text-indent:-21.0pt;">
+	<span style="font-family:黑体;"><span>9.<span> </span></span></span><span style="font-family:宋体;">美国使馆要求赴美加团队应集体活动，团进团出，行程中任何人在未经领队及导游认可的情况下，请勿擅自脱团。每到一站一定要记下所住酒店地址、电话、领队及导游的电话、房号、旅游车牌号等信息，出行前携带好以上信息，以备万一走失可找到团队<span></span></span> 
+</p>
+<p class="MsoNormal">
+	<span style="font-family:宋体;"> </span> 
+</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //div J_tab_switch -->
+        
+	</div>
+</div>
+<!-- //div J_tab_switch -->
+</div>
+    	
+</div>
+
+<!-- 签证/签注end -->
+
+
+</div><!-- class="main" -->
+</div>
+
+<!-- 诚途产品内容 -->
+<div class="w1000 mt25"><img src="http://127.0.0.1//images/10.jpg" width="1000" height="60" class="mt20"/></div>
+
+<!-- 引入头部 start -->
+
+
+
+
+
+<div class="w1000">
+    <div class="foot2 clearfix mt25">
+      <dl class="mr40">
+         <dt>订购指南</dt>
+         <dd><a href="http://www.chengtour.com" class="gray">门票订购流程是怎样的？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">二维码使用时有什么注意事项？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">可以预订多长时间的门票？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">想要修改订单，怎么操作？</a></dd>
+      </dl>
+      <dl class="mr40">
+         <dt>注册与登录</dt>
+         <dd><a href="http://www.chengtour.com" class="gray">手机没有收到激活/验证短信怎么办</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">怎样才能成为诚途网会员？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">在哪登录会员帐号？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">如何修改我的帐号密码？</a></dd>
+      </dl>
+      <dl class="mr40">
+         <dt>支付与取票</dt>
+         <dd><a href="http://www.chengtour.com" class="gray">付款方式有哪些？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">在线支付安全吗？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">为什么支付不成功？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">想要退款，应该怎么做？</a></dd>
+      </dl>
+      <dl>
+         <dt>沟通与订阅</dt>
+         <dd><a href="http://www.chengtour.com" class="gray">我想咨询门票，应该怎么办？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">我有意见，在哪可以提？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">我想投诉，应该怎么反映？</a></dd>
+         <dd><a href="http://www.chengtour.com" class="gray">我是景区负责人，怎么联系诚途网？</a></dd>
+      </dl>
+    </div>
+    <div class="foot3">
+       <ul>
+          <li class="pl20">
+              <i class="i1"></i>
+              <strong>价格保证</strong>
+              同类产品，保证低价
+          </li>
+          <li>
+              <i class="i2"></i>
+              <strong>退订保障</strong>
+              因特殊情况影响出行，保证退订
+          </li>
+          <li>
+              <i class="i3"></i>
+              <strong>救援保障</strong>
+              旅途中遇意外情况，保证援助
+          </li>
+          <li class="li">
+              <i class="i4"></i>
+              <strong>7x24小时服务</strong>
+              快速响应，全年无休
+          </li>
+       </ul>
+    </div>
+</div>
+
+<div class="foot">
+    <div class="foot1">
+      <a href="http://www.chengtour.com/help/about_us.html">关于我们</a> | <a href="http://www.chengtour.com/help/site_map.html">网站地图</a> | <a href="http://www.chengtour.com/help/contact_us.html">联系我们</a> | <a href="http://www.chengtour.com/help/server_intro.html">服务说明</a> | <a href="http://www.chengtour.com/help/about_us.html">帮助中心</a> | <a href="#">友情链接</a> | <a href="http://www.chengtour.com">诚聘英才</a> | <a href="http://www.chengtour.com">旅游度假资质</a> | <a href="http://www.chengtour.com">意见反馈</a> | <a href="http://www.chengtour.com">广告业务</a> | <a href="http://www.chengtour.com">用户体验平台</a>
+    </div>
+    <div class="foot2">Copyright © 2014 www.chengtour.com. 北京青年旅行社股份有限公司广外营业部版权所有　京ICP备12029589　经营许可证：L-BJ-GJ00060</div>
+    <!-- 
+    <div class="foot3 mt10">
+    
+       <a href="#"><img src="http://127.0.0.1//images/f_01.png" width="56" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_02.png" width="47" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_03.png" width="49" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_04.png" width="80" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_05.png" width="56" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_06.png" width="48" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_07.png" width="88" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_08.png" width="96" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_09.png" width="48" height="38" /></a>
+       <a href="#"><img src="http://127.0.0.1//images/f_10.png" width="52" height="38" /></a>
+    </div>
+     -->
+</div>
+<!--
+<div style="margin-left:50%;">
+    <div class="yc01">
+        <dl>
+           <dt><a href="#"></a></dt>
+           <dd>
+              <span class="span1"><a href="#">购物车</a></span>
+              <span class="span2"><a href="#">最近查看</a></span>
+              <span class="span3"><a href="#">在线客服</a></span>
+              <span class="span4"><a href="#">提提意见</a></span>
+              <span class="span5"><a href="#">返回顶部</a></span>
+           </dd>
+        </dl>
+    </div>
+</div>
+-->
+<!-- 引入头部 end -->
+
+<!-- 引入友情链接 start -->
+
+<div class="foot_bottom">
+     <dl>
+         <dt>友情链接</dt>
+         <dd>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+             <a href="#">旅游摄影</a>
+         </dd>
+     </dl>
+     <dl>
+         <dt>境外路线</dt>
+         <dd>
+             <a href="#">上海到日本旅游</a>
+             <a href="#">南京到日本旅游</a>
+             <a href="#">天津到韩国旅游</a>
+             <a href="#">上海到日本旅游</a>
+             <a href="#">南京到日本旅游</a>
+             <a href="#">天津到韩国旅游</a>
+             <a href="#">上海到日本旅游</a>
+             <a href="#">南京到日本旅游</a>
+         </dd>
+     </dl>
+     <dl>
+         <dt>境外精选</dt>
+         <dd>
+             <a href="#">罗马旅游</a>
+             <a href="#">普吉岛旅游</a>
+             <a href="#">新西兰旅游</a>
+             <a href="#">罗马旅游</a>
+             <a href="#">普吉岛旅游</a>
+             <a href="#">新西兰旅游</a>
+             <a href="#">罗马旅游</a>
+             <a href="#">普吉岛旅游</a>
+             <a href="#">新西兰旅游</a>
+             <a href="#">罗马旅游</a>
+             <a href="#">普吉岛旅游</a>
+             <a href="#">新西兰旅游</a>
+         </dd>
+     </dl>
+</div>
+<!-- 引入友情链接 end -->
+</body>
+</html>

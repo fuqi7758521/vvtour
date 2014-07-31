@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName">
+
+	<bean id="systemIdDao" class="com.usual.dao.impl.SystemIdDaoImpl"></bean>
+
+	<bean id="adminInfoDao" class="com.usual.dao.impl.AdminInfoDaoImpl"></bean>
+	
+	<bean id="mngInfoDao" class="com.usual.dao.impl.ManageMenuDaoImpl"></bean>
+	
+	<bean id="albumInfoDao" class="com.usual.dao.impl.AlbumInfoDaoImpl"></bean>
+	
+	<bean id="albumPicDao" class="com.usual.dao.impl.AlbumPicDaoImpl"></bean>
+	
+	<bean id="visitParentDao" class="com.vvtour.shop.dao.impl.VisitParentDaoImpl"></bean>
+	
+	<bean id="tourpathDao" class="com.vvtour.shop.dao.impl.TourPathDaoImpl"></bean>
+	
+	<bean id="productInfoDao" class="com.vvtour.shop.dao.impl.ProductInfoDaoImpl"></bean>
+	
+	<bean id="categoryDao" class="com.vvtour.shop.dao.impl.CategoryInfoDaoImpl"></bean>
+	
+	<bean id="chipCaDao" class="com.cms.dao.impl.ChipCategoryImpl"></bean>
+	
+	<bean id="chipDao" class="com.cms.dao.impl.ChipInfoDaoImpl"></bean>
+	
+</beans>

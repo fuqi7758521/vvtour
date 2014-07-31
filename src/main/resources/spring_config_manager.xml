@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName">
+
+	<bean id="systemIdManager" class="com.usual.manager.impl.SystemIdManagerImpl"></bean>
+
+	<bean id="adminInfoManager" class="com.usual.manager.impl.AdminInfoManagerImpl"></bean>
+	
+	<bean id="menuManager" class="com.usual.manager.impl.MngMenuManagerImpl"></bean>
+	
+	<bean id="albumManager" class="com.usual.manager.impl.AlbumInfoManagerImpl"></bean>
+	
+	<bean id="albumPicManager" class="com.usual.manager.impl.AlbumPicManagerImpl"></bean>
+	
+	<bean id="vparentManager" class="com.vvtour.shop.manager.impl.VisitParentManagerImpl"></bean>
+	
+	<bean id="tourPathManager" class="com.vvtour.shop.manager.impl.TourPathManagerImpl"></bean>
+	
+	<bean id="productManager" class="com.vvtour.shop.manager.impl.ProductInfoManagerImpl"></bean>
+	
+	<bean id="categoryManager" class="com.vvtour.shop.manager.impl.CategoryInfoManagerImpl"></bean>
+	
+	<bean id="chipCaManager" class="com.cms.manager.impl.ChipCategoryManagerImpl"></bean>
+	
+	<bean id="chipManager" class="com.cms.manager.impl.ChipInfoManagerImpl"></bean>
+	
+</beans>

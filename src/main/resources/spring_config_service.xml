@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="byName">
+
+	<bean id="adminInfoService" class="com.usual.service.impl.AdminInfoServiceImpl"></bean>
+	
+	<bean id="menuMngService" class="com.usual.service.impl.MngMenuServiceImpl"></bean>
+	
+	<bean id="albumService" class="com.usual.service.impl.AlbumInfoServiceImpl"></bean>
+	
+	<bean id="albumPicService" class="com.usual.service.impl.AlbumPicServiceImpl"></bean>
+	
+	<bean id="vparentService" class="com.vvtour.shop.service.impl.VisitParentServiceImpl"></bean>
+	
+	<bean id="tourPathService" class="com.vvtour.shop.service.impl.TourPathServiceImpl"></bean>
+	
+	<bean id="productService" class="com.vvtour.shop.service.impl.ProductServiceImpl"></bean>
+	
+	<bean id="categoryService" class="com.vvtour.shop.service.impl.CategoryServiceImpl"></bean>
+	
+	<bean id="chipCaService" class="com.cms.service.impl.ChipCategoryServiceImpl"></bean>
+	
+	<bean id="chipService" class="com.cms.service.impl.ChipInfoServiceImpl"></bean>
+
+</beans>

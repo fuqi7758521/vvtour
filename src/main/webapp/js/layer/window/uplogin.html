@@ -1,0 +1,21 @@
+<form action="" id="loginForm" method="post">
+	<ul class="formLib">
+		<li class="form_lilib">
+			<label>登录名：</label>
+			<input type="text" id="login_name" name="login_name" placeholder="请输入登录名" autocomplete="off">
+			<span class="from_msg">用户名/邮箱</span>
+		</li>
+		<li class="form_lilib">
+			<label>密码：</label>
+			<input type="password" id="login_pass" name="login_pass" placeholder="请输入密码">
+		</li>
+		<li class="form_lilib">
+			<label>验证码：</label>
+			<input type="text" id="login_yan" name="login_yan" placeholder="请输入验证码" autocomplete="off" style="width:90px;">
+			<img class="checkimg" src="http://www.bayuanbao.com/ajax/captcha" onclick="this.src='http://www.bayuanbao.com/ajax/captcha'" title="换一张"/>
+		</li>
+		<li class="form_libtn form_regtn">
+			<input type="submit" class="BB_button" value="登 录"><span class="from_msg"><a href="" target="_blank">忘记登录密码？</a></span>
+		</li>
+	</ul>
+</form>
