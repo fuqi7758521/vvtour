@@ -27,7 +27,9 @@ public enum IdTypeEnum {
 	
 	CHIP_CATEGORY_ID(CodeConstants.ID_TYPE_INIT_NUM + 10),				/**   碎片分类idType=10011   **/
 	
-	CHIP_ID(CodeConstants.ID_TYPE_INIT_NUM + 11);				/**   碎片idType=10012   **/
+	CHIP_ID(CodeConstants.ID_TYPE_INIT_NUM + 11),			/**   碎片idType=10012   **/
+	
+	USER_ID(CodeConstants.ID_TYPE_INIT_NUM + 12);			/**  用户idType**/	
 
 	private final int type;
 
