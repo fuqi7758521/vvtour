@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.stereotype.Service;
 
 import com.admin.criteria.UserCriteria;
 import com.admin.dao.UserDao;
 import com.admin.entity.User;
 import com.admin.manager.UserManager;
 
+@Service
 public class UserManagerImpl implements UserManager {
 
 	@Autowired

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.admin.criteria.SearchPagerModel;
 import com.admin.criteria.UserCriteria;
@@ -12,6 +13,7 @@ import com.admin.manager.UserManager;
 import com.admin.service.UserService;
 import com.usual.service.BaseService;
 
+@Service
 public class UserServiceImpl extends BaseService implements UserService {
 
 	private final static Logger logger = Logger.getLogger(UserServiceImpl.class);
