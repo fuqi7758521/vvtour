@@ -15,7 +15,8 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.web.servlet.view.AbstractView;
 
-import com.vvtour.shop.Constant;
+import com.admin.Constant;
+
 
 /**
  * @author fuqi

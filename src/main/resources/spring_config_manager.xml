@@ -25,4 +25,6 @@
 	
 	<bean id="chipManager" class="com.cms.manager.impl.ChipInfoManagerImpl"></bean>
 	
+	<bean id="userManager" class="com.admin.manager.impl.UserManagerImpl"></bean>
+	
 </beans>

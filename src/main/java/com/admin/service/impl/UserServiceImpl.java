@@ -13,7 +13,6 @@ import com.admin.manager.UserManager;
 import com.admin.service.UserService;
 import com.usual.service.BaseService;
 
-@Service
 public class UserServiceImpl extends BaseService implements UserService {
 
 	private final static Logger logger = Logger.getLogger(UserServiceImpl.class);

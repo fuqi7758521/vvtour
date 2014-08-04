@@ -1,0 +1,34 @@
+.ad_main1{border:1px solid #86a4be;width:300px;padding:2px;font-family:"宋体",arial;position:absolute;display:none;z-index:2003}
+.ad_main2{border:1px solid #86a4be;font-size:12px;}
+ul{margin:0px;padding:0px;list-style:none}
+.ad_title{background:rgb(200,235,250)}
+.ad_bh{width:50px;display:inline-block;padding:5px 0 5px 5px}
+.ad_qd{width:200px;display:inline-block;padding:5px 0 5px 0}
+.ad_data_list .ad_bh{padding:7px 0 7px 5px}
+.ad_data_list .ad_qd{padding:7px 0 7px 0}
+.ad_odd{background-color:#e6f8ff}
+.ad_data_list li{cursor:default;background-color:#ffffff}
+.ad_data_list li.hover{background-color:rgb(218,231,246)}
+.adAuto{
+	background-image:url(http://pic.lvmama.com/js/ui/lvmamaUI/img/bandbox-rounded.gif);
+	border:0px;
+	border-raduis:2px 0 0 2px;
+	-moz-border-raduis:2px 0 0 2px;
+	-webkit-border-raduis:2px 0 0 2px;
+	height:14px;
+	font-size:12px;
+	padding:5px 4px;
+	font-family:"arial, sans-serif";
+	margin:0px;
+}
+.adAutoI{
+	background-image:url(http://pic.lvmama.com/js/ui/lvmamaUI/img/bandbox-rounded.gif);
+	background-position:0px -120px;
+	display:inline-block;
+	height:24px;
+	vertical-align:top;
+	width:24px;
+	outline:none;
+}
+.adAutoI:hover{background-position:0 -144px;}
+.adAutoI:active{background-position:0 -168px;}

@@ -8,18 +8,18 @@ import com.usual.entity.BaseEntity;
  * 用户实体类
  * 
  * @author fuqi
- * @date 2014-08-04 
+ * @date 2014-08-04
  */
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
 	private final static String collectionName = "user";
-	
+
 	public User() {
 		super(collectionName);
 	}
-	
+
 	private String userId;
 
 	private String username;
@@ -39,6 +39,10 @@ public class User extends BaseEntity{
 	private Date birthday;
 
 	private Integer sex;
+
+	private String province;
+
+	private String city;
 
 	public String getUserId() {
 		return userId;
@@ -118,6 +122,22 @@ public class User extends BaseEntity{
 
 	public void setSex(Integer sex) {
 		this.sex = sex;
+	}
+
+	public String getProvince() {
+		return province;
+	}
+
+	public void setProvince(String province) {
+		this.province = province;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 }

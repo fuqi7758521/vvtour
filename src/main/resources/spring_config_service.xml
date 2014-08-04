@@ -22,5 +22,7 @@
 	<bean id="chipCaService" class="com.cms.service.impl.ChipCategoryServiceImpl"></bean>
 	
 	<bean id="chipService" class="com.cms.service.impl.ChipInfoServiceImpl"></bean>
+	
+	<bean id="userService" class="com.admin.service.impl.UserServiceImpl"></bean>
 
 </beans>

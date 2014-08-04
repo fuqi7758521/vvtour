@@ -14,7 +14,7 @@ import com.admin.dao.UserDao;
 import com.admin.entity.User;
 import com.admin.manager.UserManager;
 
-@Service
+
 public class UserManagerImpl implements UserManager {
 
 	@Autowired

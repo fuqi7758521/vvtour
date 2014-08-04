@@ -29,7 +29,7 @@
 			<version>1.1.2</version> 
 		</dependency> 	
 	  
-		<dependency>
+<!-- 		<dependency>
 		   	<groupId>javax.servlet</groupId>
 		   	<artifactId>servlet-api</artifactId>
 		   	<version>3.0-alpha-1</version>
@@ -40,7 +40,7 @@
 		   	<groupId>javax.servlet</groupId>
 		   	<artifactId>jsp-api</artifactId>
 		   	<version>2.0</version>
-	   </dependency>
+	   </dependency> -->
 	   
 	  	<!--slf4j -->
 		<dependency>
@@ -258,7 +258,7 @@
 				</property>
 			</activation>
 
-			<dependencies>
+			<!-- <dependencies>
 				<dependency>
 					<groupId>com.sun</groupId>
 					<artifactId>tools</artifactId>
@@ -266,7 +266,7 @@
 					<scope>system</scope>
 					<systemPath>${java.home}/lib/tools.jar</systemPath>
 				</dependency>
-			</dependencies>
+			</dependencies> -->
 
 			<properties>
 

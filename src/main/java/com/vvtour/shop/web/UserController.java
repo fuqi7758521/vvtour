@@ -3,20 +3,14 @@ package com.vvtour.shop.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.admin.Constant;
-import com.admin.criteria.SearchPagerModel;
-import com.admin.criteria.UserCriteria;
 import com.admin.entity.User;
 import com.admin.service.UserService;
-import com.admin.utils.JsonUtil;
-import com.admin.utils.RequestUtil;
 import com.usual.web.BaseController;
 
 /**
@@ -30,32 +24,35 @@ public class UserController extends BaseController {
 	
 	private final static Logger logger = Logger.getLogger(UserController.class);
 
-	//注册页面
-	private static final String USER_SIGN_UP = "";
+	//邮箱注册页面
+	private static final String USER_SIGN_UP_BY_EMAIL = "front/user/signUpByEmail";
+	
+	//电话注册页面
+	private static final String USER_SIGN_UP_BY_PHONE = "front/user/signUpByPhone";
 	
 	//登录页面
-	private static final String USER_SIGN_IN = "";
+	private static final String USER_SIGN_IN = "front/user/signin";
 	
 	//首页
 	private static final String INDEX = "";
 	
 	//用户中心
-	private static final String USER_INFO_CENTER = "";
+	private static final String USER_INFO_CENTER = "front/user/userInfoCenter";
 	
 	//修改密码
-	private static final String USER_CHANGE_PASSWORD = "";
+	private static final String USER_CHANGE_PASSWORD = "front/user/changePassword";
 	
 	//用户信息详情
-	private static final String USER_UPDATE_INFO_DETAIL = "";
+	private static final String USER_DETAIL = "front/user/userDetail";
 	
 	//邮箱验证页面
 	private static final String USER_VERIFY_EMAIL = "";
 	
 	//找回密码页面
-	private static final String USER_FIND_PASSWORD = "";
+	private static final String USER_FIND_PASSWORD = "front/user/findPassword";
 	
 	//邮箱找回密码页面
-	private static final String USER_FIND_PASSWORD_BY_EMAIL = "";
+	private static final String USER_FIND_PASSWORD_BY_EMAIL = "findPasswordByEmail";
 	
 	//手机号找回密码页面
 	private static final String USER_FIND_PASSWORD_BY_MOBILE_PHONE = "";
@@ -63,12 +60,21 @@ public class UserController extends BaseController {
 	@Autowired
 	private UserService userService;
 	
-	//进入注册页面
-	@RequestMapping("/goSignUp")
-	public ModelAndView goSignUp(User user, HttpServletRequest request, HttpServletResponse response){
+	//进入邮箱注册页面
+	@RequestMapping("/goSignUpByEmail.htm")
+	public ModelAndView goSignUpByEmail(User user, HttpServletRequest request, HttpServletResponse response){
 		
 		
-		return new ModelAndView(USER_SIGN_UP);
+		return new ModelAndView(USER_SIGN_UP_BY_EMAIL);
+		
+	}
+	
+	//进入手机注册页面
+	@RequestMapping("/goSignUpByPhone")
+	public ModelAndView goSignUpByPhone(User user, HttpServletRequest request, HttpServletResponse response){
+		
+		
+		return new ModelAndView(USER_SIGN_UP_BY_PHONE);
 		
 	}
 	
@@ -97,9 +103,9 @@ public class UserController extends BaseController {
 	}
 	
 	
-	//用户中心
-	@RequestMapping("/goUserCenter")
-	public ModelAndView goUserCenter(HttpServletRequest request, HttpServletResponse response){
+	//用户信息详情
+	@RequestMapping("/goUserDetail")
+	public ModelAndView goUserDetail(HttpServletRequest request, HttpServletResponse response){
 		
 		return new ModelAndView(USER_INFO_CENTER);
 		
@@ -120,13 +126,13 @@ public class UserController extends BaseController {
 	//用户个人信息详情
 	@RequestMapping("/goUpdateUserInfo")
 	public ModelAndView goUpdateUserInfo(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView(USER_UPDATE_INFO_DETAIL);
+		return new ModelAndView(USER_DETAIL);
 	}
 	
 	//更新个人信息
 	@RequestMapping("/updateUserInfo")
 	public ModelAndView updateUserInfo(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView(USER_UPDATE_INFO_DETAIL);
+		return new ModelAndView(USER_DETAIL);
 	}
 	
 	//进入邮箱验证页面
