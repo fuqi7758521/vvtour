@@ -1,11 +1,12 @@
-package com.vvtour.shop.dao;
+package com.admin.dao;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
-import com.vvtour.shop.entity.User;
+import com.admin.entity.User;
+
 
 /**
  * 用户DAO
@@ -41,6 +42,6 @@ public interface UserDao {
 	 * @param query
 	 * @return 用户列表数
 	 */
-	public long queryUserCount(Query query);
+	public Long queryUserCount(Query query);
 	
 }

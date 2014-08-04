@@ -1,4 +1,4 @@
-package com.vvtour.shop.criteria;
+package com.admin.criteria;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class SearchPagerModel<T> {
 
     // 总数
-    private int total;
+    private long total;
 
     //起始查询条目
     private int offset;
@@ -32,11 +32,11 @@ public class SearchPagerModel<T> {
     	this.pageSize=pageSize;
     }
 
-	public int getTotal() {
+	public long getTotal() {
 		return total;
 	}
 
-	public void setTotal(int total) {
+	public void setTotal(long total) {
 		this.total = total;
 	}
 

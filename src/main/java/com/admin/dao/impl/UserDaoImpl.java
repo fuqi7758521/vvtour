@@ -1,13 +1,13 @@
-package com.vvtour.shop.dao.impl;
+package com.admin.dao.impl;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 
+import com.admin.dao.UserDao;
+import com.admin.entity.User;
 import com.usual.dao.BaseDao;
-import com.vvtour.shop.dao.UserDao;
-import com.vvtour.shop.entity.User;
 
 /**
  * 用户DAO实现
@@ -30,13 +30,14 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 		return false;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> queryUserList(Query query) {
 		return (List<User>) queryList(query, new User());
 	}
 
 	@Override
-	public long queryUserCount(Query query) {
+	public Long queryUserCount(Query query) {
 		return getCount(query, new User());
 	}
 

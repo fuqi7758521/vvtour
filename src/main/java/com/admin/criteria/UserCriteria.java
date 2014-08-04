@@ -1,6 +1,7 @@
-package com.vvtour.shop.criteria;
+package com.admin.criteria;
 
-import com.vvtour.shop.entity.User;
+import com.admin.entity.User;
+
 
 public class UserCriteria extends User {
 

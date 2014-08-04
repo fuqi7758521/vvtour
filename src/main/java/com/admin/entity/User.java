@@ -1,4 +1,4 @@
-package com.vvtour.shop.entity;
+package com.admin.entity;
 
 import java.util.Date;
 
