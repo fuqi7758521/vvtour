@@ -25,6 +25,5 @@
 	
 	<bean id="chipManager" class="com.cms.manager.impl.ChipInfoManagerImpl"></bean>
 	
-	<bean id="userManager" class="com.admin.manager.impl.UserManagerImpl"></bean>
-	
+	<bean id="userManager" class="com.vvtour.shop.manager.impl.UserManagerImpl"/>
 </beans>

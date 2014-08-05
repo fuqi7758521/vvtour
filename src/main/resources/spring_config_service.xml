@@ -23,6 +23,6 @@
 	
 	<bean id="chipService" class="com.cms.service.impl.ChipInfoServiceImpl"></bean>
 	
-	<bean id="userService" class="com.admin.service.impl.UserServiceImpl"></bean>
+	<bean id="userService" class="com.vvtour.shop.service.impl.UserServiceImpl"></bean>
 
 </beans>

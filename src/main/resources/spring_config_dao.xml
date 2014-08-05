@@ -25,6 +25,6 @@
 	
 	<bean id="chipDao" class="com.cms.dao.impl.ChipInfoDaoImpl"></bean>
 	
-	<bean id="userDao" class="com.admin.dao.impl.UserDaoImpl"></bean>
+	<bean id="userDao" class="com.vvtour.shop.dao.impl.UserDaoImpl"></bean>
 	
 </beans>

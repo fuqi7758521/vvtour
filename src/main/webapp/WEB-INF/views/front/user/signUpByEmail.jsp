@@ -85,6 +85,7 @@
 					</div>
 				</div>
 				<div class="yhzcLB">
+				<form action="<%=request.getContextPath() %>/user/signUp.htm" method="post">
 					<ul>
 						<li>
 							<div class="yhzcLB_a"><span>*</span>您的Email地址：</div><input id="sso_email_b" name="email" type="text" class="yhzcLB_b" />
@@ -93,10 +94,10 @@
 							<div class="yhzcLB_a"><span>*</span>用户名：</div><input  id="sso_username" name="username" type="text" class="yhzcLB_b" />
 						</li>
 						<li>
-							<div class="yhzcLB_a"><span>*</span>设置密码：</div><input id="sso_password" name="password" type="text" class="yhzcLB_b" />
+							<div class="yhzcLB_a"><span>*</span>设置密码：</div><input id="sso_password" name="password" type="password" class="yhzcLB_b" />
 						</li>
 						<li>
-							<div class="yhzcLB_a"><span>*</span>确认密码：</div><input id="sso_againPassword" name="againPassword" type="text" class="yhzcLB_b" />
+							<div class="yhzcLB_a"><span>*</span>确认密码：</div><input id="sso_againPassword" name="againPassword" type="password" class="yhzcLB_b" />
 						</li>
 						<li>
 							<div class="yhzcLB_a"><span>*</span>验证码：</div><input  id="sso_verifycode1" name="verifycode" type="text" class="yhzcLB_c" />
@@ -106,15 +107,20 @@
 						</li>
 						<li class="">
 							<div class="yhzcLB_a">所在地：</div>
-							<select id="captialId" class="province"><option value="">--请选择--</option></select>
-							<select id="cityId" name="cityId" class="city"><option>--请选择--</option></select>
+							<select id="captialId" class="province" name="province">
+								<option value="">--请选择--</option>
+							</select>
+							<select id="cityId" name="city" class="city">
+							<option>--请选择--</option>
+							</select>
 						</li>
 						<li>
 							<div class="yhzcLB_a">&nbsp;</div>	
-							<div class="yhzcLB_e"><input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/yhzc_22.jpg"/><br />
+							<div class="yhzcLB_e"><input name="" type="submit" src="<%=request.getContextPath() %>/front/static/img/yhzc_22.jpg"/><br />
 							<a id="chengtu_tk" href="javascript:void(0)">《诚途旅游网会员服务条款》</a></div>
 						</li>
 					</ul>
+					</form>
 				</div>
 			</div>
 			<div class="yhzcR">

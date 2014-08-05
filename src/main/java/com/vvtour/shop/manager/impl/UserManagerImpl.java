@@ -14,17 +14,17 @@ import com.vvtour.shop.entity.User;
 import com.vvtour.shop.manager.UserManager;
 
 public class UserManagerImpl implements UserManager {
-	
+
 	@Autowired
 	private UserDao userDao;
 
 	class UserField {
 
-		final static String USERID = "user_id";
+		final static String USERID = "userId";
 		final static String USERNAME = "username";
 		final static String NICKNAME = "nickname";
 		final static String EMAIL = "email";
-		final static String MOBILE_PHONE = "mobile_phone";
+		final static String MOBILE_PHONE = "mobilePhone";
 		final static String STATUS = "status";
 		final static String PROVINCE = "province";
 		final static String CITY = "city";
@@ -53,31 +53,31 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	@Override
-	public void addUpdateUser(User to) {
-		if(StringUtils.isEmpty(to.getUserId())){
-			userDao.add(to);
-		}else{
-			Query query = Query.query(Criteria.where(UserField.USERID).is(
-					to.getUserId()));
-			Update update = new Update();
-			if(StringUtils.isNotEmpty(to.getUsername())){
-				update.set(UserField.USERNAME, to.getUsername());
-			}
-			if(StringUtils.isNotEmpty(to.getEmail())){
-				update.set(UserField.EMAIL, to.getEmail());
-			}
-			if(to.getSex() != null){
-				update.set(UserField.SEX, to.getSex());
-			}
-			if(StringUtils.isNotEmpty(to.getProvince())){
-				update.set(UserField.PROVINCE, to.getProvince());
-			}
-			if(StringUtils.isNotEmpty(to.getCity())){
-				update.set(UserField.CITY, to.getCity());
-			}
-			userDao.editUser(query, update);
-		}
+	public void addUser(User to) {
+		userDao.add(to);
+	}
 
+	@Override
+	public void updateUser(User to) {
+		Query query = Query.query(Criteria.where(UserField.USERID).is(
+				to.getUserId()));
+		Update update = new Update();
+		if (StringUtils.isNotEmpty(to.getUsername())) {
+			update.set(UserField.USERNAME, to.getUsername());
+		}
+		if (StringUtils.isNotEmpty(to.getEmail())) {
+			update.set(UserField.EMAIL, to.getEmail());
+		}
+		if (to.getSex() != null) {
+			update.set(UserField.SEX, to.getSex());
+		}
+		if (StringUtils.isNotEmpty(to.getProvince())) {
+			update.set(UserField.PROVINCE, to.getProvince());
+		}
+		if (StringUtils.isNotEmpty(to.getCity())) {
+			update.set(UserField.CITY, to.getCity());
+		}
+		userDao.editUser(query, update);
 	}
 
 	// 获取查询条件
@@ -110,5 +110,10 @@ public class UserManagerImpl implements UserManager {
 		}
 
 		return query;
+	}
+
+	@Override
+	public User getUser(UserCriteria criteria) {
+		return userDao.queryUser(getQuery(criteria));
 	}
 }

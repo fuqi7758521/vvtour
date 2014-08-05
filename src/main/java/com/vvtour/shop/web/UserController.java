@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +18,11 @@ import com.usual.web.BaseController;
 import com.vvtour.shop.criteria.SearchPagerModel;
 import com.vvtour.shop.criteria.UserCriteria;
 import com.vvtour.shop.entity.User;
+import com.vvtour.shop.utils.MessageDigestUtil;
 import com.vvtour.shop.utils.RequestUtil;
+import com.vvtour.shop.service.UserService;
+import com.vvtour.shop.Constant;
+import com.vvtour.shop.utils.JsonUtil;
 
 /**
  * 用户controller
@@ -25,7 +30,6 @@ import com.vvtour.shop.utils.RequestUtil;
  * @date 2014-08-02 16:34
  */
 @Controller
-@RequestMapping("/user")
 public class UserController extends BaseController {
 	
 	private final static Logger logger = Logger.getLogger(UserController.class);
@@ -67,33 +71,31 @@ public class UserController extends BaseController {
 	private UserService userService;
 	
 	//进入邮箱注册页面
-	@RequestMapping("/goSignUpByEmail.htm")
+	@RequestMapping("/user/goSignUpByEmail.htm")
 	public ModelAndView goSignUpByEmail(User user, HttpServletRequest request, HttpServletResponse response){
-		
 		
 		return new ModelAndView(USER_SIGN_UP_BY_EMAIL);
 		
 	}
 	
 	//进入手机注册页面
-	@RequestMapping("/goSignUpByPhone.htm")
+	@RequestMapping("/user/goSignUpByPhone.htm")
 	public ModelAndView goSignUpByPhone(User user, HttpServletRequest request, HttpServletResponse response){
-		
-		
 		return new ModelAndView(USER_SIGN_UP_BY_PHONE);
 		
 	}
 	
 	//注册
-	@RequestMapping("/signUp")
+	@RequestMapping("/user/signUp.htm")
 	public ModelAndView signUp(User user, HttpServletRequest request, HttpServletResponse response){
-		userService.addUpdateUser(user);
+		user.setPassword(MessageDigestUtil.getMD5(user.getPassword() + Constant.PASSWORD_SALT_KEY));
+		userService.addUser(user);
 		return new ModelAndView(INDEX);
 		
 	}
 	
 	//进入登录页面
-	@RequestMapping("/goSignIn")
+	@RequestMapping("/user/goSignIn")
 	public ModelAndView goSignIn(User user, HttpServletRequest request, HttpServletResponse response){
 		
 		return new ModelAndView(USER_SIGN_IN);
@@ -101,7 +103,7 @@ public class UserController extends BaseController {
 	}
 	
 	//登录
-	@RequestMapping("/signIn")
+	@RequestMapping("/user/signIn")
 	public ModelAndView signIn(HttpServletRequest request, HttpServletResponse response){
 		
 		return new ModelAndView(INDEX);
@@ -110,7 +112,7 @@ public class UserController extends BaseController {
 	
 	
 	//用户信息详情
-	@RequestMapping("/goUserDetail")
+	@RequestMapping("/user/goUserDetail")
 	public ModelAndView goUserDetail(HttpServletRequest request, HttpServletResponse response){
 		
 		return new ModelAndView(USER_INFO_CENTER);
@@ -118,73 +120,73 @@ public class UserController extends BaseController {
 	}
 	
 	//进入密码修改页面
-	@RequestMapping("/goChangePassword")
+	@RequestMapping("/user/goChangePassword")
 	public ModelAndView goChangePassword(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_CHANGE_PASSWORD);
 	}
 	
 	//修改密码 
-	@RequestMapping("/changePassword")
+	@RequestMapping("/uer/changePassword")
 	public ModelAndView chagePassword(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_INFO_CENTER);
 	}
 	
 	//用户个人信息详情
-	@RequestMapping("/goUpdateUserInfo")
+	@RequestMapping("/user/goUpdateUserInfo")
 	public ModelAndView goUpdateUserInfo(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_DETAIL);
 	}
 	
 	//更新个人信息
-	@RequestMapping("/updateUserInfo")
+	@RequestMapping("/user/updateUserInfo")
 	public ModelAndView updateUserInfo(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_DETAIL);
 	}
 	
 	//进入邮箱验证页面
-	@RequestMapping("/goVerifyEmail")
+	@RequestMapping("/user/goVerifyEmail")
 	public ModelAndView goVerifyEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_VERIFY_EMAIL);
 	}
 	
 	//验证邮箱
-	@RequestMapping("/verifyEmail")
+	@RequestMapping("/user/verifyEmail")
 	public ModelAndView verifyEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView();
 	}
 	
 	//找回密码
-	@RequestMapping("/goFindPassword")
+	@RequestMapping("/user/goFindPassword")
 	public ModelAndView goFindPassword(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_FIND_PASSWORD);
 	}
 	
 	//进入通过邮箱找回密码页面
-	@RequestMapping("/goFindPasswordByEmail")
+	@RequestMapping("/user/goFindPasswordByEmail")
 	public ModelAndView goFindPasswordByEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_FIND_PASSWORD_BY_EMAIL);
 	}
 	
 	//发送邮件，在邮件里面有新的密码
-	@RequestMapping("/findPasswordByEmail")
+	@RequestMapping("/user/findPasswordByEmail")
 	public ModelAndView findPasswordByEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView();
 	}
 	
 	//进入通过手机找回密码页面
-	@RequestMapping("/goFindPasswordByPhone")
+	@RequestMapping("/user/goFindPasswordByPhone")
 	public ModelAndView goFindPasswordByPone(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_FIND_PASSWORD_BY_MOBILE_PHONE);
 	}
 	
 	//通过手机找回密码页面
-	@RequestMapping("/findPasswordByPhone")
+	@RequestMapping("/user/findPasswordByPhone")
 	public ModelAndView findPasswordByPone(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView();
 	}
 	
 	//判断所填邮箱是否已经被注册
-	@RequestMapping("checkEmailExisted.htm")
+	@RequestMapping("/user/checkEmailExisted.htm")
 	public @ResponseBody Map<String, String> checkEmailExisted(HttpServletRequest request, HttpServletResponse response){
 		String email = RequestUtil.getString(request, "email");
 		UserCriteria criteria = new UserCriteria();
@@ -202,6 +204,62 @@ public class UserController extends BaseController {
 			result.put("msg", "邮箱已存在，不可以注册");
 		}
 		return result;
+	}
+	/////////////////////////////////////////下面的代码是管理后台用户相关/////////////////////////////////////////////////////////////
+	
+	
+	//后台管理中用户详情页
+	private static final String ADMIN_USER_DETAIL = "admin/user/detail.jsp";
+	
+	//用户列表页
+	private static final String ADMIN_USER_LIST = "admin/user/list.jsp";
+	
+	//用户每页显示数量
+	private static final Integer ADMIN_USER_LIST_PAGESIZE = 20;
+	
+	@RequestMapping("/admin/user/list")
+	public ModelAndView getUserList(User user, HttpServletRequest request, HttpServletResponse response){
+		
+		Integer pageNum=RequestUtil.getInteger(request, "pageNum");
+		UserCriteria criteria = new UserCriteria();
+		SearchPagerModel<User> searchPagerModel = new SearchPagerModel<User>(null == pageNum ? 1 : pageNum, ADMIN_USER_LIST_PAGESIZE);
+		
+		criteria.setUserId(user.getUserId());
+		criteria.setUsername(user.getUsername());
+		criteria.setEmail(user.getEmail());
+		criteria.setMobilePhone(user.getMobilePhone());
+		criteria.setStatus(user.getStatus());
+		criteria.setPageModel(searchPagerModel);
+		SearchPagerModel<User> users = userService.getUsers(criteria);
+		request.setAttribute("users", users);
+		return new ModelAndView(ADMIN_USER_DETAIL);
+		
+	}
+	
+	//用户详情页面
+	@RequestMapping("/admin/user/goEdit")
+	public ModelAndView goEdit(HttpServletRequest request, HttpServletResponse response){
+		
+		String userId = RequestUtil.getString(request, "userId");
+		if(StringUtils.isNotEmpty(userId)){
+			User user = userService.getUser(userId);
+			request.setAttribute("user", user);
+		}
+		return new ModelAndView(USER_DETAIL);
+		
+	}
+	
+	
+	//修改用户状态,包括： 删除用户，屏蔽用户，恢复用户为正常状态
+	@RequestMapping("/admin/user/modifyStatus")
+	public ModelAndView modifyUserStatus(HttpServletRequest request, HttpServletResponse response){
+		String userId = RequestUtil.getString(request, "userId");
+		Integer status = RequestUtil.getInteger(request, "status");
+		User to = new User();
+		to.setUserId(userId);
+		to.setStatus(status);
+		userService.updateUser(to);
+		return new ModelAndView(Constant.JSON_VIEW, Constant.JSON_ROOT, JsonUtil.getOkStatusMsg(null));
 	}
 	
 }

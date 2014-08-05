@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.view.AbstractView;
 
-import com.admin.Constant;
+import com.vvtour.shop.Constant;
+
 
 
 /**

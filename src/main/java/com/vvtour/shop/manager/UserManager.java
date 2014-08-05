@@ -7,12 +7,16 @@ import com.vvtour.shop.entity.User;
 
 public interface UserManager {
 	
-	public Long getUserCount(UserCriteria criteria);
+	 Long getUserCount(UserCriteria criteria);
 	
-	public List<User> getUsers(UserCriteria criteria);
+	 List<User> getUsers(UserCriteria criteria);
 	
-	public User getUser(String userId);
+	 User getUser(String userId);
+	 
+	 User getUser(UserCriteria criteria);
 	
-	public void addUpdateUser(User to);
+	 void addUser(User to);
+	 
+	 void updateUser(User to);
 
 }

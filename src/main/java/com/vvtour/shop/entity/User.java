@@ -27,8 +27,12 @@ public class User extends BaseEntity {
 	private String nickname;
 
 	private String mobilePhone;
+	
+	private Integer validateMobilePhone;
 
 	private String email;
+	
+	private Integer validateEmail;
 
 	private String password;
 
@@ -139,5 +143,23 @@ public class User extends BaseEntity {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	public Integer getValidateMobilePhone() {
+		return validateMobilePhone;
+	}
+
+	public void setValidateMobilePhone(Integer validateMobilePhone) {
+		this.validateMobilePhone = validateMobilePhone;
+	}
+
+	public Integer getValidateEmail() {
+		return validateEmail;
+	}
+
+	public void setValidateEmail(Integer validateEmail) {
+		this.validateEmail = validateEmail;
+	}
+	
+	
 
 }
