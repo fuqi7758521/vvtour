@@ -5,14 +5,18 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.Session;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
 
 import com.usual.web.BaseController;
 import com.vvtour.shop.criteria.SearchPagerModel;
@@ -40,8 +44,11 @@ public class UserController extends BaseController {
 	//电话注册页面
 	private static final String USER_SIGN_UP_BY_PHONE = "front/user/signUpByPhone";
 	
+	//邮箱注册成功页面
+	private static final String USER_SIGN_UP_BY_EMAIL_SUCCESS = "front/user/signUpByEmailSuccess";
+	
 	//登录页面
-	private static final String USER_SIGN_IN = "front/user/signin";
+	private static final String USER_SIGN_IN = "front/user/signIn";
 	
 	//首页
 	private static final String INDEX = "";
@@ -73,16 +80,13 @@ public class UserController extends BaseController {
 	//进入邮箱注册页面
 	@RequestMapping("/user/goSignUpByEmail.htm")
 	public ModelAndView goSignUpByEmail(User user, HttpServletRequest request, HttpServletResponse response){
-		
 		return new ModelAndView(USER_SIGN_UP_BY_EMAIL);
-		
 	}
 	
 	//进入手机注册页面
 	@RequestMapping("/user/goSignUpByPhone.htm")
 	public ModelAndView goSignUpByPhone(User user, HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_SIGN_UP_BY_PHONE);
-		
 	}
 	
 	//注册
@@ -90,23 +94,45 @@ public class UserController extends BaseController {
 	public ModelAndView signUp(User user, HttpServletRequest request, HttpServletResponse response){
 		user.setPassword(MessageDigestUtil.getMD5(user.getPassword() + Constant.PASSWORD_SALT_KEY));
 		userService.addUser(user);
-		return new ModelAndView(INDEX);
+		return new ModelAndView(USER_SIGN_UP_BY_EMAIL_SUCCESS);
 		
 	}
 	
 	//进入登录页面
-	@RequestMapping("/user/goSignIn")
+	@RequestMapping("/user/goSignIn.htm")
 	public ModelAndView goSignIn(User user, HttpServletRequest request, HttpServletResponse response){
-		
 		return new ModelAndView(USER_SIGN_IN);
-		
 	}
 	
 	//登录
-	@RequestMapping("/user/signIn")
+	@RequestMapping("/user/signIn.htm")
 	public ModelAndView signIn(HttpServletRequest request, HttpServletResponse response){
+		String identity = RequestUtil.getString(request, "identity");
+		String password = RequestUtil.getString(request, "password");
+		password=MessageDigestUtil.getMD5(password + Constant.PASSWORD_SALT_KEY);
+		UserCriteria criteria = new UserCriteria();
+		criteria.setPassword(password);
+		criteria.setUsername(identity);
+		User user = userService.getUser(criteria);
+		if(user != null){
+			
+			return new ModelAndView(INDEX);
+		}
 		
-		return new ModelAndView(INDEX);
+		criteria = new UserCriteria();
+		criteria.setEmail(identity);
+		user = userService.getUser(criteria);
+		if(user != null){
+			return new ModelAndView(INDEX);
+		}
+		
+		criteria = new UserCriteria();
+		criteria.setMobilePhone(identity);
+		user = userService.getUser(criteria);
+		if(user != null){
+			return new ModelAndView(INDEX);
+		}
+		return new ModelAndView("forword:/user/goSignIn.htm");
 		
 	}
 	

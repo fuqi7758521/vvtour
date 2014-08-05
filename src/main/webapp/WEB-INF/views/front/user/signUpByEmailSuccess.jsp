@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>用户-用户登录</title>
+<title>用户-注册成功</title>
 <link href="<%=request.getContextPath() %>/front/static/css/common.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath() %>/front/static/css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -15,41 +15,24 @@
 <div class="w1000">
 	
 	<div class="content_z">
-		<div class="login">
-			<div class="loginA"><img src="<%=request.getContextPath() %>/front/static/img/login_03.jpg" /></div>
-			<div class="loginB">
-				<div class="loginB_z">
-				<div class="loginB_n">
-					<div class="loginB_a">登录驴妈妈</div>
-					<form method="post" action="<%=request.getContextPath() %>/user/signIn.htm">
-					<div class="loginB_b">
-						<div class="loginB_ba"><input name="identity" type="text" /></div>
-						<div class="loginB_ba"><input name="password" type="password" /></div>
-						<div class="loginB_bb">
-							<input name="" type="text" />
-							<span><img src="<%=request.getContextPath() %>/front/static/img/login_11.jpg" />
-							<a href="#">换一张</a></span>
-						</div>
-						<div class="loginB_bc">
-							<input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/login_15.jpg" />
-							<a href="#">忘记密码</a>
+		<div class="zccg">
+			<div class="zccg_z">
+				<div class="zccg_a"><img src="<%=request.getContextPath() %>/front/static/img/zccg_03.jpg" />恭喜，注册成功。您获得了<span>100积分</span>的奖励</div>
+				<div class="zccg_n">
+					<div class="zccg_b">
+						<ul>
+							<li><img src="<%=request.getContextPath() %>/front/static/img/yzyx_04.jpg" />您的注册邮箱为：110207382@qq.com</li>
+							<li><img src="<%=request.getContextPath() %>/front/static/img/yzyx_04.jpg" />邮箱可用来登录、找回密码、订购产品。</li>
+						</ul>
+					</div>
+					<div class="zccg_c">
+						<div class="zccg_ca">我们已向您的邮箱发送一封验证邮件，验证邮箱成功后将获得300积分奖励。</div>
+						<div class="zccg_cb">
+							<input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/zccg_07.jpg" />
+							没有收到？<a href="#">再次发送</a>
 						</div>
 					</div>
-					</form>
-					<div class="loginB_c">
-						<div class="loginB_ca">还不是诚途会员？<a href="<%=request.getContextPath() %>/user/goSignUpByEmail.htm">免费注册</a></div>
-						<div class="loginB_cb">
-							<div class="loginB_cba">使用合作网站账号登录</div> 
-							<div class="loginB_cba"><span><img src="<%=request.getContextPath() %>/front/static/img/login_19.jpg" /></span><a href="#">QQ</a></div>
-							<div class="loginB_cba"><span><img src="<%=request.getContextPath() %>/front/static/img/login_21.jpg" /></span><a href="#">腾讯微博</a></div>
-							<div class="loginB_cba"><span><img src="<%=request.getContextPath() %>/front/static/img/login_23.jpg" /></span><a href="#">百度</a></div>
-							<div class="loginB_cba"><span><img src="<%=request.getContextPath() %>/front/static/img/login_29.jpg" /></span><a href="#">新浪微博</a></div>
-							<div class="loginB_cba"><span><img src="<%=request.getContextPath() %>/front/static/img/login_32.jpg" /></span><a href="#">支付宝</a></div>
-							<div class="loginB_cba"><span><img src="<%=request.getContextPath() %>/front/static/img/login_34.jpg" /></span><a href="#">开心网</a></div>
-							<div class="loginB_cba"><span><img src="<%=request.getContextPath() %>/front/static/img/login_36.jpg" /></span><a href="#">盛大</a></div>
-						</div>
-					</div>
-				</div>
+					<div class="zccg_d">您现在要去：<a href="#">返回首页</a></div>
 				</div>
 			</div>
 		</div>
