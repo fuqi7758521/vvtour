@@ -104,14 +104,10 @@
 								<img id="image" src="/nsso/account/checkcode.htm" /><a href="#" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
 							</div>
 						</li>
-						<li>
+						<li class="">
 							<div class="yhzcLB_a">所在地：</div>
-							<select name="">
-								<option>北京市</option>
-							</select>
-							<select name="">
-								<option>北京市</option>
-							</select>
+							<select id="captialId" class="province"><option value="">--请选择--</option></select>
+							<select id="cityId" name="cityId" class="city"><option>--请选择--</option></select>
 						</li>
 						<li>
 							<div class="yhzcLB_a">&nbsp;</div>	
@@ -202,15 +198,15 @@
 		
 		function sso_email_b_callback(call){
 			$.ajax({
-				type: "POST",
-				url:  "<%=request.getContextPath()%>/user/checkUniqueField.do",
+				type: "GET",
+				url:  "<%=request.getContextPath()%>/user/checkEmailExisted.htm",
 				data: {
 					email: this.value
 				},
 				dataType: "json",
 				success: function(response) {
-					if (response.success == false) {
-						error_tip("#sso_email_b","该Email地址已被注册，请更换其它地址，或<a href='http://login.lvmama.com/nsso/login' class='link_blue'>用此Email登录</a>",undefined,"reg_mtop");
+					if (response.success == "false") {
+						error_tip("#sso_email_b","该Email地址已被注册，请更换其它地址",undefined,"reg_mtop");
 					} else {
 						call();
 					}

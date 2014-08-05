@@ -1,4 +1,4 @@
-package com.admin.utils;
+package com.vvtour.shop.utils;
 
 
 import java.io.IOException;

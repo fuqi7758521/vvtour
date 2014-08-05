@@ -25,6 +25,9 @@ public class UserServiceImpl extends BaseService implements UserService {
 	public SearchPagerModel<User> getUsers(UserCriteria criteria) {
 
 		SearchPagerModel<User> pager = criteria.getPageModel();
+		if(pager == null){
+			pager = new SearchPagerModel<User>();
+		}
 		Long count = userManager.getUserCount(criteria);
 		if (null != count && count.intValue() > 0) {
 			List<User> result = userManager.getUsers(criteria);

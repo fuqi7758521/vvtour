@@ -1,5 +1,8 @@
 package com.vvtour.shop.web;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -7,11 +10,14 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.admin.entity.User;
-import com.admin.service.UserService;
 import com.usual.web.BaseController;
+import com.vvtour.shop.criteria.SearchPagerModel;
+import com.vvtour.shop.criteria.UserCriteria;
+import com.vvtour.shop.entity.User;
+import com.vvtour.shop.utils.RequestUtil;
 
 /**
  * 用户controller
@@ -70,7 +76,7 @@ public class UserController extends BaseController {
 	}
 	
 	//进入手机注册页面
-	@RequestMapping("/goSignUpByPhone")
+	@RequestMapping("/goSignUpByPhone.htm")
 	public ModelAndView goSignUpByPhone(User user, HttpServletRequest request, HttpServletResponse response){
 		
 		
@@ -80,8 +86,8 @@ public class UserController extends BaseController {
 	
 	//注册
 	@RequestMapping("/signUp")
-	public ModelAndView signUp(HttpServletRequest request, HttpServletResponse response){
-		
+	public ModelAndView signUp(User user, HttpServletRequest request, HttpServletResponse response){
+		userService.addUpdateUser(user);
 		return new ModelAndView(INDEX);
 		
 	}
@@ -175,6 +181,27 @@ public class UserController extends BaseController {
 	@RequestMapping("/findPasswordByPhone")
 	public ModelAndView findPasswordByPone(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView();
+	}
+	
+	//判断所填邮箱是否已经被注册
+	@RequestMapping("checkEmailExisted.htm")
+	public @ResponseBody Map<String, String> checkEmailExisted(HttpServletRequest request, HttpServletResponse response){
+		String email = RequestUtil.getString(request, "email");
+		UserCriteria criteria = new UserCriteria();
+		criteria.setEmail(email);
+//		SearchPagerModel<User> users = userService.getUsers(criteria);
+		SearchPagerModel<User> users = new SearchPagerModel<User>();
+		users.setTotal(1);
+		
+		Map<String, String> result = new HashMap<String, String>();
+		if(users == null || users.getTotal() == 0){
+			result.put("success", "false");
+			result.put("msg", "邮箱不存在，可以注册");
+		}else{
+			result.put("success", "true");
+			result.put("msg", "邮箱已存在，不可以注册");
+		}
+		return result;
 	}
 	
 }

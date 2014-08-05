@@ -9,12 +9,12 @@
 		$.extend(option,opt);
 		var elt = $(this);
 		var resource = [
-			ui.site+"plugin/city/json-array-of-province.js",
-			ui.site+"plugin/city/json-array-of-city.js",
-			ui.site+"plugin/city/json-array-of-district.js"
+			ui.site+"js/city/json-array-of-province.js",
+			ui.site+"js/city/json-array-of-city.js",
+			ui.site+"js/city/json-array-of-district.js"
 			];
 		if(!opt.area){
-			resource[1] = ui.site+"plugin/city/json-array-of-city-new.js";
+			resource[1] = ui.site+"js/city/json-array-of-city-new.js";
 		}
 
 		ui.getJSON("provinceList",resource[0],function(){
