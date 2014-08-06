@@ -15,7 +15,7 @@
          http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd">
 
 	<context:annotation-config />
-	<mongo:db-factory host="127.0.0.1" port="27017" username="chengtour" password="q83vs2y5" dbname="chengtour" />
+	<mongo:db-factory host="127.0.0.1" port="27017" username="" password="" dbname="chengtour" />
 	<mongo:mapping-converter id="converter" db-factory-ref="mongoDbFactory"/>
 	
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">

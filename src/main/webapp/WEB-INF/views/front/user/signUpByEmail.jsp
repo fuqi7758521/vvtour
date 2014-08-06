@@ -41,7 +41,7 @@
 						<li>
 							<div class="yhzcLB_a"><span>*</span>验证码：</div><input  id="sso_verifycode1" name="verifycode" type="text" class="yhzcLB_c" />
 							<div class="yhzcLB_d">
-								<img id="image" src="/nsso/account/checkcode.htm" /><a href="#" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
+								<img id="image" src="<%=request.getContextPath() %>/common/genVerifyCode.htm" /><a href="#" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
 							</div>
 						</li>
 						<li class="">
@@ -143,14 +143,14 @@
 		
 		function sso_email_b_callback(call){
 			$.ajax({
-				type: "GET",
+				type: "POST",
 				url:  "<%=request.getContextPath()%>/user/checkEmailExisted.htm",
 				data: {
 					email: this.value
 				},
 				dataType: "json",
 				success: function(response) {
-					if (response.success == "false") {
+					if (response.success == "true") {
 						error_tip("#sso_email_b","该Email地址已被注册，请更换其它地址",undefined,"reg_mtop");
 					} else {
 						call();
@@ -161,13 +161,13 @@
 		function sso_username_callback(call){
 			$.ajax({
 				type: "POST",
-				url:  "http://login.lvmama.com/nsso/ajax/checkUniqueField.do",
+				url:  "<%=request.getContextPath()%>/user/checkUsernameExisted.htm",
 				data: {
-					userName: this.value
+					username: this.value
 				},
 				dataType: "json",
 				success: function(response) {
-					if (response.success == false) {
+					if (response.success == "true") {
 						error_tip("#sso_username","该用户名已被使用，请更换其他用户名");  
 					} else {
 						call();

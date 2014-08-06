@@ -21,7 +21,7 @@
 				<div class="zccg_n">
 					<div class="zccg_b">
 						<ul>
-							<li><img src="<%=request.getContextPath() %>/front/static/img/yzyx_04.jpg" />您的注册邮箱为：110207382@qq.com</li>
+							<li><img src="<%=request.getContextPath() %>/front/static/img/yzyx_04.jpg" />您的注册邮箱为：${email}</li>
 							<li><img src="<%=request.getContextPath() %>/front/static/img/yzyx_04.jpg" />邮箱可用来登录、找回密码、订购产品。</li>
 						</ul>
 					</div>

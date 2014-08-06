@@ -5,13 +5,10 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.Session;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -94,7 +91,14 @@ public class UserController extends BaseController {
 	public ModelAndView signUp(User user, HttpServletRequest request, HttpServletResponse response){
 		user.setPassword(MessageDigestUtil.getMD5(user.getPassword() + Constant.PASSWORD_SALT_KEY));
 		userService.addUser(user);
-		return new ModelAndView(USER_SIGN_UP_BY_EMAIL_SUCCESS);
+		Map<String, String> result = new HashMap<String, String>();
+		if(StringUtils.isNotEmpty(user.getEmail())){
+			result.put("email", user.getEmail());
+		}
+		if(StringUtils.isNotEmpty(user.getMobilePhone())){
+			result.put("mobile", user.getMobilePhone());
+		}
+		return new ModelAndView(USER_SIGN_UP_BY_EMAIL_SUCCESS,result);
 		
 	}
 	
@@ -217,12 +221,10 @@ public class UserController extends BaseController {
 		String email = RequestUtil.getString(request, "email");
 		UserCriteria criteria = new UserCriteria();
 		criteria.setEmail(email);
-//		SearchPagerModel<User> users = userService.getUsers(criteria);
-		SearchPagerModel<User> users = new SearchPagerModel<User>();
-		users.setTotal(1);
+		User user = userService.getUser(criteria);
 		
 		Map<String, String> result = new HashMap<String, String>();
-		if(users == null || users.getTotal() == 0){
+		if(user == null){
 			result.put("success", "false");
 			result.put("msg", "邮箱不存在，可以注册");
 		}else{
@@ -231,6 +233,27 @@ public class UserController extends BaseController {
 		}
 		return result;
 	}
+	
+	//判断所填用户名是否已经被注册
+	@RequestMapping("/user/checkUsernameExisted.htm")
+	public @ResponseBody Map<String, String> checkUsernameExisted(HttpServletRequest request, HttpServletResponse response){
+		String username = RequestUtil.getString(request, "username");
+		UserCriteria criteria = new UserCriteria();
+		criteria.setUsername(username);
+		User user = userService.getUser(criteria);
+		
+		Map<String, String> result = new HashMap<String, String>();
+		if(user == null){
+			result.put("success", "false");
+			result.put("msg", "用户名不存在，可以注册");
+		}else{
+			result.put("success", "true");
+			result.put("msg", "用户名已存在，不可以注册");
+		}
+		return result;
+	}
+	
+	
 	/////////////////////////////////////////下面的代码是管理后台用户相关/////////////////////////////////////////////////////////////
 	
 	
