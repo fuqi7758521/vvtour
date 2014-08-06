@@ -22,7 +22,7 @@
 					<div class="yhzcLA_b"><a href="<%=request.getContextPath()%>/user/goSignUpByEmail.htm">邮箱注册</a></div>
 					<div class="yhzcLA_a"><span><a href="#">手机注册</a></span></div>
 					<div class="yhzcLA_c">
-						<a href="#">会员可注册</a>&nbsp;成为诚途会员
+						<a href="#">会员卡注册</a>&nbsp;成为诚途会员
 					</div>
 				</div>
 				<div class="yhzcLB">
@@ -75,7 +75,7 @@
 					<img src="<%=request.getContextPath() %>/front/static/img/yhzc_09.jpg" /><span>现在注册即可获得<strong>100积分</strong></span>
 				</div>
 				<div class="yhzcR_b">
-					<span>已经有驴妈妈账号？</span><input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/yhzc_15.jpg" />
+					<span>已经有诚途账号？</span><input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/yhzc_15.jpg" />
 				</div>
 				<div class="yhzcR_c">
 					<div class="yhzcR_ca">

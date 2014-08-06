@@ -6,7 +6,7 @@
 	       <div class="topl">您好，欢迎来到诚途旅游网！<a href="<%=request.getContextPath() %>/user/goSignIn.htm" class="blue ml20">登录</a><span>|</span><a href="<%=request.getContextPath() %>/user/goSignUpByEmail.htm" class="blue">注册</a></div>
        </c:if>
        <c:if test='${user != null}'>
-        	<div class="topl">您好，<a href="#" class="blue ml20">${user.username}</a><span>|</span><a href="<%=request.getContextPath() %>/user/signOut.htm" class="blue">退出</a></div>
+        	<div class="topl">您好,<a href="<%=request.getContextPath() %>/user/goUserInfoCenter.htm" class="blue ml5">${user.username}</a><span>|</span><a href="<%=request.getContextPath() %>/user/signOut.htm" class="blue">退出</a></div>
        </c:if>
       
          <ul class="topr">

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
 <jsp:include page="../common/header.jsp"/>
 
 <div class="container">
@@ -22,12 +23,13 @@
 				<div class="loginB_z">
 				<div class="loginB_n">
 					<div class="loginB_a">登录诚途</div>
+					<span class="login_error_tip" id="login_error_tip"><i class="login_sp login_v_error"></i>请输入邮箱/手机号/用户名</span>
 					<form id="loginform" method="post" action="<%=request.getContextPath() %>/user/signIn.htm">
 					<div class="loginB_b">
 						<div class="loginB_ba">
 							<input id="loginName" name="identity" type="text" />
 							<i class="login_sp login_v_pass" style="display: none;"></i>
-							<p class="login_input_info" style="display: block;">邮箱/手机号/用户名/会员卡</p>
+							<p class="login_input_info" style="display: block;">邮箱/手机号/用户名</p>
 						</div>
 						<div class="loginB_ba">
 							<input id="password" name="password" type="password" />
@@ -40,7 +42,7 @@
 							<a href="#" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
 						</div>
 						<div class="loginB_bc">
-							<input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/login_15.jpg" />
+							<input id="loginBtn" name="" type="image" src="<%=request.getContextPath() %>/front/static/img/login_15.jpg" />
 							<a href="#">忘记密码</a>
 						</div>
 					</div>
@@ -71,9 +73,9 @@
 
 <script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
 <script src="<%=request.getContextPath() %>/front/static/js/chengtuUI.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/l_login.js"></script>
 
 <script>
-
 
 //判断验证码是否正确
 function sso_verifycode1_callback(call){
@@ -93,13 +95,13 @@ function sso_verifycode1_callback(call){
 		}
 	});				
 }		
-		
+
 function loginSubmit(){
 	document.getElementById("loginform").submit();
 }
+
 </script>
 
-<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/form.validate.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/l_login.js"></script>
+
 </body>
 </html>

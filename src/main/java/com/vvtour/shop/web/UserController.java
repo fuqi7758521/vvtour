@@ -84,13 +84,13 @@ public class UserController extends BaseController {
 	
 	//进入邮箱注册页面
 	@RequestMapping("/user/goSignUpByEmail.htm")
-	public ModelAndView goSignUpByEmail(User user, HttpServletRequest request, HttpServletResponse response){
+	public ModelAndView goSignUpByEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_SIGN_UP_BY_EMAIL);
 	}
 	
 	//进入手机注册页面
 	@RequestMapping("/user/goSignUpByPhone.htm")
-	public ModelAndView goSignUpByPhone(User user, HttpServletRequest request, HttpServletResponse response){
+	public ModelAndView goSignUpByPhone(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_SIGN_UP_BY_PHONE);
 	}
 	
@@ -119,7 +119,11 @@ public class UserController extends BaseController {
 	//进入登录页面
 	@RequestMapping("/user/goSignIn.htm")
 	public ModelAndView goSignIn(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView(USER_SIGN_IN);
+		User loginUser = AcsUtil.getLoginUser(request);
+		if(loginUser != null){
+			return new ModelAndView(USER_INFO_CENTER);
+		}
+		return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
 	}
 	
 	//登录
@@ -168,7 +172,10 @@ public class UserController extends BaseController {
 	//用户信息中心
 	@RequestMapping("/user/goUserInfoCenter.htm")
 	public ModelAndView goUserInfoCenter(HttpServletRequest request, HttpServletResponse response){
-		
+		User loginUser = AcsUtil.getLoginUser(request);
+		if(loginUser == null){
+			return new ModelAndView(USER_SIGN_IN);
+		}
 		return new ModelAndView(USER_INFO_CENTER);
 		
 	}
