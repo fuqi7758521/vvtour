@@ -1,6 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="ctop">
      <div class="top01 clearfix">
+       
        <div class="topl">您好，欢迎来到诚途旅游网！<a href="<%=request.getContextPath() %>/user/goSignIn.htm" class="blue ml20">登录</a><span>|</span><a href="<%=request.getContextPath() %>/user/goSignUpByEmail.htm" class="blue">注册</a></div>
         <!--   
         <div class="topl">您好，<a href="#" target="_blank" class="blue ml20">hellowuyao</a><span>|</span><a href="#" target="_blank" class="blue">退出</a></div>

@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -19,6 +20,7 @@ import com.usual.web.BaseController;
 import com.vvtour.shop.criteria.SearchPagerModel;
 import com.vvtour.shop.criteria.UserCriteria;
 import com.vvtour.shop.entity.User;
+import com.vvtour.shop.utils.AcsUtil;
 import com.vvtour.shop.utils.MessageDigestUtil;
 import com.vvtour.shop.utils.RequestUtil;
 import com.vvtour.shop.service.UserService;
@@ -58,6 +60,9 @@ public class UserController extends BaseController {
 	
 	//修改密码
 	private static final String USER_CHANGE_PASSWORD = "front/user/changePassword";
+	
+	//修改密码结果
+	private static final String USER_CHANGE_PASSWORD_RESULT = "front/user/changePasswordResult";
 	
 	//用户信息详情
 	private static final String USER_DETAIL = "front/user/userDetail";
@@ -127,46 +132,66 @@ public class UserController extends BaseController {
 		criteria.setUsername(identity);
 		User user = userService.getUser(criteria);
 		if(user != null){
-			
-			return new ModelAndView(INDEX);
+			AcsUtil.addLoginUserToSession(request, user);
+			return new ModelAndView(USER_INFO_CENTER);
 		}
 		
 		criteria = new UserCriteria();
 		criteria.setEmail(identity);
 		user = userService.getUser(criteria);
 		if(user != null){
-			return new ModelAndView(INDEX);
+			AcsUtil.addLoginUserToSession(request, user);
+			return new ModelAndView(USER_INFO_CENTER);
 		}
 		
 		criteria = new UserCriteria();
 		criteria.setMobile(identity);
 		user = userService.getUser(criteria);
 		if(user != null){
-			return new ModelAndView(INDEX);
+			AcsUtil.addLoginUserToSession(request, user);
+			return new ModelAndView(USER_INFO_CENTER);
 		}
 		return new ModelAndView("forword:/user/goSignIn.htm");
 		
 	}
 	
 	
-	//用户信息详情
-	@RequestMapping("/user/goUserDetail")
-	public ModelAndView goUserDetail(HttpServletRequest request, HttpServletResponse response){
+	//用户信息中心
+	@RequestMapping("/user/goUserInfoCenter.htm")
+	public ModelAndView goUserInfoCenter(HttpServletRequest request, HttpServletResponse response){
 		
 		return new ModelAndView(USER_INFO_CENTER);
 		
 	}
 	
 	//进入密码修改页面
-	@RequestMapping("/user/goChangePassword")
+	@RequestMapping("/user/goChangePassword.htm")
 	public ModelAndView goChangePassword(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_CHANGE_PASSWORD);
 	}
 	
 	//修改密码 
-	@RequestMapping("/uer/changePassword")
+	@RequestMapping("/uer/changePassword.htm")
 	public ModelAndView chagePassword(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView(USER_INFO_CENTER);
+		User loginUser = AcsUtil.getLoginUser(request);
+		if(loginUser == null){
+			return new ModelAndView(USER_SIGN_IN);
+		}
+		String orgPassword = RequestUtil.getString(request, "orgPassword");
+		String newPassword = RequestUtil.getString(request, "password");
+		Map<String, String> result = new HashMap<String, String>();
+		if(!loginUser.getPassword().equals(MessageDigestUtil.getMD5(orgPassword + Constant.PASSWORD_SALT_KEY))){
+			String msg = "您的密码与原密码不符！";
+			result.put("msg", msg);
+			return new ModelAndView(USER_CHANGE_PASSWORD_RESULT,result);
+		}
+		User to = new User();
+		to.setUserId(loginUser.getUserId());
+		to.setPassword(MessageDigestUtil.getMD5(newPassword + Constant.PASSWORD_SALT_KEY));
+		userService.updateUser(to);
+		String msg = "恭喜！登录密码修改成功！";
+		result.put("msg", msg);
+		return new ModelAndView(USER_CHANGE_PASSWORD_RESULT,result);
 	}
 	
 	//用户个人信息详情

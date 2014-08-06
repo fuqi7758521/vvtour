@@ -60,29 +60,7 @@
 						修改登录密码后，原密码将不能用来登录。
 					</div>
 					<div class="xgmmC">
-						<form action="<%=request.getContextPath() %>/uer/changePassword.htm" method="post">
-						<ul>
-							<li>
-								<div class="xgmmC_a"><span>*</span>请输入旧密码：</div>
-								<div class="xgmmC_b"><input id="sso_oldPassword" name="orgPassword" type="type" /></div>
-								<%-- <div class="xgmmC_c"><img src="<%=request.getContextPath() %>/front/static/img/xgmm_03.jpg" /></div> --%>
-							</li>
-							<li>
-								<div class="xgmmC_a"><span>*</span>请输入新密码：</div>
-								<div class="xgmmC_b"><input id="sso_password" name="newPassword" type="password" /></div>
-								<%-- <div class="xgmmC_c"><img src="<%=request.getContextPath() %>/front/static/img/xgmm_03.jpg" /></div> --%>
-							</li>
-							<li>
-								<div class="xgmmC_a"><span>*</span>请确认新密码：</div>
-								<div class="xgmmC_b"><input id="sso_againPassword" name="confirmPassword" type="password" /></div>
-								<%-- <div class="xgmmC_c"><img src="<%=request.getContextPath() %>/front/static/img/xgmm_06.jpg" /><span>两次密码输入不一致</span></div> --%>
-							</li>
-							<li>
-								<div class="xgmmC_a">&nbsp;</div>
-								<div class="xgmmC_d"><input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/xgmm_09.jpg" /></div>
-							</li>
-						</ul>
-						</form>
+						${msg}
 					</div>
 				</div>
 			</div>
@@ -140,8 +118,5 @@
 </div>
 
 <jsp:include page="../common/footer.jsp"/>
-<script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
-<script src="<%=request.getContextPath() %>/front/static/js/chengtuUI.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/form.validate.js"></script>
 </body>
 </html>
