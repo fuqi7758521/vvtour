@@ -11,4 +11,7 @@ public interface Constant {
 	JSONView JSON_VIEW=new JSONView();
 	
 	String PASSWORD_SALT_KEY = "Salt.chengtu.com.2014";
+	
+	Integer SEX_MALE = 1;
+	Integer SEX_FEMALE = 0;
 }

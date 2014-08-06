@@ -23,12 +23,14 @@ public class UserManagerImpl implements UserManager {
 		final static String USERID = "userId";
 		final static String USERNAME = "username";
 		final static String NICKNAME = "nickname";
+		final static String REALNAME = "realname";
 		final static String EMAIL = "email";
 		final static String MOBILE = "mobile";
 		final static String STATUS = "status";
 		final static String PROVINCE = "province";
 		final static String CITY = "city";
 		final static String SEX = "sex";
+		final static String PASSWORD = "password";
 	}
 
 	@Override
@@ -77,6 +79,12 @@ public class UserManagerImpl implements UserManager {
 		if (StringUtils.isNotEmpty(to.getCity())) {
 			update.set(UserField.CITY, to.getCity());
 		}
+		if (StringUtils.isNotEmpty(to.getPassword())){
+			update.set(UserField.PASSWORD, to.getPassword());
+		}
+		if (StringUtils.isNotEmpty(to.getRealname())){
+			update.set(UserField.REALNAME, to.getRealname());
+		}
 		userDao.editUser(query, update);
 	}
 
@@ -107,6 +115,10 @@ public class UserManagerImpl implements UserManager {
 		if (criteria.getStatus() != null) {
 			query.addCriteria(Criteria.where(UserField.STATUS).is(
 					criteria.getStatus()));
+		}
+		
+		if(StringUtils.isNotEmpty(criteria.getPassword())){
+			query.addCriteria(Criteria.where(UserField.PASSWORD).is(criteria.getPassword()));
 		}
 
 		return query;

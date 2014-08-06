@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>用户-修改密码</title>
+<title>登录密码修改结果</title>
 <link href="<%=request.getContextPath() %>/front/static/css/common.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath() %>/front/static/css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -19,38 +19,9 @@
 	</div>
 	
 	<div class="content">
-		<div class="left">
-			<div class="leftA">
-				<div class="leftA_a"><a href="#"><img src="<%=request.getContextPath() %>/front/static/img/grzx_03.jpg" /></a></div>
-				<div class="leftA_b"><a href="#">编辑我的资料</a></div>
-			</div>
-			<div class="leftB">
-				<ul>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_18.jpg" /></span><a href="#">我的订单</a></li>
-					<li><span>&nbsp;</span><a href="#">国际机票订单</a></li>
-				</ul>
-				<ul>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_30.jpg" /></span><a href="#">我的积分</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_34.jpg" /></span><a href="#">我的优惠券</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_36.jpg" /></span><a href="#">现金账户</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_38.jpg" /></span><a href="#">礼品卡</a></li>
-				</ul>
-				<ul>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_40.jpg" /></span><a href="#">个人资料</a><a href="#" style=" float:right; color:#0088cc;">完善</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_42.jpg" /></span><a href="#">登录密码修改</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_44.jpg" /></span><a href="#">常用游客信息</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_46.jpg" /></span><a href="#">站内信息</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_48.jpg" /></span><a href="#">邮件订阅</a></li>
-				</ul>
-				<ul style="border-bottom:none;">
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_50.jpg" /></span><a href="#">我的点评</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_52.jpg" /></span><a href="#">我的攻略</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_54.jpg" /></span><a href="#">我的收藏</a></li>
-					<li><span><img src="<%=request.getContextPath() %>/front/static/img/grzx_56.jpg" /></span><a href="#">我的旅程</a></li>
-				</ul>
-			</div>
-			<div class="leftC"><a href="#"><img src="<%=request.getContextPath() %>/front/static/img/grzx_59.jpg" /></a></div>
-		</div>
+		
+		<jsp:include page="../common/sidebar.jsp"/>
+		
 		<div class="right">
 			<div class="xgmm">
 				<div class="xgmmA"><span>登录密码修改</span></div>

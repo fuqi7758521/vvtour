@@ -17,4 +17,10 @@ public class AcsUtil {
 		HttpSession session = request.getSession();
 		session.setAttribute("user", user);
 	}
+	
+	
+	public static void removeLoginUserFromSession(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		session.invalidate();
+	}
 }

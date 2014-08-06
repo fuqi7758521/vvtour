@@ -26,6 +26,8 @@ public class User extends BaseEntity {
 
 	private String nickname;
 
+	private String realname;
+
 	private String mobile;
 
 	private Integer validateMobilePhone;
@@ -158,6 +160,14 @@ public class User extends BaseEntity {
 
 	public void setValidateEmail(Integer validateEmail) {
 		this.validateEmail = validateEmail;
+	}
+
+	public String getRealname() {
+		return realname;
+	}
+
+	public void setRealname(String realname) {
+		this.realname = realname;
 	}
 
 }

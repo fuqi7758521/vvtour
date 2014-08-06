@@ -2,22 +2,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="ctop">
      <div class="top01 clearfix">
-       
-       <div class="topl">您好，欢迎来到诚途旅游网！<a href="<%=request.getContextPath() %>/user/goSignIn.htm" class="blue ml20">登录</a><span>|</span><a href="<%=request.getContextPath() %>/user/goSignUpByEmail.htm" class="blue">注册</a></div>
-        <!--   
-        <div class="topl">您好，<a href="#" target="_blank" class="blue ml20">hellowuyao</a><span>|</span><a href="#" target="_blank" class="blue">退出</a></div>
-        -->  
+       <c:if test='${user == null}'>
+	       <div class="topl">您好，欢迎来到诚途旅游网！<a href="<%=request.getContextPath() %>/user/goSignIn.htm" class="blue ml20">登录</a><span>|</span><a href="<%=request.getContextPath() %>/user/goSignUpByEmail.htm" class="blue">注册</a></div>
+       </c:if>
+       <c:if test='${user != null}'>
+        	<div class="topl">您好，<a href="#" class="blue ml20">${user.username}</a><span>|</span><a href="<%=request.getContextPath() %>/user/signOut.htm" class="blue">退出</a></div>
+       </c:if>
+      
          <ul class="topr">
-           <li class="r01"><a href="#" class="hide">我的诚途</a>
-               <ul>
-                  <li><a href="#">我的订单</a></li>
-                  <li><a href="#">我的积分</a></li>
-                  <li><a href="#">我的优惠券</a></li>
-                  <li><a href="#">我的会员卡</a></li>
-                  <li><a href="#">我的礼品卡</a></li>
-               </ul>
-               
-           </li>
+          <c:if test='${user != null}'>
+	           <li class="r01"><a href="#" class="hide">我的诚途</a>
+	               <ul>
+	                  <li><a href="#">我的订单</a></li>
+	                  <li><a href="#">我的积分</a></li>
+	                  <li><a href="#">我的优惠券</a></li>
+	                  <li><a href="#">我的会员卡</a></li>
+	                  <li><a href="#">我的礼品卡</a></li>
+	               </ul>
+	           </li>
+           </c:if>
            <li class="li tc"><a href="#">积分商城</a></li>
            <li class="li tc"><a href="#">团购预约</a></li>
            <li class="li02 tc"><a href="#">帮助</a></li>

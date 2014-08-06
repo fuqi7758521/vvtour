@@ -9,6 +9,7 @@ encoding//src/main/webapp/WEB-INF/views/front/user/findPasswordByEmail.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/front/user/signIn.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/front/user/signUpByEmailSuccess.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/front/user/signUpByPhone.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/front/user/userDetail.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/front/user/userInfoCenter.jsp=UTF-8
 encoding//src/main/webapp/front/static/css/style.css=UTF-8
 encoding//src/test/java=UTF-8

@@ -101,6 +101,7 @@ public class UserController extends BaseController {
 			return new ModelAndView("forword:/user/goSignUpByEmail.htm");
 		}
 		user.setPassword(MessageDigestUtil.getMD5(user.getPassword() + Constant.PASSWORD_SALT_KEY));
+		user.setSex(Constant.SEX_MALE);
 		userService.addUser(user);
 		Map<String, String> result = new HashMap<String, String>();
 		if(StringUtils.isNotEmpty(user.getEmail())){
@@ -117,7 +118,7 @@ public class UserController extends BaseController {
 	
 	//进入登录页面
 	@RequestMapping("/user/goSignIn.htm")
-	public ModelAndView goSignIn(User user, HttpServletRequest request, HttpServletResponse response){
+	public ModelAndView goSignIn(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_SIGN_IN);
 	}
 	
@@ -138,6 +139,7 @@ public class UserController extends BaseController {
 		
 		criteria = new UserCriteria();
 		criteria.setEmail(identity);
+		criteria.setPassword(password);
 		user = userService.getUser(criteria);
 		if(user != null){
 			AcsUtil.addLoginUserToSession(request, user);
@@ -146,15 +148,22 @@ public class UserController extends BaseController {
 		
 		criteria = new UserCriteria();
 		criteria.setMobile(identity);
+		criteria.setPassword(password);
 		user = userService.getUser(criteria);
 		if(user != null){
 			AcsUtil.addLoginUserToSession(request, user);
 			return new ModelAndView(USER_INFO_CENTER);
 		}
-		return new ModelAndView("forword:/user/goSignIn.htm");
+		return new ModelAndView("redirect:/user/goSignIn.htm");
 		
 	}
 	
+	//退出
+	@RequestMapping("/user/signOut.htm")
+	public ModelAndView signOut(HttpServletRequest request, HttpServletResponse response){
+		AcsUtil.removeLoginUserFromSession(request);
+		return new ModelAndView("redirect:/user/goSignIn.htm");
+	}
 	
 	//用户信息中心
 	@RequestMapping("/user/goUserInfoCenter.htm")
@@ -195,14 +204,24 @@ public class UserController extends BaseController {
 	}
 	
 	//用户个人信息详情
-	@RequestMapping("/user/goUpdateUserInfo")
-	public ModelAndView goUpdateUserInfo(HttpServletRequest request, HttpServletResponse response){
+	@RequestMapping("/user/goUserDetail.htm")
+	public ModelAndView goUserDetail(HttpServletRequest request, HttpServletResponse response){
+		User loginUser = AcsUtil.getLoginUser(request);
+		if(loginUser == null){
+			return new ModelAndView(USER_SIGN_IN);
+		}
 		return new ModelAndView(USER_DETAIL);
 	}
 	
 	//更新个人信息
-	@RequestMapping("/user/updateUserInfo")
-	public ModelAndView updateUserInfo(HttpServletRequest request, HttpServletResponse response){
+	@RequestMapping("/user/updateUserInfo.htm")
+	public ModelAndView updateUserInfo(User user, HttpServletRequest request, HttpServletResponse response){
+		User loginUser = AcsUtil.getLoginUser(request);
+		if(loginUser == null){
+			return new ModelAndView(USER_SIGN_IN);
+		}
+		user.setUserId(loginUser.getUserId());
+		userService.updateUser(user);
 		return new ModelAndView(USER_DETAIL);
 	}
 	

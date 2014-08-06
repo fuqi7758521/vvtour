@@ -6,7 +6,7 @@
 <title>用户-邮箱注册</title>
 <link href="<%=request.getContextPath() %>/front/static/css/common.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath() %>/front/static/css/style.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="<%=request.getContextPath() %>/front/static/css/l_login.css"/>
+<link href="<%=request.getContextPath() %>/front/static/css/l_login.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -56,8 +56,6 @@
 						</li>
 						<li>
 							<div class="yhzcLB_a">&nbsp;</div>	
-							<%-- <div class="yhzcLB_e"><input id="submitBtn" type="image" src="<%=request.getContextPath() %>/front/static/img/yhzc_22.jpg"/><br />
-							</div> --%>
 							<a id="submitBtn" class="register_submit" href="javascript:void(0)"></a>
 						</li>
 						<li><label class="csmm_form_col w105"> </label><input type="checkbox" class="register_tk" checked id="terms"><a class="link_blue" href="javascript:void(0)" id="chengtu_tk">《诚途旅游网会员服务条款》</a>

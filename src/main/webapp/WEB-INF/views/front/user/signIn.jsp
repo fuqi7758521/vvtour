@@ -3,9 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>用户-用户登录</title>
+<title>诚途登录</title>
 <link href="<%=request.getContextPath() %>/front/static/css/common.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath() %>/front/static/css/style.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath() %>/front/static/css/l_login.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -20,15 +21,23 @@
 			<div class="loginB">
 				<div class="loginB_z">
 				<div class="loginB_n">
-					<div class="loginB_a">登录驴妈妈</div>
-					<form method="post" action="<%=request.getContextPath() %>/user/signIn.htm">
+					<div class="loginB_a">登录诚途</div>
+					<form id="loginform" method="post" action="<%=request.getContextPath() %>/user/signIn.htm">
 					<div class="loginB_b">
-						<div class="loginB_ba"><input name="identity" type="text" /></div>
-						<div class="loginB_ba"><input name="password" type="password" /></div>
+						<div class="loginB_ba">
+							<input id="loginName" name="identity" type="text" />
+							<i class="login_sp login_v_pass" style="display: none;"></i>
+							<p class="login_input_info" style="display: block;">邮箱/手机号/用户名/会员卡</p>
+						</div>
+						<div class="loginB_ba">
+							<input id="password" name="password" type="password" />
+							<i class="login_sp login_v_pass"></i>
+							<p class="login_input_info">请输入密码</p>
+						</div>
 						<div class="loginB_bb">
-							<input name="" type="text" />
-							<span><img src="<%=request.getContextPath() %>/front/static/img/login_11.jpg" />
-							<a href="#">换一张</a></span>
+							<input  id="sso_verifycode1" name="authenticationCode" type="text" class="yhzcLB_c" />
+							<span><img id="image" src="<%=request.getContextPath() %>/common/genVerifyCode.htm" />
+							<a href="#" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
 						</div>
 						<div class="loginB_bc">
 							<input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/login_15.jpg" />
@@ -58,23 +67,39 @@
 </div>
 </div>
 
-<div class="foot">
-    <div class="foot1">
-      <a href="#">关于我们</a> | <a href="#">网站地图</a> | <a href="#">酒店品牌</a> | <a href="#">酒店查询</a> | <a href="#">帮助中心</a> | <a href="#">友情链接</a> | <a href="#">诚聘英才</a> | <a href="#">旅游度假资质</a> | <a href="#">意见反馈</a> | <a href="#">广告业务</a> | <a href="#">用户体验平台</a>
-    </div>
-    <div class="foot2">Copyright © 2014 www.lvmama.com. 上海景域文化传播有限公司版权所有　沪ICP备13011172号-3　增值电信业务经营许可证编号：沪B2-20100030</div>
-    <div class="foot3 mt10">
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_01.png" width="56" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_02.png" width="47" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_03.png" width="49" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_04.png" width="80" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_05.png" width="56" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_06.png" width="48" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_07.png" width="88" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_08.png" width="96" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_09.png" width="48" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_10.png" width="52" height="38" /></a>
-    </div>
-</div>
+<jsp:include page="../common/footer.jsp"/>
+
+<script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
+<script src="<%=request.getContextPath() %>/front/static/js/chengtuUI.js"></script>
+
+<script>
+
+
+//判断验证码是否正确
+function sso_verifycode1_callback(call){
+	$.ajax({
+		type: "POST",
+		url:  "<%=request.getContextPath()%>/common/checkVerifyCode.htm",
+		data: {
+			authenticationCode: this.value
+		},
+		dataType: "json",
+		success: function(response) {
+			if (response.success == "false") {
+				error_tip("#sso_verifycode1","验证码输入错误",":last");  
+			} else {
+				call();
+			}
+		}
+	});				
+}		
+		
+function loginSubmit(){
+	document.getElementById("loginform").submit();
+}
+</script>
+
+<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/form.validate.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/l_login.js"></script>
 </body>
 </html>

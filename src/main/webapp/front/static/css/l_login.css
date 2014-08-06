@@ -38,7 +38,7 @@ a.login_bg_prev:hover,a.login_bg_prev_active{background-position:-0px -120px}
 .login_v_pass{display:inline-block;width:15px;height:15px;background-position:0px -96px;margin-left:5px;position:relative;top:-4px;display:none}
 .login_error_tip{color:red;display:none}
 .login_v_error{display:inline-block;width:13px;height:15px;background-position:-16px -94px;margin-right:5px;vertical-align:top}
-.login_input_info{margin:0px;color:#c3c3c3;font-size:14px;position:absolute;top:12px;left:14px;}
+.login_input_info{margin:0px;color:#c3c3c3;font-size:14px;position:relative;top:-28px;left:17px;}
 input.login_input_color{border:1px solid #ffab36;-moz-box-shadow:0px 0px 4px #ffab36;-o-box-shadow:0px 0px 4px #ffab36;-webkit-box-shadow:0px 0px 4px #ffab36;box-shadow:0px 0px 4px #ffab36;}
 .login_wjmm{float:right;margin-right:46px;*position:relative;*top:2px}
 .login_mfzc{margin-left:4px;}
