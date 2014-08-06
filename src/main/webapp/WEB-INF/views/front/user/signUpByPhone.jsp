@@ -27,7 +27,7 @@
 				<div class="yhzcLB">
 					<ul>
 						<li>
-							<div class="yhzcLB_a"><span>*</span>您的手机号：</div><input name="mobilePhone" type="text" class="yhzcLB_b" />
+							<div class="yhzcLB_a"><span>*</span>您的手机号：</div><input id="sso_mobile" name="mobile" type="text" class="yhzcLB_b" />
 						</li>
 						<li>
 							<div class="yhzcLB_a"><span>*</span>用户名：</div><input id="sso_username" name="username" type="text" class="yhzcLB_b" />
@@ -39,10 +39,9 @@
 							<div class="yhzcLB_a"><span>*</span>确认密码：</div><input id="sso_againPassword" name="againPassword" type="password" class="yhzcLB_b" />
 						</li>
 						<li>
-							<div class="yhzcLB_a"><span>*</span>验证码：</div><input name="" type="text" class="yhzcLB_c" />
+							<div class="yhzcLB_a"><span>*</span>验证码：</div><input  id="sso_verifycode1" name="verifycode" type="text" class="yhzcLB_c" />
 							<div class="yhzcLB_d">
-								<img src="<%=request.getContextPath() %>/front/static/img/login_11.jpg" />
-								<a href="#">换一张</a>
+								<img id="image" src="<%=request.getContextPath() %>/common/genVerifyCode.htm" /><a href="#" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
 							</div>
 						</li>
 						<li class="">
@@ -88,24 +87,8 @@
 </div>
 </div>
 
-<div class="foot">
-    <div class="foot1">
-      <a href="#">关于我们</a> | <a href="#">网站地图</a> | <a href="#">酒店品牌</a> | <a href="#">酒店查询</a> | <a href="#">帮助中心</a> | <a href="#">友情链接</a> | <a href="#">诚聘英才</a> | <a href="#">旅游度假资质</a> | <a href="#">意见反馈</a> | <a href="#">广告业务</a> | <a href="#">用户体验平台</a>
-    </div>
-    <div class="foot2">Copyright © 2014 www.lvmama.com. 上海景域文化传播有限公司版权所有　沪ICP备13011172号-3　增值电信业务经营许可证编号：沪B2-20100030</div>
-    <div class="foot3 mt10">
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_01.png" width="56" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_02.png" width="47" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_03.png" width="49" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_04.png" width="80" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_05.png" width="56" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_06.png" width="48" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_07.png" width="88" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_08.png" width="96" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_09.png" width="48" height="38" /></a>
-       <a href="#"><img src="<%=request.getContextPath() %>/front/static/img/f_10.png" width="52" height="38" /></a>
-    </div>
-</div>
+<jsp:include page="../common/footer.jsp"/>
+
 <script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
 <script src="<%=request.getContextPath() %>/front/static/js/chengtuUI.js"></script>
 <script type="text/javascript">
@@ -140,33 +123,17 @@
           
           }		 
 		
-		function sso_email_b_callback(call){
-			$.ajax({
-				type: "GET",
-				url:  "<%=request.getContextPath()%>/user/checkEmailExisted.htm",
-				data: {
-					email: this.value
-				},
-				dataType: "json",
-				success: function(response) {
-					if (response.success == "false") {
-						error_tip("#sso_email_b","该Email地址已被注册，请更换其它地址",undefined,"reg_mtop");
-					} else {
-						call();
-					}
-				}
-			});
-		}
+		
 		function sso_username_callback(call){
 			$.ajax({
 				type: "POST",
-				url:  "http://login.lvmama.com/nsso/ajax/checkUniqueField.do",
+				url:  "<%=request.getContextPath()%>/user/checkUsernameExisted.htm",
 				data: {
 					userName: this.value
 				},
 				dataType: "json",
 				success: function(response) {
-					if (response.success == false) {
+					if (response.success == "false") {
 						error_tip("#sso_username","该用户名已被使用，请更换其他用户名");  
 					} else {
 						call();

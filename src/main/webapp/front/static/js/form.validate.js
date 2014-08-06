@@ -171,6 +171,7 @@ $(function(){
 			window.validate_pass && window.validate_pass();
 		});
 	});
+	
 	var lihide = $("#emailRegForm li.hide");
 	if(lihide.size()>0){
 		$("#sso_email_b").one("click",function(){

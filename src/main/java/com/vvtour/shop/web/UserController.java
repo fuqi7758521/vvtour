@@ -44,6 +44,9 @@ public class UserController extends BaseController {
 	//邮箱注册成功页面
 	private static final String USER_SIGN_UP_BY_EMAIL_SUCCESS = "front/user/signUpByEmailSuccess";
 	
+	//手机注册成功页面
+	private static final String USER_SIGN_UP_BY_MOBILE_SUCCESS = "front/user/signUpByMobileSuccess";
+	
 	//登录页面
 	private static final String USER_SIGN_IN = "front/user/signIn";
 	
@@ -89,16 +92,21 @@ public class UserController extends BaseController {
 	//注册
 	@RequestMapping("/user/signUp.htm")
 	public ModelAndView signUp(User user, HttpServletRequest request, HttpServletResponse response){
+		if(StringUtils.isEmpty(user.getUsername())){
+			return new ModelAndView("forword:/user/goSignUpByEmail.htm");
+		}
 		user.setPassword(MessageDigestUtil.getMD5(user.getPassword() + Constant.PASSWORD_SALT_KEY));
 		userService.addUser(user);
 		Map<String, String> result = new HashMap<String, String>();
 		if(StringUtils.isNotEmpty(user.getEmail())){
 			result.put("email", user.getEmail());
+			return new ModelAndView(USER_SIGN_UP_BY_EMAIL_SUCCESS,result);
 		}
 		if(StringUtils.isNotEmpty(user.getMobilePhone())){
 			result.put("mobile", user.getMobilePhone());
+			return new ModelAndView(USER_SIGN_UP_BY_MOBILE_SUCCESS,result);
 		}
-		return new ModelAndView(USER_SIGN_UP_BY_EMAIL_SUCCESS,result);
+		return null;
 		
 	}
 	
@@ -249,6 +257,25 @@ public class UserController extends BaseController {
 		}else{
 			result.put("success", "true");
 			result.put("msg", "用户名已存在，不可以注册");
+		}
+		return result;
+	}
+	
+	//判断所填手机号是否已经被注册
+	@RequestMapping("/user/checkMobileExisted.htm")
+	public @ResponseBody Map<String, String> checkMobileExisted(HttpServletRequest request, HttpServletResponse response){
+		String mobile = RequestUtil.getString(request, "mobile");
+		UserCriteria criteria = new UserCriteria();
+		criteria.setMobilePhone(mobile);
+		User user = userService.getUser(criteria);
+		
+		Map<String, String> result = new HashMap<String, String>();
+		if(user == null){
+			result.put("success", "false");
+			result.put("msg", "手机号不存在，可以注册");
+		}else{
+			result.put("success", "true");
+			result.put("msg", "手机号已存在，不可以注册");
 		}
 		return result;
 	}

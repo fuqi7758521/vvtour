@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -15,6 +17,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.vvtour.shop.utils.RequestUtil;
 
 @Controller
 public class VerifyCodeController {
@@ -110,5 +115,19 @@ public class VerifyCodeController {
 		ServletOutputStream sos = response.getOutputStream();
 		ImageIO.write(buffImg, "jpeg", sos);
 		sos.close();
+	}
+	
+	@RequestMapping("/common/checkVerifyCode.htm")
+	public @ResponseBody Map<String, String> checkVerifyCode(HttpServletRequest request,HttpServletResponse response){
+		String authenticationCode = RequestUtil.getString(request, "authenticationCode");
+		HttpSession session = request.getSession();
+		String validateCode = (String) session.getAttribute("validateCode");
+		Map<String, String> result = new HashMap<String, String>();
+		if(authenticationCode.equalsIgnoreCase(validateCode)){
+			result.put("success", "true");
+		}else{
+			result.put("success", "false");
+		}
+		return result;
 	}
 }
