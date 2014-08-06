@@ -26,12 +26,12 @@ public class User extends BaseEntity {
 
 	private String nickname;
 
-	private String mobilePhone;
-	
+	private String mobile;
+
 	private Integer validateMobilePhone;
 
 	private String email;
-	
+
 	private Integer validateEmail;
 
 	private String password;
@@ -72,12 +72,12 @@ public class User extends BaseEntity {
 		this.nickname = nickname;
 	}
 
-	public String getMobilePhone() {
-		return mobilePhone;
+	public String getMobile() {
+		return mobile;
 	}
 
-	public void setMobilePhone(String mobilePhone) {
-		this.mobilePhone = mobilePhone;
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 
 	public String getEmail() {
@@ -159,7 +159,5 @@ public class User extends BaseEntity {
 	public void setValidateEmail(Integer validateEmail) {
 		this.validateEmail = validateEmail;
 	}
-	
-	
 
 }

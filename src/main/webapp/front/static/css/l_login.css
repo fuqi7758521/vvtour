@@ -1,0 +1,374 @@
+body{padding:0px;margin:0px;font-size:12px;font-family:"ÀŒÃÂ",Arial}
+form{margin:0px;padding:0px;}
+i{font-style:normal}
+img{border:none}
+.fl{float:left;}
+.dn{display:none}
+ul,ol,p{list-style:none;margin:0px;padding:0px;}
+a{text-decoration:none;outline:none;}
+.login_main{width:970px;margin:0 auto;position:relative;}
+.login_top{height:70px;margin-top:0px;}
+img#code_img{display:inline}
+#allIframe .slideimg,.login_func{position:absolute;left:0px;top:0px;z-index:1;top:47px;}
+.login_func{background:url() left center no-repeat;height:416px;width:100%;}
+.login_bg2{background:url(http://pic.lvmama.com/img/new_v/ob_login/login_bg02.jpg) left center no-repeat}
+.login_bg3{background:url(http://pic.lvmama.com/img/new_v/ob_login/login_bg01.jpg) 8px -15px no-repeat}
+.login_input_main{width:352px;height:372px;border:1px solid #cecece;background-color:#ffffff;float:right;margin-right:45px;position:relative;z-index:2}
+.login_input_border{width:346px;height:366px;margin:1px 0 0 1px;border:2px solid #ededed;position:relative;}
+.login_sp{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/login_suprise.jpg)}
+.login_submit{display:inline-block;height:35px;width:104px;overflow:hidden;outline:none;cursor:pointer;background-position:0 -35px;}
+.login_submit:hover{background-position:0 0;}
+.login_input_ul{padding-left:40px;margin-top:20px;}
+.login_input_ul li{text-align:left;position:relative;}
+.login_input_title{height:53px;}
+.login_input_title h2{font-weight:normal;font-size:18px;color:#747474;margin:0px 0 8px;font-family:"Œ¢»Ì—≈∫⁄"}
+.login_text{-moz-box-shadow:0 0 4px #CECECE inset;-o-box-shadow:0 0 4px #CECECE inset;-webkit-box-shadow:0 0 4px #CECECE inset;box-shadow:0 0 4px #CECECE inset;
+padding-left:10px;width:245px;height:35px;line-height:34px;border:1px solid #cecece;font-size:16px;margin-bottom:14px;vertical-align:middle;*height:33px;*line-height:31px;color:#333333;font-family:"arial";font-weight:bold}
+.login_input_mm{margin:2px 0 12px;}
+.login_input_mm .login_input_checkbox{vertical-align:middle;position:relative;top:-2px}
+.login_input_submit{margin-bottom:15px;}
+.login_bg_change{text-align:center;margin:23px auto 10px;height:21px;width:150px;*margin-top:28px;}
+.login_bg_next,.login_bg_prev{float:left;width:21px;height:21px;font-size:0px;text-indent:-10000px;overflow:hidden;outline:none;vertical-align:top}
+.login_bg_next{background-position:-50px -95px}
+a.login_bg_next:hover,a.login_bg_next_active{background-position:-21px -120px}
+.login_bg_prev{background-position:-29px -95px}
+a.login_bg_prev:hover,a.login_bg_prev_active{background-position:-0px -120px}
+.login_bg_tip{margin:0 30px;position:relative;top:5px;color:#888888;float:left;}
+.login_bg_tip i{font-style:normal}
+.login_v_pass{display:inline-block;width:15px;height:15px;background-position:0px -96px;margin-left:5px;position:relative;top:-4px;display:none}
+.login_error_tip{color:red;display:none}
+.login_v_error{display:inline-block;width:13px;height:15px;background-position:-16px -94px;margin-right:5px;vertical-align:top}
+.login_input_info{margin:0px;color:#c3c3c3;font-size:14px;position:absolute;top:12px;left:14px;}
+input.login_input_color{border:1px solid #ffab36;-moz-box-shadow:0px 0px 4px #ffab36;-o-box-shadow:0px 0px 4px #ffab36;-webkit-box-shadow:0px 0px 4px #ffab36;box-shadow:0px 0px 4px #ffab36;}
+.login_wjmm{float:right;margin-right:46px;*position:relative;*top:2px}
+.login_mfzc{margin-left:4px;}
+.login_two_mm{margin-bottom:10px}
+.login_two_mm .zhfs_form_input{height:35px;line-height:35px;}
+
+.login_input_hr{border-top: 1px dashed #CCCCCC;width:90%;margin:0 auto;font-size:0px;}
+.login_other{height:20px;display:inline-block;margin-right:4px;}
+.login_other i{display:inline-block;height:20px;vertical-align:text-bottom;*vertical-align:middle;cursor:pointer;}
+.login_qq{background-position:0 -72px;width:20px;margin-left:6px;}
+.login_tx{background-position:-95px -71px;width:16px;margin-right:5px;}
+.login_bd{background-position:-112px -71px;width:16px;margin-right:5px;}
+.login_wb{background-position:-20px -72px;width:19px;}
+.login_zfb{background-position:-172px -72px;width:19px;margin-right:2px;}
+.login_sd{background-position:-58px -72px;width:18px;margin-right:2px;}
+.login_kx{background-position:-76px -72px;width:19px;margin-right:1px;}
+.login_input_bottom{color:#888888;padding-left:20px;}
+.login_input_bottom_1{margin:12px 0 0px 0}
+.login_input_bottom_2{margin:10px 0 3px}
+.login_input_bottom_3{margin:0px 0 0 0}
+
+
+.login_logo{float:left;font-size:18px;color:#707070;}
+.login_logo .text{position:relative;top:6px;font-weight:normal;font-family:"Œ¢»Ì—≈∫⁄"}
+.login_logo label.text{font-family:"ÀŒÃÂ"}
+.login_logo a{color:#949494;}
+.login_logo img{vertical-align:middle;}
+a.link_blue{color:#07c;text-decoration:none}
+a.link_blue:hover{color:#EE0066;text-decoration:underline;}
+.login_other a.link_blue{color:#888;}
+a.link_gray{color:#888888;}
+.text_gray{position: relative; top: 6px;color:#888}
+a.text:hover{text-decoration:none}
+a.link_gray:hover{text-decoration:underline;color:#EE0066}
+.login_hotline{position:relative;top:6px;float:right;display:block;width:175px;overflow:hidden;padding-top:15px; font:normal 20px/34px 'Microsoft YaHei'; color:#dd3388; background:url(http://pic.lvmama.com/img/new_v/ob_main/head_call_bg.gif) no-repeat right top;}
+.login_bottom{border-top:1px solid #ebebeb;text-align:center;color:#333333;margin-top:20px;padding-top:5px;}
+.login_bottom p{margin:10px 0}
+.login_mlr10{margin:0 10px}
+.login_autoComplete{width:256px;border:1px solid #4190db;position:absolute;background-color:#ffffff;z-index:99;top:109px;left:40px;display:none}
+.login_auto_ul em{font-style:normal}
+.login_auto_ul li.login_auto_title{font-weight:normal;line-height:30px;}
+.login_auto_ul li{line-height:22px;text-indent:5px;font-family:"Arial";cursor:pointer;font-weight:bold;color:#333}
+.login_auto_ul li.hover,.login_auto_ul li.curr{color:#ffffff;background-color:#6eb6fe}
+
+
+.zhfs_logo_top{margin-top:15px;}
+.zhfs_center{height:424px;border-top:2px solid #dedede}
+.zhfs_step{padding:22px 22px 0 0;height:20px;}
+.zhfs_step li{color:#888888;float:right;}
+.zhfs_step li.curr{color:#ff6403}
+.zhfs_step li i{display:inline-block;background-image:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg);background-position:-17px 0;width:17px;height:17px;line-height:17px;text-indent:5px;font-weight:bold;color:#ffffff;margin-right:3px;}
+.zhfs_step li.curr i{background-position:-0px 0;}
+.zhfs_jiao{display:inline-block;margin:0 10px;height:17px;width:17px;background:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg) -34px 0;vertical-align:top}
+.zhfs_step_text{position:relative;top:1px;*top:0px;}
+
+.zhfs_zhmm{margin-top:55px;}
+.zhfs_mm{margin:0 auto 15px auto;width:410px;}
+.zhfs_mm_btn{display:block;height:55px;cursor:pointer;}
+.zhfs_mm_btn_hover{background:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_zhover.jpg);}
+.zhfs_mm_btn_hover .zhfs_mm_title{color:#fd6500}
+.zhfs_email_cur{background:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg) 0 -17px;width:42px;height:43px;display:inline-block;margin:4px 0 0 25px}
+.zhfs_phone_cur{background:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg) -42px -17px;width:29px;height:44px;display:inline-block;margin:3px 7px 0 31px}
+.zhfs_mm_title{font-size:24px;font-family:"Œ¢»Ì—≈∫⁄";color:#666666;cursor:pointer;position:relative;top:-13px;left:40px;}
+.zhfs_mm_jiao{background:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg) -51px -0px;width:17px;height:17px;display:inline-block;position:relative;top:-13px;left:145px;}
+.zhfs_mm_btn_hover .zhfs_mm_jiao{display:none}
+.zhfs_mm_text{color:#bababa;display:block;text-indent:115px;line-height:25px;}
+.zhfs_t_left{font-weight:bold;font-size:14px;margin-top:-20px;padding-left:28px;}
+.zhfs_form{margin:55px 0 0 245px;}
+.zhfs_form li{margin-bottom:10px;}
+.yxzh_form li{margin-bottom:17px;}
+.zhfs_form_col{display:inline-block;width:55px;font-size:14px;}
+.zhfs_form_input{-moz-box-shadow:0 0 4px #CECECE inset;-o-box-shadow:0 0 4px #CECECE inset;-webkit-box-shadow:0 0 4px #CECECE inset;box-shadow:0 0 4px #CECECE inset;
+width:213px;height:29px;line-height:29px; padding-left:10px; border:1px solid #abc;font-size:15px;color:#333;font-family:"arial";font-weight:bold;vertical-align:middle;}
+a.zhfs_sj_submit{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg);background-position:0 -84px;display:inline-block;width:112px;height:35px;outline:none;margin-top:15px;}
+a.zhfs_sj_submit:hover{background-position:0 -119px;}
+
+.zhfs_info_s{border:1px solid #f8ab5d;cursor:pointer;background-color:#ffeecd;color:#fe6601;height:25px;line-height:25px;padding:0 10px;margin-left:55px;margin-bottom:10px;display:inline-block;
+-moz-border-radius:3px;-wekit-border-radius:3px;border-radius:3px;}
+.zhfs_state{color:#888888;display:inline;width:308px;}
+.zhfs_state i,.zhfs_v_error i,.zhfs_v_success i,.zhfs_success_s i{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg);vertical-align:text-top;margin-right:5px;}
+.zhfs_v_info i{background-position:-92px 0;display:inline-block;width:12px;height:12px;}
+.borderred{border:1px solid red;}
+.zhfs_v_error{color:red;}
+.zhfs_v_error i{background-position:-104px 0;display:inline-block;width:12px;height:12px;}
+.zhfs_v_success i{background-position:-68px 0;display:inline-block;width:12px;height:12px;}
+.zhfs_success_s{border:1px solid #7cc35d;background-color:#f2ffe3;color:#888888;display:inline-block;height:30px;line-height:30px;padding:0 10px;margin-left:55px;}
+.zhfs_success_s i{background-position:-80px 0;display:inline-block;width:12px;height:12px;}
+.zhfs_info_send{border:1px solid #e5e5e5;background-color:#f7f7f7;color:#888888;height:30px;line-height:30px;padding:0 10px;display:inline-block;_padding-top:5px;}
+a.zhfs_send_again{background:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg) 0 -60px;display:inline-block;width:116px;height:24px;color:#aba897;outline:none;text-align:center;line-height:24px;}
+a.zhfs_send_again:hover{color:#ABA897}
+
+
+.csmm_form_col{width:80px;text-align:right;font-size:14px;display:inline-block;padding-right:18px;}
+.yxzh_form .csmm_form_col{width:45px;}
+.csmm_form_value{font-size:15px;font-family:"arial";font-weight:bold;color:#333333;}
+a.csmm_sj_submit{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg);background-position:0 -154px;display:inline-block;width:99px;height:35px;outline:none}
+a.csmm_sj_submit:hover{background-position:-99px -154px;}
+
+
+
+.zhfs_sb{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg);background-repeat:no-repeat;}
+.zhfs_re{margin:65px 0 0 225px;}
+.zhfs_re_success{background-position:-71px -20px;display:inline-block;width:32px;height:32px;vertical-align:text-bottom;position:relative;top:6px;}
+.zhfs_re_error{background-position:-103px -20px;display:inline-block;width:32px;height:32px;vertical-align:text-bottom;position:relative;top:6px;}
+.zhfs_re_strong{font-size:14px;margin-left:10px;color:#000000;font-weight:bold;font-family:"arial"}
+.zhfs_line1,.zhfs_line2{padding-left:42px;margin:15px 0}
+.zhfs_re_login{background-position:-112px -127px;display:inline-block;width:76px;height:27px;}
+.zhfs_w99{width:89px;margin-right:5px;}
+#sso_verifycode{margin-right:5px;}
+.zhfs_yzm{vertical-align:top;}
+.zhfs_first{height:25px;}
+
+.zhfs_yj_line1{padding-left:42px;margin:15px 0;color:#888888}
+.zhfs_email_btn{display:inline-block;width:106px;height:27px;background-position:0 -189px;vertical-align:text-bottom;margin-right:10px}
+.zhfs_yj_hr{font-size:0px;border-top:1px solid #ededed;margin-left:40px;}
+input.w_xym{width:103px;}
+.validate_loading{position:relative;top:5px;left:5px}
+
+/*’“ªÿ” œ‰*/
+.sm_main{width:645px;margin:10px auto;}
+.sm_topline{border-top:3px solid #d30085;font-size:0px;}
+.sm_content{background-color:#f2f2f2;padding:8px;}
+.sm_hotline{position:relative;top:6px;float:right;display:block;width:175px;overflow:hidden;padding-top:15px; font:normal 20px/34px 'Microsoft YaHei'; color:#dd3388; background:url(http://pic.lvmama.com/img/new_v/ob_login/sm_email_tright.jpg) no-repeat right top;}
+.sm_bottom{border-top:1px solid #ebebeb;text-align:center;color:#333333;margin-top:20px;padding-top:5px;}
+.sm_top{height:70px;}
+.sm_logo{float:left;font-size:18px;color:#707070;}
+.sm_c_text{background-color:#ffffff;border:1px solid #d8d8d8;font-size:14px;padding:30px 10px 20px 40px;color:#565656}
+.sm_c_bottom{color:#888888;margin-top:15px;margin-bottom:20px;text-align:center;font-size:12px;line-height:20px;}
+.numstrong{font-weight:bold;color:#bd0059;font-size:16px;}
+.s01{margin-bottom:18px;}
+.s02{margin-bottom:20px;font-weight:bold;}
+.s03{margin-bottom:5px;}
+.sm_newpwd_btn{display:inline-block;width:112px;height:35px;background:url(http://pic.lvmama.com/img/new_v/ob_login/sm_email_btn.jpg);margin-bottom:3px;}
+.s04{margin:5px 0;color:#8f8f8f}
+.s05{font-weight:bold;margin-top:20px;margin-bottom:5px}
+.s06{line-height:16px;margin:3px 0 15px 0}
+.s07{margin-bottom:15px;}
+.s08{color:#919191;}
+.color888{color:#888888}
+.color333{color:#555555}
+.zhfs_link_email{display:inline-block;background-position:0 -189px;width:106px;height:27px;vertical-align:text-bottom;}
+.zhfs_strong_title{font-size:14px;font-weight:bold;margin:20px 0 0 30px;color:#333333}
+.zhfs_re_email{margin-top:30px;}
+.zhfs_bottom_email{border-top:1px solid #ededed;padding-top:10px;width:446px;margin-left:40px;margin-top:50px;}
+.zhfs_bottom_email p{color:#898989;line-height:25px;}
+
+/*◊¢≤·’À∫≈*/
+.reg_sb{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/login_suprise.jpg)}
+.register_center{border-top:2px solid #DEDEDE}
+.register_right{width:222px;float:right;margin-top:-60px;}
+.register_step{height:20px;padding:22px 0 0 35px;}
+.register_step li{color:#888888;float:left;}
+.register_form li.mb10{margin-bottom:0px;margin-top:10px;}
+.register_step li i{display:inline-block;background-image:url(http://pic.lvmama.com/img/new_v/ob_login/login_suprise.jpg);background-position:-62px -123px;width:17px;height:17px;line-height:16px;text-indent:5px;font-weight:bold;color:#ffffff;margin-right:3px;}
+.register_step li.curr i{background-position:-44px -123px;}
+.reg_step_text{color:#bbbbbb}
+.register_allStep{overflow:hidden;float:left;margin-left:70px;width:675px;_margin-left:35px;}
+.reg_sjyx_allStep{overflow:hidden;float:left;width:675px;}
+.register_stepWidth{width:1800px;}
+.register_form{margin:40px 0 0 0px;float:left;width:675px;}
+.register_form li{margin-bottom:18px;}
+.red{color:red;font-style:none}
+.w90{width:90px;}
+.w105{width:105px;}
+.w83{width:83px;*margin-left:7px;}
+.register_submit{display:inline-block;outline:none;width:130px; height:36px; background:url(http://pic.lvmama.com/img/new_v/newBtn_bg.gif) no-repeat 0 -410px; }
+.register_submit:hover{background-position:-144px -410px;}
+select.province{width:100px;margin-right:10px;border:1px solid #CECECE}
+select.city{width:90px;border:1px solid #CECECE}
+.register_tk{position:relative;top:2px;margin:0;display:none;}
+.register_r_b{border-bottom:1px dashed #cccccc;padding:0 0 8px 10px;display:block;color:#555555}
+.rrb_padding{padding:16px 0 16px 10px;}
+.rrb_fsize{font-size:14px;}
+.organge{font-style:normal;color:#ff6600;font-weight:bold;}
+.register_lw{display:inline-block;margin-right:5px;width:15px;height:15px;background-position:-73px -97px;}
+.register_login{display:inline-block;width:51px;height:23px;margin-bottom:-5px;margin-left:5px; background:url(http://pic.lvmama.com/img/new_v/newBtn_bg.gif) no-repeat 0 -375px; }
+.register_login:hover{background-position:-144px -375px;}
+.gray{color:#888}
+.rrb_padding .login_other{}
+.register_lh{line-height:25px;border-bottom:none;}
+.reg_clear{clear:both}
+.register_sjtext {color: #555555;font-family: arial;font-size: 15px;font-weight: bold;margin-right: 10px;vertical-align: top;}
+.register_yzm{margin-top:10px;}
+.register_yzm #yzm_send_ok{*margin-left:-12px;}
+a.mtopclear{margin-top:5px}
+textarea{resize: none;}
+.register_h2_title{margin:30px 0 0 34px;color:#f246a8;font-family:"Œ¢»Ì—≈∫⁄";font-size:20px;*margin-left:38px;background:url(http://pic.lvmama.com/img/new_v/ob_login/register_h2_title_bg.jpg) no-repeat left bottom;padding-bottom:6px;}
+/*◊¢≤·≥…π¶“≥√Ê*/
+.regc_sb{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/success_suprise.jpg);display:inline-block;}
+.regc_ul{padding-left:42px;margin-top:20px;}
+.regc_ul li{color:#888888;padding:6px 0}
+.reg_dian{width:6px;height:6px;background-position:-173px -23px;margin-right:5px;margin-bottom:2px;}
+.reg_li_middle{margin:15px 0}
+.regc_sy{width:100px;height:27px;background-position:0 -54px;margin-bottom:-3px;overflow:hidden;line-height:250px;}
+.regc_wdlmm{width:132px;height:27px;background-position:-101px -54px;margin:0 10px -3px 5px;}
+.regc_wdlmmckzh{width:153px;height:27px;background-position:-0px -157px;margin:0 10px -3px 5px;overflow:hidden;line-height:250px;}
+.regc_jgz{width:62px;height:22px;background-position:0 0;vertical-align:top}
+.regc_gzsl{width:47px;height:22px;background-position:-62px 0;text-indent:15px;line-height:22px;vertical-align:top}
+.regc_st{width:57px;height:23px;background-position:-109px 0;vertical-align:top}
+.regc_valign{position:relative;top:6px;color:#888}
+.regc_stsl{width:48px;height:23px;background-position:-166px 0;vertical-align:top;line-height:23px;text-align:center;color:#ff8d20;font-size:13px;font-family:"arial"}
+.regc_sina{width:20px;height:14px;background-position:-214px 0;vertical-align:top;margin-right:5px;}
+.regc_qq{width:14px;height:13px;background-position:-234px 0;vertical-align:top;margin-right:5px;}
+.regc_email{width:13px;height:10px;background-position:-248px 0;vertical-align:top;margin-right:5px;}
+.regc_ptop{margin-right:5px;position:relative;top:6px;}
+.regc_client{width:131px;height:31px;background-position:0 -23px;vertical-align:top;line-height:31px;text-indent:18px;position:relative;top:-3px;}
+a.regc_client:hover{text-decoration:none;color:#0066CC}
+.regc_mac{width:102px;height:38px;background-position:0px -81px;vertical-align:top;position:relative;top:-7px}
+a.regc_mac:hover{background-position:0px -119px;}
+.regc_android{width:102px;height:38px;background-position:-102px -81px;vertical-align:top;position:relative;top:-7px}
+a.regc_android:hover{background-position:-102px -119px;}
+.login_bottom_t{text-align:center;}
+.regc_bottom{margin-top:10px;}
+
+/*◊¢≤·“≥√Ê[ ÷ª˙°¢” œ‰]*/
+.regc_zc_title{height:73px;width:100%;}
+.regc_zc_title li.menu{width:106px;height:35px;margin-top:22px;;background-image:url(http://pic.lvmama.com/img/new_v/ob_login/regc_zc_title.jpg);float:left;margin-right:5px;color:#919191;text-align:center;font-family:"Œ¢»Ì—≈∫⁄";font-size:16px;
+line-height:32px;cursor:pointer;font-weight:bold;}
+.regc_zc_title li.curr{width:158px;height:45px;text-shadow:1px 1px 1px #555555;background-position:-106px 0px;color:#ffffff;position:relative;top:-6px;text-indent:25px;line-height:42px;font-weight:normal;font-size:17px;}
+.register_sj_form{margin:20px 0 0 30px;}
+.register_sj_form .reg_sj_info{margin-bottom:35px;}
+.reg_sj_info .zhfs_v_info,span.zhfs_v_widthauto{width:auto;}
+span.ml100{margin-left:108px;}
+.reg_zc_line{background:url(http://pic.lvmama.com/img/new_v/ob_login/regc_line.jpg);height:4px;font-size:0px;width:437px;margin-top:-4px;position:relative;top:-5px;z-index:-1;top:-16px;}
+.register_topfont{color:#888888;position:relative;float:left;top:35px;left:20px;}
+.reg_diandian{height:9px;margin-left:143px;}
+.reg_diandian li{width:6px;height:7px;float:left;background-position:-104px 0;vertical-align:middle;margin-left:20px;height:9px;font-size:0px;}
+.reg_diandian li.curr{width:8px;height:9px;background-position:-112px 0;position:relative;top:-1px;}
+.regc_zc_title li.menu_yx{background-position:-0px 0}
+.regc_zc_title li.menu_yx.curr{background-position:-264px 0}
+.regc_yx .zhfs_re_strong{margin-left:40px;}
+.regc_yx .reg_li_middle{margin-bottom:50px;}
+li.regc_yx_text{margin:20px 0;color:#555;line-height:2}
+li.regc_yx_text label{font-size:13px;}
+.zhfs_yx_lkyz{background-position:-106px -189px;display:inline-block;width:87px;height:28px;vertical-align:text-bottom;}
+.reg_validate_error{margin-bottom:60px;}
+.xy {width:405px;height:80px;overflow-x:hidden;overflow-y:auto;margin:10px 0 10px 122px;;border:1px solid #ccc;color:gray;
+line-height:1.2;padding:5px 0 0 5px;display:none;clear:both;font-size:12px;display:none;white-space:pre-wrap;word-wrap:break-word;}
+.input_border_red{border:1px solid red}
+.showBlock{display:block;font-family:"ÀŒÃÂ";}
+.marginclear,span.marginclear{margin:0px;}
+.hide{display:none}
+.reg_mtop{margin-top:-8px;position:relative;top:15px;display:inline-block}
+.reg_mtop .label_tip{width:270px;}
+span.reg_mtop i{vertical-align:top}
+.label_tip{width:auto; font-weight:500;display:inline;}
+.register_right_hyk{margin-top:-70px;}
+.hidden{visibility:hidden}
+.w_max{float:left;width:3000px;}
+.w_overflow{float:left;overflow:hidden;width:704px;position:relative;}
+
+/*—È÷§≥…π¶*/
+.vs_sb{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/email_sina_qq.jpg);display:inline-block;margin-right:10px;vertical-align:text-bottom;}
+.vs_email{background-position:0 0;width:31px;height:22px;}
+.vs_sina{background-position:-34px 0px;width:62px;height:22px;}
+.vs_qq{background-position:-96px 0px;width:57px;height:23px;}
+.vs_desc{padding:20px;}
+.vs_d_title{color:#BD0059;font-size:14px;margin:10px 0;}
+.vs_bottom_info{height:135px;}
+.vs_bottom_info li{width:288px;float:left;}
+.vs_clear{clear:both}
+.vs_bottom_title{color:#515151;line-height:22px;font-weight:bold}
+a.vs_bottom_title:hover{text-decoration:underline;}
+.vs_bottom_desc{color:#878787;line-height:18px;}
+.vs_bottom_line{border-bottom:1px dashed #BFBFBF;margin-bottom:12px;padding-bottom:10px;}
+.vs_02{display:block;height:50px;margin-bottom:15px;}
+.vs_03{font-weight:bold;margin-top:36px;line-height:22px;}
+.vs_alignright{text-align:right;}
+.vs_04{margin:0px 0 8px;display:inline-block}
+.vs_06{background-color:#efefef;padding:8px 0 5px 15px}
+.vs_06 a{margin-right:5px;}
+.vs_lh20{line-height:20px;}
+.vs_lh22{line-height:22px;}
+.vs_yzyx{background:url(http://pic.lvmama.com/img/new_v/ob_login/vs_yzyx.jpg);display:inline-block;width:137px;height:36px;vertical-align:text-bottom;}
+.vs_yzyx_text{position:relative;top:-8px;}
+.vs_jh_info{display:inline-block;line-height:22px;margin-top:-10px;position:relative;top:14px;}
+.vs_jh_label{font-weight:normal}
+.vs_fsize{font-size:15px;word-wrap:break-word;width:550px;display:inline-block;font-family:arial}
+.mt15{margin-top:15px;}
+.mr10{margin-right:10px;}
+.vs_acenter{}
+
+/*µØ≤„◊¢≤·*/
+.div_loginreg_main{width:auto;height:auto;position:absolute;padding-top:5px;float:left;overflow:hidden;line-height:normal}
+.div_loginreg_bg{background-color:#000000;filter:alpha(Opacity=20);opacity:0.2;position:absolute;width:100%;height:1000px;;left:0px;top:0px;z-index:0;}
+.div_loginreg_content{background-color:#fff;/*height:308px;*/width:660px;position:relative;z-index:1;/*padding:10px 0 10px 45px;*/margin:0 5px 5px;overflow:hidden;}
+.div_loginreg_yd{display:inline-block;width:132px;height:35px;background-position:0 -214px;}
+.div_loginreg_dl{display:inline-block;width:132px;height:35px;background-position:0 -249px;vertical-align:middle;margin-right:27px;}
+.div_loginreg_left{width:310px;float:left;border-right:1px solid #e9e9e9;height:308px;}
+.div_loginreg_right{float:left;margin-left:45px;width:300px;}
+.div_loginreg_pmargin1{margin-bottom:30px;}
+.div_loginreg_pmargin2{position:relative;zoom:1;width:255px;width:270px\9; margin:0 auto 12px;}
+.div_loginreg_pbottom1{margin:6px 20px;color:#888888;}
+.div_loginreg_title #login_error{position:absolute;left:20px;left:0px\9;top:33px;}
+.div_loginreg_title{_height:30px; margin-bottom:40px;text-indent:12px; font:bold 14px/2 "Microsoft YaHei"; background:#eee; border-top:2px solid #e37;}
+.div_loginreg_title .zhfs_state{font-family:"ÀŒÃÂ";*margin-top:8px;}
+
+.div_loginreg_pcolor{color:#888888;line-height:1.5;}
+.div_loginreg_input_hr{border-top:1px dashed #cccccc;font-size:0px;margin:40px 0 15px;position:relative;width:285px;left:-15px}
+.div_login_input_hr{border-top:1px dashed #cccccc;font-size:0px;margin:30px 15px 15px;}
+.div_loginreg_close{display:inline-block;position:absolute;right:5px;top:5px;width:18px;height:17px;background:url(http://pic.lvmama.com/img/common_pop/close.gif) no-repeat 5px 5px;}
+.div_login_right{margin-bottom:20px;}
+.div_login_content{width:333px;padding:0;}
+.div_loginreg_pmargin3{vertical-align:middle;margin-right:20px;}
+.clear_mr{margin-right:0px;}
+.clear_ml{margin-left:0px;}
+.clear_m{margin:0px;}
+.mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+.div_loginreg_clearp{padding:0px;margin-left:15px;*margin-left:11px;}
+.div_loginreg_3bottom{margin-left:130px;margin-top:35px;}
+.div_regsuccess_content{width:640px;}
+.div_loginreg_inputtext{display:block;position:absolute;left:13px;top:9px;font-size:12px;color:#aaa;cursor:text;line-height: 1.2;}
+.div_reg_just{display:inline-block;width:132px;height:35px;background-position:0 -284px}
+.div_reg_h3{color:#333333;margin-bottom:10px;}
+.div_reg_ulinfo{color:#898989;line-height:18px;margin-bottom:20px;}
+.div_reg_dian{display:inline-block;background-position:-104px -45px;width:3px;height:3px;margin-right:5px;vertical-align:text-top;position:relative;top:4px;}
+.div_reg_left{height:205px;}
+.div_reg_content{height:260px;}
+.div_reg_next{display:inline-block;background-position:0 -319px;width:112px;height:36px;}
+.div_reg_content_ui{height:400px;}
+ #terms_xx .label_tip{width:380px}
+ #terms_xx .zhfs_v_error{margin:5px 0 0 102px;width:400px;}
+ .mt0{margin-top:0px;}
+#image1{position:relative;top:7px;margin-right:3px;}
+#image{vertical-align:top}
+p.register_r_b_position{position: absolute; left: 171px; top: 110px; border-bottom: medium none;*top:128px;}
+label.w_sjzh{width:70px;margin-right:10px;text-align:right;}
+span.w_sjzh_xym{margin-left:80px;}
+.w_code{width:91px;margin-right:0px;}
+.ml-45{margin-left:-46px;}
+.div_loginreg_pmargin2 img{ vertical-align:middle;}
+.div_loginreg_main input{margin-bottom:0;}

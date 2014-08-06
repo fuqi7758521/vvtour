@@ -24,7 +24,7 @@ public class UserManagerImpl implements UserManager {
 		final static String USERNAME = "username";
 		final static String NICKNAME = "nickname";
 		final static String EMAIL = "email";
-		final static String MOBILE_PHONE = "mobilePhone";
+		final static String MOBILE = "mobile";
 		final static String STATUS = "status";
 		final static String PROVINCE = "province";
 		final static String CITY = "city";
@@ -94,9 +94,9 @@ public class UserManagerImpl implements UserManager {
 					criteria.getEmail()));
 		}
 
-		if (StringUtils.isNotEmpty(criteria.getMobilePhone())) {
-			query.addCriteria(Criteria.where(UserField.MOBILE_PHONE).is(
-					criteria.getMobilePhone()));
+		if (StringUtils.isNotEmpty(criteria.getMobile())) {
+			query.addCriteria(Criteria.where(UserField.MOBILE).is(
+					criteria.getMobile()));
 		}
 
 		if (StringUtils.isNotEmpty(criteria.getUsername())) {

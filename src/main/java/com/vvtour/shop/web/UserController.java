@@ -102,8 +102,8 @@ public class UserController extends BaseController {
 			result.put("email", user.getEmail());
 			return new ModelAndView(USER_SIGN_UP_BY_EMAIL_SUCCESS,result);
 		}
-		if(StringUtils.isNotEmpty(user.getMobilePhone())){
-			result.put("mobile", user.getMobilePhone());
+		if(StringUtils.isNotEmpty(user.getMobile())){
+			result.put("mobile", user.getMobile());
 			return new ModelAndView(USER_SIGN_UP_BY_MOBILE_SUCCESS,result);
 		}
 		return null;
@@ -139,7 +139,7 @@ public class UserController extends BaseController {
 		}
 		
 		criteria = new UserCriteria();
-		criteria.setMobilePhone(identity);
+		criteria.setMobile(identity);
 		user = userService.getUser(criteria);
 		if(user != null){
 			return new ModelAndView(INDEX);
@@ -266,7 +266,7 @@ public class UserController extends BaseController {
 	public @ResponseBody Map<String, String> checkMobileExisted(HttpServletRequest request, HttpServletResponse response){
 		String mobile = RequestUtil.getString(request, "mobile");
 		UserCriteria criteria = new UserCriteria();
-		criteria.setMobilePhone(mobile);
+		criteria.setMobile(mobile);
 		User user = userService.getUser(criteria);
 		
 		Map<String, String> result = new HashMap<String, String>();
@@ -303,7 +303,7 @@ public class UserController extends BaseController {
 		criteria.setUserId(user.getUserId());
 		criteria.setUsername(user.getUsername());
 		criteria.setEmail(user.getEmail());
-		criteria.setMobilePhone(user.getMobilePhone());
+		criteria.setMobile(user.getMobile());
 		criteria.setStatus(user.getStatus());
 		criteria.setPageModel(searchPagerModel);
 		SearchPagerModel<User> users = userService.getUsers(criteria);
