@@ -3,6 +3,7 @@ package com.vvtour.shop.entity;
 import java.util.Date;
 
 import com.usual.entity.BaseEntity;
+import com.vvtour.shop.utils.DateUtil;
 
 /**
  * 用户实体类
@@ -41,6 +42,8 @@ public class User extends BaseEntity {
 	private Integer status;
 
 	private Date lastLoginDate;
+	
+	private String lastLoginDateStr;
 
 	private Date birthday;
 
@@ -199,6 +202,18 @@ public class User extends BaseEntity {
 		this.dayOfBirthday = dayOfBirthday;
 	}
 
+	public String getLastLoginDateStr() {
+		if(this.lastLoginDate != null){
+			return DateUtil.formatDateTime(this.lastLoginDate, DateUtil.FORMAT_ONE);
+		}
+		return "";
+	}
+
+	public void setLastLoginDateStr(String lastLoginDateStr) {
+		this.lastLoginDateStr = lastLoginDateStr;
+	}
+
+	
 	
 
 }

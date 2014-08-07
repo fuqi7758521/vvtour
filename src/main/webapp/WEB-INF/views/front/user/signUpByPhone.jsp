@@ -103,7 +103,7 @@
 <script>
 function provinceLoaded(){
  	  for(var i = 0; i < document.getElementById("captialId").options.length;i++) {  
-    if (document.getElementById("captialId").options[i].value == "310000"){                
+    if (document.getElementById("captialId").options[i].value == "110000"){                
       document.getElementById("captialId").options[i].selected ="true";
       break; 
     }
@@ -113,7 +113,7 @@ function provinceLoaded(){
 		
 function cityLoaded(){
     for(var i = 0; i < document.getElementById("cityId").options.length;i++) {  
-	if (document.getElementById("cityId").options[i].value == '310000')
+	if (document.getElementById("cityId").options[i].value == '110000')
        {                
 	    document.getElementById("cityId").options[i].selected ="true"; 
                         break;

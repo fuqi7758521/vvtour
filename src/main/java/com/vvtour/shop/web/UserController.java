@@ -1,5 +1,6 @@
 package com.vvtour.shop.web;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +29,6 @@ import com.vvtour.shop.utils.PropUtil;
 import com.vvtour.shop.utils.RequestUtil;
 import com.vvtour.shop.service.UserService;
 import com.vvtour.shop.Constant;
-import com.vvtour.shop.utils.JsonUtil;
 
 /**
  * 用户controller
@@ -36,7 +36,7 @@ import com.vvtour.shop.utils.JsonUtil;
  * @date 2014-08-02 16:34
  */
 @Controller
-public class UserController extends BaseController {
+public class UserController extends BaseController implements Constant{
 	
 	private final static Logger logger = Logger.getLogger(UserController.class);
 
@@ -107,11 +107,14 @@ public class UserController extends BaseController {
 			return new ModelAndView("forword:/user/goSignUpByEmail.htm");
 		}
 		user.setPassword(MessageDigestUtil.getMD5(user.getPassword() + Constant.PASSWORD_SALT_KEY));
-		user.setSex(Constant.SEX_MALE);
+		user.setStatus(USER_STATUS_NORMAL);
 		userService.addUser(user);
+		AcsUtil.addLoginUserToSession(request, user);
+		updateSignInTime(user.getUserId());
 		Map<String, String> result = new HashMap<String, String>();
 		if(StringUtils.isNotEmpty(user.getEmail())){
 			result.put("email", user.getEmail());
+			sendVerifyEmailByThread(user);
 			return new ModelAndView(USER_SIGN_UP_BY_EMAIL_SUCCESS,result);
 		}
 		if(StringUtils.isNotEmpty(user.getMobile())){
@@ -144,6 +147,7 @@ public class UserController extends BaseController {
 		User user = userService.getUser(criteria);
 		if(user != null){
 			AcsUtil.addLoginUserToSession(request, user);
+			updateSignInTime(user.getUserId());
 			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
 		}
 		
@@ -153,6 +157,7 @@ public class UserController extends BaseController {
 		user = userService.getUser(criteria);
 		if(user != null){
 			AcsUtil.addLoginUserToSession(request, user);
+			updateSignInTime(user.getUserId());
 			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
 		}
 		
@@ -162,10 +167,18 @@ public class UserController extends BaseController {
 		user = userService.getUser(criteria);
 		if(user != null){
 			AcsUtil.addLoginUserToSession(request, user);
+			updateSignInTime(user.getUserId());
 			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
 		}
 		return new ModelAndView("redirect:/user/goSignIn.htm");
 		
+	}
+	//更新最新登录时间
+	private void updateSignInTime(String userId){
+		User userTmp = new User();
+		userTmp.setUserId(userId);
+		userTmp.setLastLoginDate(new Date());
+		userService.updateUser(userTmp);
 	}
 	
 	//退出
@@ -296,7 +309,13 @@ public class UserController extends BaseController {
 			return result;
 		}
 		
+		sendVerifyEmailByThread(loginUser);
 		
+		result.put("msg", "请登录您的邮箱，点击验证链接进行验证！");
+		return result;
+	}
+
+	private void sendVerifyEmailByThread(final User loginUser) {
 		class SendVerifyEmailThread extends Thread{
 
 			@Override
@@ -317,9 +336,6 @@ public class UserController extends BaseController {
 		}
 		Thread emailThread = new SendVerifyEmailThread();
 		emailThread.start();
-		
-		result.put("msg", "请登录您的邮箱，点击验证链接进行验证！");
-		return result;
 	}
 	
 	//验证邮箱
@@ -419,7 +435,7 @@ public class UserController extends BaseController {
 	}
 	
 	//判断所填邮箱是否已经被注册
-	@RequestMapping("/user/checkEmailExisted.htm.htm")
+	@RequestMapping("/user/checkEmailExisted.htm")
 	public @ResponseBody Map<String, String> checkEmailExisted(HttpServletRequest request, HttpServletResponse response){
 		String email = RequestUtil.getString(request, "email");
 		UserCriteria criteria = new UserCriteria();
@@ -480,30 +496,25 @@ public class UserController extends BaseController {
 	
 	
 	//后台管理中用户详情页
-	private static final String ADMIN_USER_DETAIL = "admin/user/detail.jsp";
+	private static final String ADMIN_USER_DETAIL = "admin/user/detail";
 	
 	//用户列表页
-	private static final String ADMIN_USER_LIST = "admin/user/list.jsp";
+	private static final String ADMIN_USER_LIST = "admin/user/list";
 	
 	//用户每页显示数量
-	private static final Integer ADMIN_USER_LIST_PAGESIZE = 20;
+	private static final Integer ADMIN_USER_LIST_PAGESIZE = 10;
 	
 	@RequestMapping("/admin/user/list.htm")
-	public ModelAndView getUserList(User user, HttpServletRequest request, HttpServletResponse response){
-		
+	public ModelAndView getUserList(UserCriteria criteria, HttpServletRequest request, HttpServletResponse response){
+		if(criteria.getStatus() == null){
+			criteria.setStatus(USER_STATUS_NORMAL);
+		}
 		Integer pageNum=RequestUtil.getInteger(request, "pageNum");
-		UserCriteria criteria = new UserCriteria();
 		SearchPagerModel<User> searchPagerModel = new SearchPagerModel<User>(null == pageNum ? 1 : pageNum, ADMIN_USER_LIST_PAGESIZE);
-		
-		criteria.setUserId(user.getUserId());
-		criteria.setUsername(user.getUsername());
-		criteria.setEmail(user.getEmail());
-		criteria.setMobile(user.getMobile());
-		criteria.setStatus(user.getStatus());
 		criteria.setPageModel(searchPagerModel);
 		SearchPagerModel<User> users = userService.getUsers(criteria);
 		request.setAttribute("users", users);
-		return new ModelAndView(ADMIN_USER_DETAIL);
+		return new ModelAndView(ADMIN_USER_LIST);
 		
 	}
 	
@@ -516,21 +527,23 @@ public class UserController extends BaseController {
 			User user = userService.getUser(userId);
 			request.setAttribute("user", user);
 		}
-		return new ModelAndView(USER_DETAIL);
+		return new ModelAndView(ADMIN_USER_DETAIL);
 		
 	}
 	
 	
 	//修改用户状态,包括： 删除用户，屏蔽用户，恢复用户为正常状态
 	@RequestMapping("/admin/user/modifyStatus.htm")
-	public ModelAndView modifyUserStatus(HttpServletRequest request, HttpServletResponse response){
+	public @ResponseBody Map<String, String> modifyUserStatus(HttpServletRequest request, HttpServletResponse response){
+		Map<String, String> result = new HashMap<String, String>();
 		String userId = RequestUtil.getString(request, "userId");
 		Integer status = RequestUtil.getInteger(request, "status");
 		User to = new User();
 		to.setUserId(userId);
 		to.setStatus(status);
 		userService.updateUser(to);
-		return new ModelAndView(Constant.JSON_VIEW, Constant.JSON_ROOT, JsonUtil.getOkStatusMsg(null));
+		result.put("msg", "操作成功");
+		return result;
 	}
 	
 }
