@@ -313,6 +313,7 @@
 
 .zhmmB{ clear:both; width:360px; height:auto; margin:0 auto;}
 .zhmmB_z{ float:left; padding:50px 0px 50px 0px;}
+.zhmmB_s{ float:left; padding:50px 0px 50px 0px;}
 .zhmmB_n{ float:left; width:360px; height:auto; padding:10px 0px 0px 0px;}
 .zhmmB_a{ float:left; width:42px; height:42px; padding:0px 40px 0px 0px;}
 .zhmmB_b{ float:left; width:278px; line-height:42px;}
@@ -321,8 +322,13 @@
 .zhmmB_b a{ color:#b9b9b9;}
 
 .zhmmB_z ul{ float:left; width:360px; height:auto;}
+.zhmmB_s ul{ float:left; width:600px; height:auto;}
 .zhmmB_z ul li{ float:left; width:360px; height:auto; padding:0px 0px 15px 0px;}
+.zhmmB_s ul li{ float:left; width:600px; height:auto; padding:0px 0px 15px 0px;}
 .zhmmB_z ul li span{ float:left; width:55px; height:33px; line-height:33px;}
+.zhmmB_s ul li p{ float:left; width:55px; height:33px; line-height:33px;display:inline;}
+.zhmmB_s ul li div{ float:left; width:100px; height:33px; line-height:33px;display:inline;}
+.zhmmB_s ul li span{ float:left; width:250px; height:33px; line-height:33px;}
 .zhmmB_za{ float:left; background-image:url(../img/yhzc_05.jpg); width:220px; height:33px; background-repeat:no-repeat; line-height:33px; border:0px; padding:0px 0px 0px 5px;}
 .zhmmB_zb{ float:left; background-image:url(../img/yhzc_07.jpg); width:96px; height:33px; background-repeat:no-repeat; line-height:33px; border:0px; padding:0px 0px 0px 5px;}
 .zhmmB_zc{ float:left; line-height:33px;}

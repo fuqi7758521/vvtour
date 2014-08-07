@@ -44,7 +44,7 @@
 						</div>
 						<div class="loginB_bc">
 							<input id="loginBtn" name="" type="image" src="<%=request.getContextPath() %>/front/static/img/login_15.jpg" />
-							<span><a href="<%=request.getContextPath() %>/user/goFindPassword.htm">忘记密码?</a></span>
+							<span style="position: absolute; margin-left: 1px;"><a href="<%=request.getContextPath() %>/user/goFindPassword.htm">忘记密码?</a></span>
 						</div>
 					</div>
 					</form>

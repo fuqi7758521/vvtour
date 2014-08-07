@@ -27,17 +27,23 @@
 				</ul>
 			</div>
 			<div class="zhmmB">
-				<div class="zhmmB_z">
+				<div class="zhmmB_s">
 					<ul>
 						<form id="findPasswordForm" method="post" action="<%=request.getContextPath() %>/user/findPasswordByEmail.htm">
-							<li><span>Email</span><input id="sso_email_c" name="email" type="text" class="zhmmB_za"/></li>
-							<li><span>验证码</span><input id="sso_verifycode1" type="text" class="zhmmB_zb"/>
+							<li>
+								<p>Email</p>
+								<input id="sso_email_c" name="email" type="text" class="zhmmB_za"/>
+							</li>
+							<li>
+								<p>验证码</p>
+								<input id="sso_verifycode1" type="text" class="zhmmB_zb"/>
 								<div class="zhmmB_zc">
 									<img id="image" src="<%=request.getContextPath() %>/common/genVerifyCode.htm" />
 									<a href="javascript:;" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
 								</div>
 							</li>
-							<li><span></span>
+							<li>
+							<span style="width:55px"></span>
 							<a href="javascript:;" id="submitBtn" class="submit"></a>
 							<%-- <input id="submitBtn" type="image" src="<%=request.getContextPath() %>/front/static/img/zhmm_06.jpg"/> --%>
 							</li>
