@@ -145,7 +145,7 @@ public class UserController extends BaseController implements Constant{
 		criteria.setPassword(password);
 		criteria.setUsername(identity);
 		User user = userService.getUser(criteria);
-		if(user != null){
+		if(user != null && user.getStatus().equals(USER_STATUS_NORMAL)){
 			AcsUtil.addLoginUserToSession(request, user);
 			updateSignInTime(user.getUserId());
 			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
@@ -155,7 +155,7 @@ public class UserController extends BaseController implements Constant{
 		criteria.setEmail(identity);
 		criteria.setPassword(password);
 		user = userService.getUser(criteria);
-		if(user != null){
+		if(user != null && user.getStatus().equals(USER_STATUS_NORMAL)){
 			AcsUtil.addLoginUserToSession(request, user);
 			updateSignInTime(user.getUserId());
 			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
@@ -165,7 +165,7 @@ public class UserController extends BaseController implements Constant{
 		criteria.setMobile(identity);
 		criteria.setPassword(password);
 		user = userService.getUser(criteria);
-		if(user != null){
+		if(user != null && user.getStatus().equals(USER_STATUS_NORMAL)){
 			AcsUtil.addLoginUserToSession(request, user);
 			updateSignInTime(user.getUserId());
 			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
