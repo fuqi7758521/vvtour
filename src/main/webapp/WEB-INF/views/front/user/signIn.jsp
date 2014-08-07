@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -43,7 +44,7 @@
 						</div>
 						<div class="loginB_bc">
 							<input id="loginBtn" name="" type="image" src="<%=request.getContextPath() %>/front/static/img/login_15.jpg" />
-							<a href="#">忘记密码</a>
+							<a href="<%=request.getContextPath() %>/user/goFindPassword.htm">忘记密码</a>
 						</div>
 					</div>
 					</form>
@@ -73,9 +74,14 @@
 
 <script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
 <script src="<%=request.getContextPath() %>/front/static/js/chengtuUI.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/l_login.js"></script>
+<script src="<%=request.getContextPath() %>/front/static/js/l_login.js"></script>
 
 <script>
+
+function refreshCheckCode(s) {
+    var elt = document.getElementById(s);
+    elt.src = elt.src + "?_=" + (new Date).getTime();
+}
 
 //判断验证码是否正确
 function sso_verifycode1_callback(call){

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,8 +28,14 @@
 					<div class="grzxA">
 						<div class="grzxA_a"><strong>${user.username }</strong>,欢迎来到诚途！</div>
 						<div class="grzxA_b">
-							<span>登录邮箱：11020***@qq.com(已验证)</span>  <span>手机号：未绑定</span>
-							<input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/grzx_08.jpg" />
+							<span>登录邮箱：${user.email}(<c:if test="${user.validateEmail==1 }">已验证</c:if><c:if test="${user.validateEmail==null || user.validateEmail==0}" >未验证</c:if>)</span>  
+							<c:if test="${user.validateMobilePhone==1 }">
+								<span>手机号：已绑定</span>
+							</c:if>
+							<c:if test="${user.validateMobilePhone==null || user.validateMobilePhone==0 }">
+								<span>手机号：未绑定</span>
+								<input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/grzx_08.jpg" />
+							</c:if>
 						</div>
 					</div>
 					<div class="grzxB">
@@ -47,7 +54,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="grzxR"><img src="img/grzx_05.jpg" /></div>
+				<div class="grzxR"><img src="<%=request.getContextPath() %>/front/static/img/grzx_05.jpg" /></div>
 			</div>
 			<div class="jqdd">
 				<div class="jqddA">

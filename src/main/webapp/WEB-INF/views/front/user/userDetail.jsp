@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>用户-个人资料页面</title>
+<title>我的个人资料-诚途旅游网</title>
 <link href="<%=request.getContextPath() %>/front/static/css/common.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath() %>/front/static/css/style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -15,7 +15,7 @@
 <div class="container">
 <div class="w1000">
 	<div class="nav">
-		<a href="#">我的驴妈妈</a> > <a href="#">我的信息</a>
+		<a href="#">我的诚途</a> > <a href="#">我的信息</a>
 	</div>
 	
 	<div class="content">
@@ -33,18 +33,20 @@
 					<div class="grzlB_n">
 						<div class="grzlB_a">*用户名：</div>
 						<div class="grzlB_b">
-							<input name="username" type="text" value="${user.username}" class="grzlB_ba"/>
-							<a href="#">修改</a>
-							<span>(用户名只能修改一次)</span>
+							<input name="" type="text" value="${user.username}" class="grzlB_ba"/>
+							<span>(用户名不能修改)</span>
 						</div>
 					</div>
 					<div class="grzlB_n">
 						<div class="grzlB_a">*EMAIL：</div>
 						<div class="grzlB_b">
-							<input name="email" type="text" class="grzlB_ba" value="${user.email }"/>
-							<a href="#">修改</a>
-							<a href="#">解绑</a>
-							<span>已验证</span>
+							<input id="email" name="email" type="text" class="grzlB_ba" value="${user.email }"/>
+							<a href="javascript:;" onclick="modifyEmail()">修改</a>
+							<c:if test="${user.validateEmail == null or  user.validateEmail == 0}"><span>未验证</span></c:if>
+							<c:if test="${user.validateEmail != null and  user.validateEmail == 1}">
+								<a href="javascript:;" onclick="removeEmailBind()">解绑</a>
+								<span>已验证</span>
+							</c:if>
 						</div>
 					</div>
 					<div class="grzlB_n">
@@ -79,14 +81,23 @@
 					<div class="grzlB_n">
 						<div class="grzlB_a">生日：</div>
 						<div class="grzlB_b">
-							<select name="" style="width:80px;">
+							<select name="yearOfBirthday" style="width:80px;">
 								<option>年</option>
+								<c:forEach var="y" begin="1900" end="2030" step="1">
+									<option <c:if test="${user.yearOfBirthday == y }">selected</c:if> value="${y }">${y }</option>
+								</c:forEach>
 							</select>
-							<select name="" style="width:50px;">
+							<select name="monthOfBirthday" style="width:50px;">
 								<option>月</option>
+								<c:forEach var="m" begin="1" end="12" step="1">
+									<option <c:if test="${user.monthOfBirthday == m }">selected</c:if> value="${m }">${m }</option>
+								</c:forEach>
 							</select>
-							<select name="" style="width:50px;">
+							<select name="dayOfBirthday" style="width:50px;">
 								<option>日</option>
+								<c:forEach var="d" begin="1" end="31" step="1">
+									<option <c:if test="${user.dayOfBirthday == d }">selected</c:if> value="${d }">${d }</option>
+								</c:forEach>
 							</select>
 						</div>
 					</div>
@@ -191,6 +202,20 @@ function cityLoaded(){
   
 }					
 
+function modifyEmail(){
+	var email = $("#email").val();
+	var url = "<%=request.getContextPath() %>/user/updateUserEmail.htm";
+	$.post(url,{email:email},function(result){
+		alert(result.msg);
+	});
+}
+
+function removeEmailBind(){
+	var url = "<%=request.getContextPath() %>/user/removeEmailBind.htm";
+	$.post(url,{},function(result){
+		alert(result.msg);
+	});
+}
 		
 
 </script>

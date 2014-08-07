@@ -57,7 +57,7 @@
 	function init(){
 		//$("#allIframe").append("<div id='pixed1' style='display:none;width:970px;height:415px;position:absolute;left:0px;top:47px;z-index:1;background-color:#fff;opacity:0;filter:alpha(Opacity=0)'></div>");
 		
-		resizeY();
+		//resizeY();
 		$("#loginName").val($getCookie("r_username")).keyup();
 		if($getCookie("r_username")){
 			$("#password").val("").focus()

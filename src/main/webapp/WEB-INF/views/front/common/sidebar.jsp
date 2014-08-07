@@ -4,7 +4,7 @@
 <div class="left">
 			<div class="leftA">
 				<div class="leftA_a"><a href="#"><img src="<%=request.getContextPath() %>/front/static/img/grzx_03.jpg" /></a></div>
-				<div class="leftA_b"><a href="#">编辑我的资料</a></div>
+				<div class="leftA_b"><a href="<%=request.getContextPath() %>/user/goUserDetail.htm">编辑我的资料</a></div>
 			</div>
 			<div class="leftB">
 				<ul>

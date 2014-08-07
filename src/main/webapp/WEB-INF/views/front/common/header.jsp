@@ -11,7 +11,7 @@
       
          <ul class="topr">
           <c:if test='${user != null}'>
-	           <li class="r01"><a href="#" class="hide">我的诚途</a>
+	           <li class="r01"><a href="<%=request.getContextPath() %>/user/goUserInfoCenter.htm" class="hide">我的诚途</a>
 	               <ul>
 	                  <li><a href="#">我的订单</a></li>
 	                  <li><a href="#">我的积分</a></li>

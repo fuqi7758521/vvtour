@@ -31,6 +31,10 @@ public class UserManagerImpl implements UserManager {
 		final static String CITY = "city";
 		final static String SEX = "sex";
 		final static String PASSWORD = "password";
+		final static String BIRTHDAY_YEAR = "yearOfBirthday";
+		final static String BIRTHDAY_MONTH = "monthOfBirthday";
+		final static String BIRTHDAY_DAY = "dayOfBirthday";
+		final static String VALIDATE_EMAIL = "validateEmail";
 	}
 
 	@Override
@@ -84,6 +88,18 @@ public class UserManagerImpl implements UserManager {
 		}
 		if (StringUtils.isNotEmpty(to.getRealname())){
 			update.set(UserField.REALNAME, to.getRealname());
+		}
+		if (to.getYearOfBirthday() != null){
+			update.set(UserField.BIRTHDAY_YEAR, to.getYearOfBirthday());
+		}
+		if (to.getMonthOfBirthday() != null){
+			update.set(UserField.BIRTHDAY_MONTH, to.getMonthOfBirthday());
+		}
+		if (to.getDayOfBirthday() != null){
+			update.set(UserField.BIRTHDAY_DAY, to.getDayOfBirthday());
+		}
+		if (to.getValidateEmail() != null){
+			update.set(UserField.VALIDATE_EMAIL, to.getValidateEmail());
 		}
 		userDao.editUser(query, update);
 	}

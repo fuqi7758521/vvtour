@@ -50,6 +50,11 @@ public class User extends BaseEntity {
 
 	private String city;
 
+	// 生日的年月日
+	private Integer yearOfBirthday;
+	private Integer monthOfBirthday;
+	private Integer dayOfBirthday;
+
 	public String getUserId() {
 		return userId;
 	}
@@ -169,5 +174,31 @@ public class User extends BaseEntity {
 	public void setRealname(String realname) {
 		this.realname = realname;
 	}
+
+	public Integer getYearOfBirthday() {
+		return yearOfBirthday;
+	}
+
+	public void setYearOfBirthday(Integer yearOfBirthday) {
+		this.yearOfBirthday = yearOfBirthday;
+	}
+
+	public Integer getMonthOfBirthday() {
+		return monthOfBirthday;
+	}
+
+	public void setMonthOfBirthday(Integer monthOfBirthday) {
+		this.monthOfBirthday = monthOfBirthday;
+	}
+
+	public Integer getDayOfBirthday() {
+		return dayOfBirthday;
+	}
+
+	public void setDayOfBirthday(Integer dayOfBirthday) {
+		this.dayOfBirthday = dayOfBirthday;
+	}
+
+	
 
 }

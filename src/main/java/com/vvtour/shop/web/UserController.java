@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -74,7 +73,7 @@ public class UserController extends BaseController {
 	private static final String USER_FIND_PASSWORD = "front/user/findPassword";
 	
 	//邮箱找回密码页面
-	private static final String USER_FIND_PASSWORD_BY_EMAIL = "findPasswordByEmail";
+	private static final String USER_FIND_PASSWORD_BY_EMAIL = "front/user/findPasswordByEmail";
 	
 	//手机号找回密码页面
 	private static final String USER_FIND_PASSWORD_BY_MOBILE_PHONE = "";
@@ -138,7 +137,7 @@ public class UserController extends BaseController {
 		User user = userService.getUser(criteria);
 		if(user != null){
 			AcsUtil.addLoginUserToSession(request, user);
-			return new ModelAndView(USER_INFO_CENTER);
+			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
 		}
 		
 		criteria = new UserCriteria();
@@ -147,7 +146,7 @@ public class UserController extends BaseController {
 		user = userService.getUser(criteria);
 		if(user != null){
 			AcsUtil.addLoginUserToSession(request, user);
-			return new ModelAndView(USER_INFO_CENTER);
+			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
 		}
 		
 		criteria = new UserCriteria();
@@ -156,7 +155,7 @@ public class UserController extends BaseController {
 		user = userService.getUser(criteria);
 		if(user != null){
 			AcsUtil.addLoginUserToSession(request, user);
-			return new ModelAndView(USER_INFO_CENTER);
+			return new ModelAndView("redirect:/user/goUserInfoCenter.htm");
 		}
 		return new ModelAndView("redirect:/user/goSignIn.htm");
 		
@@ -229,53 +228,100 @@ public class UserController extends BaseController {
 		}
 		user.setUserId(loginUser.getUserId());
 		userService.updateUser(user);
-		return new ModelAndView(USER_DETAIL);
+		AcsUtil.reAddLoginUserToSession(request,loginUser.getUserId(),userService);
+		return new ModelAndView("redirect:/user/goUserDetail.htm");
+	}
+	
+	//更新个人邮箱
+	@RequestMapping( value = "/user/updateUserEmail.htm", produces = {"application/json;charset=UTF-8"})
+	public @ResponseBody Map<String, String> updateUserEmail(HttpServletRequest request, HttpServletResponse response){
+		User loginUser = AcsUtil.getLoginUser(request);
+		Map<String, String> result = new HashMap<String, String>();
+		if(loginUser == null){
+			result.put("msg", "登录已超时，请重新登录");
+			return result;
+		}
+		User user = new User();
+		user.setUserId(loginUser.getUserId());
+		String email = RequestUtil.getString(request, "email");
+		//查询修改的email,是否被其他用户占用
+		UserCriteria criteria = new UserCriteria();
+		criteria.setEmail(email);
+		User userTmp = userService.getUser(criteria);
+		if(userTmp != null && !userTmp.getUserId().equals(loginUser.getUserId())){
+			
+			result.put("msg", "该邮箱已被占用，请选择其他邮箱");
+			return result;
+		}
+		user.setEmail(email);
+		userService.updateUser(user);
+		result.put("msg", "修改成功");
+		AcsUtil.reAddLoginUserToSession(request,loginUser.getUserId(),userService);
+		return result;
+	}
+	
+	//解除注册邮箱绑定
+	@RequestMapping( value = "/user/removeEmailBind.htm", produces = {"application/json;charset=UTF-8"})
+	public @ResponseBody Map<String, String> removeEmailBind(HttpServletRequest request, HttpServletResponse response){
+		User loginUser = AcsUtil.getLoginUser(request);
+		Map<String, String> result = new HashMap<String, String>();
+		if(loginUser == null){
+			result.put("msg", "登录已超时，请重新登录");
+			return result;
+		}
+		User user = new User();
+		user.setUserId(loginUser.getUserId());
+		user.setValidateEmail(Constant.EMAIL_UNCHECKED);
+		userService.updateUser(user);
+		result.put("msg", "解除绑定");
+		AcsUtil.reAddLoginUserToSession(request,loginUser.getUserId(),userService);
+		return result;
 	}
 	
 	//进入邮箱验证页面
-	@RequestMapping("/user/goVerifyEmail")
+	@RequestMapping("/user/goVerifyEmail.htm")
 	public ModelAndView goVerifyEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_VERIFY_EMAIL);
 	}
 	
 	//验证邮箱
-	@RequestMapping("/user/verifyEmail")
+	@RequestMapping("/user/verifyEmail.htm")
 	public ModelAndView verifyEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView();
 	}
 	
 	//找回密码
-	@RequestMapping("/user/goFindPassword")
+	@RequestMapping("/user/goFindPassword.htm")
 	public ModelAndView goFindPassword(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_FIND_PASSWORD);
 	}
 	
 	//进入通过邮箱找回密码页面
-	@RequestMapping("/user/goFindPasswordByEmail")
+	@RequestMapping("/user/goFindPasswordByEmail.htm")
 	public ModelAndView goFindPasswordByEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_FIND_PASSWORD_BY_EMAIL);
 	}
 	
 	//发送邮件，在邮件里面有新的密码
-	@RequestMapping("/user/findPasswordByEmail")
+	@RequestMapping("/user/findPasswordByEmail.htm")
 	public ModelAndView findPasswordByEmail(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView();
 	}
 	
 	//进入通过手机找回密码页面
-	@RequestMapping("/user/goFindPasswordByPhone")
+	@RequestMapping("/user/goFindPasswordByPhone.htm")
 	public ModelAndView goFindPasswordByPone(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView(USER_FIND_PASSWORD_BY_MOBILE_PHONE);
 	}
 	
 	//通过手机找回密码页面
-	@RequestMapping("/user/findPasswordByPhone")
+	@RequestMapping("/user/findPasswordByPhone.htm")
 	public ModelAndView findPasswordByPone(HttpServletRequest request, HttpServletResponse response){
 		return new ModelAndView();
 	}
 	
 	//判断所填邮箱是否已经被注册
-	@RequestMapping("/user/checkEmailExisted.htm")
+	@RequestMapping("/user/checkEmailExisted.htm.htm")
 	public @ResponseBody Map<String, String> checkEmailExisted(HttpServletRequest request, HttpServletResponse response){
 		String email = RequestUtil.getString(request, "email");
 		UserCriteria criteria = new UserCriteria();
@@ -344,7 +390,7 @@ public class UserController extends BaseController {
 	//用户每页显示数量
 	private static final Integer ADMIN_USER_LIST_PAGESIZE = 20;
 	
-	@RequestMapping("/admin/user/list")
+	@RequestMapping("/admin/user/list.htm")
 	public ModelAndView getUserList(User user, HttpServletRequest request, HttpServletResponse response){
 		
 		Integer pageNum=RequestUtil.getInteger(request, "pageNum");
@@ -364,7 +410,7 @@ public class UserController extends BaseController {
 	}
 	
 	//用户详情页面
-	@RequestMapping("/admin/user/goEdit")
+	@RequestMapping("/admin/user/goEdit.htm")
 	public ModelAndView goEdit(HttpServletRequest request, HttpServletResponse response){
 		
 		String userId = RequestUtil.getString(request, "userId");
@@ -378,7 +424,7 @@ public class UserController extends BaseController {
 	
 	
 	//修改用户状态,包括： 删除用户，屏蔽用户，恢复用户为正常状态
-	@RequestMapping("/admin/user/modifyStatus")
+	@RequestMapping("/admin/user/modifyStatus.htm")
 	public ModelAndView modifyUserStatus(HttpServletRequest request, HttpServletResponse response){
 		String userId = RequestUtil.getString(request, "userId");
 		Integer status = RequestUtil.getInteger(request, "status");

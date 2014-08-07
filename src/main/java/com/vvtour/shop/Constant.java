@@ -13,5 +13,10 @@ public interface Constant {
 	String PASSWORD_SALT_KEY = "Salt.chengtu.com.2014";
 	
 	Integer SEX_MALE = 1;
+	
 	Integer SEX_FEMALE = 0;
+	
+	Integer EMAIL_CHECKED = 1;
+	
+	Integer EMAIL_UNCHECKED = 0;
 }
