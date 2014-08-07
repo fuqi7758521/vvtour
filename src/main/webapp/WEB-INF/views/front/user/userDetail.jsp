@@ -15,7 +15,7 @@
 <div class="container">
 <div class="w1000">
 	<div class="nav">
-		<a href="#">我的诚途</a> > <a href="#">我的信息</a>
+		<a href="<%=request.getContextPath() %>/user/goUserInfoCenter.htm">我的诚途</a> > <a href="#">我的信息</a>
 	</div>
 	
 	<div class="content">
@@ -42,7 +42,8 @@
 						<div class="grzlB_b">
 							<input id="email" name="email" type="text" class="grzlB_ba" value="${user.email }"/>
 							<a href="javascript:;" onclick="modifyEmail()">修改</a>
-							<c:if test="${user.validateEmail == null or  user.validateEmail == 0}"><span>未验证</span></c:if>
+							<c:if test="${user.validateEmail == null or  user.validateEmail == 0}">
+							<span><a href="javascript:;" onclick="sendVerifyEmail()">未验证</a></span></c:if>
 							<c:if test="${user.validateEmail != null and  user.validateEmail == 1}">
 								<a href="javascript:;" onclick="removeEmailBind()">解绑</a>
 								<span>已验证</span>
@@ -216,7 +217,13 @@ function removeEmailBind(){
 		alert(result.msg);
 	});
 }
-		
+
+function sendVerifyEmail(){
+	var url = "<%=request.getContextPath() %>/user/sendVerifyEmail.htm";
+	$.post(url,{},function(result){
+		alert(result.msg)
+	});
+}		
 
 </script>
 

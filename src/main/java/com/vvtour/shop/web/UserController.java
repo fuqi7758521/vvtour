@@ -18,9 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 import com.usual.web.BaseController;
 import com.vvtour.shop.criteria.SearchPagerModel;
 import com.vvtour.shop.criteria.UserCriteria;
+import com.vvtour.shop.entity.Email;
 import com.vvtour.shop.entity.User;
 import com.vvtour.shop.utils.AcsUtil;
+import com.vvtour.shop.utils.EmailUtil;
 import com.vvtour.shop.utils.MessageDigestUtil;
+import com.vvtour.shop.utils.PasswordGeneratorUtil;
 import com.vvtour.shop.utils.RequestUtil;
 import com.vvtour.shop.service.UserService;
 import com.vvtour.shop.Constant;
@@ -74,6 +77,9 @@ public class UserController extends BaseController {
 	
 	//邮箱找回密码页面
 	private static final String USER_FIND_PASSWORD_BY_EMAIL = "front/user/findPasswordByEmail";
+	
+	//邮箱找回密码结果
+	private static final String USER_FIND_PASSWORD_BY_EMAIL_RESULT = "front/user/findPasswordByEmailResult";
 	
 	//手机号找回密码页面
 	private static final String USER_FIND_PASSWORD_BY_MOBILE_PHONE = "";
@@ -254,6 +260,7 @@ public class UserController extends BaseController {
 			return result;
 		}
 		user.setEmail(email);
+		user.setValidateEmail(Constant.EMAIL_UNCHECKED);
 		userService.updateUser(user);
 		result.put("msg", "修改成功");
 		AcsUtil.reAddLoginUserToSession(request,loginUser.getUserId(),userService);
@@ -278,16 +285,72 @@ public class UserController extends BaseController {
 		return result;
 	}
 	
-	//进入邮箱验证页面
-	@RequestMapping("/user/goVerifyEmail.htm")
-	public ModelAndView goVerifyEmail(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView(USER_VERIFY_EMAIL);
+	//发送验证邮箱邮件
+	@RequestMapping(value = "/user/sendVerifyEmail.htm" , produces = {"application/json;charset=UTF-8"})
+	public @ResponseBody Map<String, String> verifyEmail(HttpServletRequest request, HttpServletResponse response){
+		final User loginUser = AcsUtil.getLoginUser(request);
+		Map<String, String> result = new HashMap<String, String>();
+		if(loginUser == null){
+			result.put("msg", "登录已超时，请重新登录");
+			return result;
+		}
+		
+		
+		class SendVerifyEmailThread extends Thread{
+
+			@Override
+			public void run() {
+				Email email = new Email();
+				email.setTitle("诚途旅游网----验证邮箱");
+				email.setContent("请点击该链接地址，进行邮箱验证： " + Constant.DOMAIN + "/user/verifyEmail.htm?userId=" + loginUser.getUserId() + "&email=" +
+				loginUser.getEmail());
+				email.setTo(loginUser.getEmail());
+				email.setFrom(Constant.EMAIL_SEND_SERVER);
+				try {
+					EmailUtil.sendEmail(email);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+			
+		}
+		Thread emailThread = new SendVerifyEmailThread();
+		emailThread.start();
+		
+		result.put("msg", "请登录您的邮箱，点击验证链接进行验证！");
+		return result;
 	}
 	
 	//验证邮箱
 	@RequestMapping("/user/verifyEmail.htm")
-	public ModelAndView verifyEmail(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView();
+	public ModelAndView verifyEmail(HttpServletRequest request){
+		String userId = RequestUtil.getString(request, "userId");
+		String email = RequestUtil.getString(request, "email");
+		User to = new User();
+		to.setEmail(email);
+		to.setUserId(userId);
+		to.setValidateEmail(Constant.EMAIL_CHECKED);
+		userService.updateUser(to);
+		AcsUtil.reAddLoginUserToSession(request, userId, userService);
+		return new ModelAndView("redirect:/user/goUserDetail.htm");
+	}
+	
+	//邮箱解除绑定
+	@RequestMapping("/user/removeEmailBind.htm")
+	public @ResponseBody Map<String, String> removeEmailBind(HttpServletRequest request){
+		 User loginUser = AcsUtil.getLoginUser(request);
+		Map<String, String> result = new HashMap<String, String>();
+		if(loginUser == null){
+			result.put("msg", "登录已超时，请重新登录");
+			return result;
+		}
+		User to = new User();
+		to.setUserId(loginUser.getUserId());
+		to.setValidateEmail(Constant.EMAIL_UNCHECKED);
+		userService.updateUser(to);
+		AcsUtil.reAddLoginUserToSession(request, loginUser.getUserId(), userService);
+		result.put("msg", "邮箱已经解除绑定");
+		return result;
 	}
 	
 	//找回密码
@@ -305,7 +368,37 @@ public class UserController extends BaseController {
 	//发送邮件，在邮件里面有新的密码
 	@RequestMapping("/user/findPasswordByEmail.htm")
 	public ModelAndView findPasswordByEmail(HttpServletRequest request, HttpServletResponse response){
-		return new ModelAndView();
+		Map<String, String> result = new HashMap<String, String>();
+		String email = RequestUtil.getString(request, "email");
+		UserCriteria criteria = new UserCriteria();
+		criteria.setEmail(email);
+		User user = userService.getUser(criteria);
+		if(Constant.EMAIL_UNCHECKED.equals(user.getValidateEmail())){
+			//邮箱没有验证，不能找回密码
+			result.put("msg", "邮箱没有验证，不能找回密码");
+			return new ModelAndView(USER_FIND_PASSWORD_BY_EMAIL_RESULT, result);
+		}
+		Email mail = new Email();
+		mail.setTo(email);
+		mail.setFrom(Constant.EMAIL_SEND_SERVER);
+		mail.setTitle("您的诚途帐号密码找回");
+		String newPwd = PasswordGeneratorUtil.getRandomPassword();
+		mail.setContent("您的诚途帐号新密码为：" + newPwd + ", 请及时修改成你自己熟悉的密码！");
+		
+		//更新密码
+		String md5Pwd = MessageDigestUtil.getMD5(newPwd + Constant.PASSWORD_SALT_KEY);
+		User userTmp = new User();
+		userTmp.setUserId(user.getUserId());
+		userTmp.setPassword(md5Pwd);
+		userService.updateUser(userTmp);
+		try {
+			//发送新密码邮件
+			EmailUtil.sendEmail(mail);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		result.put("msg", "密码已经发往你的邮箱，请查收！");
+		return new ModelAndView(USER_FIND_PASSWORD_BY_EMAIL_RESULT,result);
 	}
 	
 	//进入通过手机找回密码页面
@@ -436,4 +529,6 @@ public class UserController extends BaseController {
 	}
 	
 }
+
+
 

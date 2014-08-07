@@ -40,11 +40,11 @@
 						<div class="loginB_bb">
 							<input  id="sso_verifycode1" name="authenticationCode" type="text" class="yhzcLB_c" />
 							<span><img id="image" src="<%=request.getContextPath() %>/common/genVerifyCode.htm" />
-							<a href="#" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
+							<a href="javascript:;" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
 						</div>
 						<div class="loginB_bc">
 							<input id="loginBtn" name="" type="image" src="<%=request.getContextPath() %>/front/static/img/login_15.jpg" />
-							<a href="<%=request.getContextPath() %>/user/goFindPassword.htm">忘记密码</a>
+							<span><a href="<%=request.getContextPath() %>/user/goFindPassword.htm">忘记密码</a></span>
 						</div>
 					</div>
 					</form>

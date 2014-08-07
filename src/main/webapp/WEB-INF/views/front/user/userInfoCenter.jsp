@@ -15,7 +15,7 @@
 <div class="container">
 <div class="w1000">
 	<div class="nav">
-		<a href="#">我的诚途</a> > <a href="#">我的信息</a>
+		<a href="<%=request.getContextPath() %>/user/goUserInfoCenter.htm">我的诚途</a> > <a href="#">我的信息</a>
 	</div>
 	
 	<div class="content">
@@ -28,7 +28,8 @@
 					<div class="grzxA">
 						<div class="grzxA_a"><strong>${user.username }</strong>,欢迎来到诚途！</div>
 						<div class="grzxA_b">
-							<span>登录邮箱：${user.email}(<c:if test="${user.validateEmail==1 }">已验证</c:if><c:if test="${user.validateEmail==null || user.validateEmail==0}" >未验证</c:if>)</span>  
+							<span>登录邮箱：${user.email}<c:if test="${user.validateEmail==1 }">(已验证)</c:if>
+							<c:if test="${user.validateEmail==null || user.validateEmail==0}" ><a href="javascript:;" onclick="sendVerifyEmail()">(未验证)</a></c:if></span>  
 							<c:if test="${user.validateMobilePhone==1 }">
 								<span>手机号：已绑定</span>
 							</c:if>
@@ -134,5 +135,14 @@
 </div>
 
 <jsp:include page="../common/footer.jsp"/>
+<script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
+<script >
+function sendVerifyEmail(){
+	var url = "<%=request.getContextPath() %>/user/sendVerifyEmail.htm";
+	$.post(url,{},function(result){
+		alert(result)
+	});
+}
+</script>
 </body>
 </html>

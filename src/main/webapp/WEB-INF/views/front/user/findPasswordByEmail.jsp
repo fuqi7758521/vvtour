@@ -28,13 +28,16 @@
 			<div class="zhmmB">
 				<div class="zhmmB_z">
 					<ul>
-						<li><span>Email</span><input name="" type="text" class="zhmmB_za"/></li>
-						<li><span>验证码</span><input name="" type="text" class="zhmmB_zb"/>
-							<div class="zhmmB_zc">
-								<img src="<%=request.getContextPath() %>/front/static/img/login_11.jpg" /><a href="#">换一张</a>
-							</div>
-						</li>
-						<li><span></span><input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/zhmm_06.jpg"/></li>
+						<form id="findPasswordForm" method="post" action="<%=request.getContextPath() %>/user/findPasswordByEmail.htm">
+							<li><span>Email</span><input id="sso_email_b" name="email" type="text" class="zhmmB_za"/></li>
+							<li><span>验证码</span><input id="sso_verifycode1"  type="text" class="zhmmB_zb"/>
+								<div class="zhmmB_zc">
+									<img id="image" src="<%=request.getContextPath() %>/common/genVerifyCode.htm" />
+									<a href="javascript:;" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
+								</div>
+							</li>
+							<li><span></span><input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/zhmm_06.jpg"/></li>
+						</form>
 					</ul>
 				</div>
 			</div>
@@ -45,5 +48,38 @@
 </div>
 
 <jsp:include page="../common/footer.jsp"/>
+<script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
+<script src="<%=request.getContextPath() %>/front/static/js/chengtuUI.js"></script>
+<script>
+
+function refreshCheckCode(s) {
+    var elt = document.getElementById(s);
+    elt.src = elt.src + "?_=" + (new Date).getTime();
+}
+
+//判断验证码是否正确
+function sso_verifycode1_callback(call){
+	$.ajax({
+		type: "POST",
+		url:  "<%=request.getContextPath()%>/common/checkVerifyCode.htm",
+		data: {
+			authenticationCode: this.value
+		},
+		dataType: "json",
+		success: function(response) {
+			if (response.success == "false") {
+				error_tip("#sso_verifycode1","验证码输入错误",":last");  
+			} else {
+				call();
+			}
+		}
+	});				
+}		
+function validate_pass(){
+
+	$("#findPasswordForm").submit();
+}
+</script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/form.validate.js"></script>
 </body>
 </html>
