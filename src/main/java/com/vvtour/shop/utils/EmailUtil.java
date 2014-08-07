@@ -18,7 +18,7 @@ public class EmailUtil {
         // 发送服务器需要身份验证  
         props.setProperty("mail.smtp.auth", "true");  
         // 设置邮件服务器主机名  
-        props.setProperty("mail.host", "mail.yunyoyo.cn");  
+        props.setProperty("mail.host", PropUtil.get("email.send.server"));  
         // 发送邮件协议名称  
         props.setProperty("mail.transport.protocol", "smtp");  
           
@@ -35,7 +35,7 @@ public class EmailUtil {
           
         Transport transport = session.getTransport();  
         // 连接邮件服务器  
-        transport.connect(Constant.EMAIL_SEND_USERNAME, Constant.EMAIL_SEND_PASSWORD);  
+        transport.connect(PropUtil.get("email.send.username"), PropUtil.get("email.send.password"));  
         // 发送邮件  
         transport.sendMessage(msg, new Address[] {new InternetAddress(mail.getTo())});  
         // 关闭连接  

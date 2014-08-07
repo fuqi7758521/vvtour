@@ -20,11 +20,4 @@ public interface Constant {
 	
 	Integer EMAIL_UNCHECKED = 0;
 	
-	String EMAIL_SEND_USERNAME = "qi.fu@yunyoyo.cn";
-	
-	String EMAIL_SEND_PASSWORD =  "911911";
-	
-	String EMAIL_SEND_SERVER = "qi.fu@yunyoyo.cn";
-
-	String DOMAIN = "http://127.0.0.1:8080/vvtour";
 }

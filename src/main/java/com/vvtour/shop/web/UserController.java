@@ -24,6 +24,7 @@ import com.vvtour.shop.utils.AcsUtil;
 import com.vvtour.shop.utils.EmailUtil;
 import com.vvtour.shop.utils.MessageDigestUtil;
 import com.vvtour.shop.utils.PasswordGeneratorUtil;
+import com.vvtour.shop.utils.PropUtil;
 import com.vvtour.shop.utils.RequestUtil;
 import com.vvtour.shop.service.UserService;
 import com.vvtour.shop.Constant;
@@ -302,10 +303,10 @@ public class UserController extends BaseController {
 			public void run() {
 				Email email = new Email();
 				email.setTitle("诚途旅游网----验证邮箱");
-				email.setContent("请点击该链接地址，进行邮箱验证： " + Constant.DOMAIN + "/user/verifyEmail.htm?userId=" + loginUser.getUserId() + "&email=" +
+				email.setContent("请点击该链接地址，进行邮箱验证： " + PropUtil.get("domain") + "/user/verifyEmail.htm?userId=" + loginUser.getUserId() + "&email=" +
 				loginUser.getEmail());
 				email.setTo(loginUser.getEmail());
-				email.setFrom(Constant.EMAIL_SEND_SERVER);
+				email.setFrom(PropUtil.get("email.send.from"));
 				try {
 					EmailUtil.sendEmail(email);
 				} catch (Exception e) {
@@ -384,7 +385,7 @@ public class UserController extends BaseController {
 		}
 		Email mail = new Email();
 		mail.setTo(email);
-		mail.setFrom(Constant.EMAIL_SEND_SERVER);
+		mail.setFrom(PropUtil.get("email.send.from"));
 		mail.setTitle("您的诚途帐号密码找回");
 		String newPwd = PasswordGeneratorUtil.getRandomPassword();
 		mail.setContent("您的诚途帐号新密码为：" + newPwd + ", 请及时修改成你自己熟悉的密码！");
