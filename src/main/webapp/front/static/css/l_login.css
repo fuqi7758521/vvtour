@@ -11,11 +11,11 @@ a{text-decoration:none;outline:none;}
 img#code_img{display:inline}
 #allIframe .slideimg,.login_func{position:absolute;left:0px;top:0px;z-index:1;top:47px;}
 .login_func{background:url() left center no-repeat;height:416px;width:100%;}
-.login_bg2{background:url(http://pic.lvmama.com/img/new_v/ob_login/login_bg02.jpg) left center no-repeat}
+.login_bg2{background:url(../img/new_v/ob_login/login_bg02.jpg) left center no-repeat}
 .login_bg3{background:url(http://pic.lvmama.com/img/new_v/ob_login/login_bg01.jpg) 8px -15px no-repeat}
 .login_input_main{width:352px;height:372px;border:1px solid #cecece;background-color:#ffffff;float:right;margin-right:45px;position:relative;z-index:2}
 .login_input_border{width:346px;height:366px;margin:1px 0 0 1px;border:2px solid #ededed;position:relative;}
-.login_sp{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/login_suprise.jpg)}
+.login_sp{background-image:url(../img/new_v/ob_login/login_suprise.jpg)}
 .login_submit{display:inline-block;height:35px;width:104px;overflow:hidden;outline:none;cursor:pointer;background-position:0 -35px;}
 .login_submit:hover{background-position:0 0;}
 .login_input_ul{padding-left:40px;margin-top:20px;}
@@ -117,7 +117,7 @@ a.zhfs_sj_submit:hover{background-position:0 -119px;}
 
 .zhfs_info_s{border:1px solid #f8ab5d;cursor:pointer;background-color:#ffeecd;color:#fe6601;height:25px;line-height:25px;padding:0 10px;margin-left:55px;margin-bottom:10px;display:inline-block;
 -moz-border-radius:3px;-wekit-border-radius:3px;border-radius:3px;}
-.zhfs_state{color:#888888;display:inline;width:308px;}
+.zhfs_state{color:#888888;display:inline;width:700px;}
 .zhfs_state i,.zhfs_v_error i,.zhfs_v_success i,.zhfs_success_s i{background-image:url(http://pic.lvmama.com/img/new_v/ob_login/zhfs_suprise.jpg);vertical-align:text-top;margin-right:5px;}
 .zhfs_v_info i{background-position:-92px 0;display:inline-block;width:12px;height:12px;}
 .borderred{border:1px solid red;}
@@ -372,3 +372,10 @@ span.w_sjzh_xym{margin-left:80px;}
 .ml-45{margin-left:-46px;}
 .div_loginreg_pmargin2 img{ vertical-align:middle;}
 .div_loginreg_main input{margin-bottom:0;}
+.submit{
+	background: url("http://pic.lvmama.com/img/new_v/newBtn_bg.gif") no-repeat scroll 0 -534px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 36px;
+    outline: medium none;
+    width: 130px;
+    }

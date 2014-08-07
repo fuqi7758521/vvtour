@@ -373,7 +373,11 @@ public class UserController extends BaseController {
 		UserCriteria criteria = new UserCriteria();
 		criteria.setEmail(email);
 		User user = userService.getUser(criteria);
-		if(Constant.EMAIL_UNCHECKED.equals(user.getValidateEmail())){
+		if(user == null ){
+			result.put("msg", "该邮箱不存在，请填写正确的邮箱！");
+			return new ModelAndView(USER_FIND_PASSWORD_BY_EMAIL_RESULT, result);
+		}
+		if(user != null && Constant.EMAIL_UNCHECKED.equals(user.getValidateEmail())){
 			//邮箱没有验证，不能找回密码
 			result.put("msg", "邮箱没有验证，不能找回密码");
 			return new ModelAndView(USER_FIND_PASSWORD_BY_EMAIL_RESULT, result);

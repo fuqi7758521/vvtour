@@ -86,7 +86,7 @@ $(function(){
 			yahooEmail: "您输入的电子邮箱域名不能注册成功，请更换其它邮箱"
 		},
 		sso_email_c : {
-			active : "请填写常用的Email地址",
+			active : "请填写注册所用Email地址",
 			empty : "email地址不能为空",
 			email : "请输入有效的Email地址"
 		},
