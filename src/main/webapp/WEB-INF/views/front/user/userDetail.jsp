@@ -174,17 +174,18 @@
 	
 </div>
 </div>
+<input type="hidden" id="myProvince" value="${user.province }"/>
+<input type="hidden" id="myCity" value="${user.city }"/>
 
 <jsp:include page="../common/footer.jsp"/>
-
-
 <script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
 <script src="<%=request.getContextPath() %>/front/static/js/chengtuUI.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/form.validate.js"></script>
 
 <script>
-function provinceLoaded(){
+ function provinceLoaded(){
  	  for(var i = 0; i < document.getElementById("captialId").options.length;i++) {  
-    if (document.getElementById("captialId").options[i].value == "310000"){                
+    if (document.getElementById("captialId").options[i].value == $("#myProvince").val()){                
       document.getElementById("captialId").options[i].selected ="true";
       break; 
     }
@@ -194,14 +195,14 @@ function provinceLoaded(){
 		
 function cityLoaded(){
     for(var i = 0; i < document.getElementById("cityId").options.length;i++) {  
-	if (document.getElementById("cityId").options[i].value == '310000')
+	if (document.getElementById("cityId").options[i].value == $("#myCity").val())
        {                
 	    document.getElementById("cityId").options[i].selected ="true"; 
                         break;
        }
     }
   
-}					
+}	
 
 function modifyEmail(){
 	var email = $("#email").val();
@@ -224,9 +225,7 @@ function sendVerifyEmail(){
 		alert(result.msg)
 	});
 }		
-
 </script>
 
-<script type="text/javascript" src="<%=request.getContextPath() %>/front/static/js/form.validate.js"></script>
 </body>
 </html>
