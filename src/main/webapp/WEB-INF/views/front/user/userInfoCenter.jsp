@@ -140,7 +140,7 @@
 function sendVerifyEmail(){
 	var url = "<%=request.getContextPath() %>/user/sendVerifyEmail.htm";
 	$.post(url,{},function(result){
-		alert(result)
+		alert(result.msg);
 	});
 }
 </script>

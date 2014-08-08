@@ -1,6 +1,6 @@
 (function($,d){
 	var ui = {
-		site : "http://127.0.0.1:8080/vvtour/front/static/",
+		site : "http://223.4.201.22:8080/vvtour/front/static/",
 		js : function(temp1,url,callback){
 			var var_key = url.substring(url.lastIndexOf("/")+1);
 			var_key = var_key.indexOf("?")>0?var_key.substring(0,var_key.indexOf("?")):var_key;
