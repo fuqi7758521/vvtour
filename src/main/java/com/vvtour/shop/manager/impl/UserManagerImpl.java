@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
@@ -36,16 +37,17 @@ public class UserManagerImpl implements UserManager {
 		final static String BIRTHDAY_DAY = "dayOfBirthday";
 		final static String VALIDATE_EMAIL = "validateEmail";
 		final static String LAST_LOGIN_DATE = "lastLoginDate";
+		final static String SIGN_UP_DATE = "signUpDate";
 	}
 
 	@Override
 	public Long getUserCount(UserCriteria criteria) {
-		return userDao.queryUserCount(getQuery(criteria));
+		return userDao.queryUserCount(getQuery(criteria,false));
 	}
 
 	@Override
 	public List<User> getUsers(UserCriteria criteria) {
-		return userDao.queryUserList(getQuery(criteria));
+		return userDao.queryUserList(getQuery(criteria,true));
 	}
 
 	@Override
@@ -112,7 +114,7 @@ public class UserManagerImpl implements UserManager {
 	}
 
 	// 获取查询条件
-	private Query getQuery(UserCriteria criteria) {
+	private Query getQuery(UserCriteria criteria, boolean needPage) {
 		Query query = new Query();
 
 		if (StringUtils.isNotEmpty(criteria.getUserId())) {
@@ -143,12 +145,19 @@ public class UserManagerImpl implements UserManager {
 		if(StringUtils.isNotEmpty(criteria.getPassword())){
 			query.addCriteria(Criteria.where(UserField.PASSWORD).is(criteria.getPassword()));
 		}
+		if(needPage){
+			if(criteria.getPageModel() != null){
+				query.skip(criteria.getPageModel().getOffset());
+				query.limit(criteria.getPageModel().getPageSize());
+			}
+		}
+		query.with(new Sort(Sort.Direction.DESC, UserField.SIGN_UP_DATE));
 
 		return query;
 	}
 
 	@Override
 	public User getUser(UserCriteria criteria) {
-		return userDao.queryUser(getQuery(criteria));
+		return userDao.queryUser(getQuery(criteria,false));
 	}
 }

@@ -74,7 +74,7 @@
 }
 
 .title_h2{
-	background:url(../images/s_ico.jpg) no-repeat left center;
+	background:url(<%=request.getContextPath() %>/backend_static/images/s_ico.jpg) no-repeat left center;
 	padding:10px 0px 10px 30px;
 	margin-left:10px;
 	font-size:14px;
@@ -109,7 +109,7 @@
 	border-left:1px solid #bebebe;
 	border-right:1px solid #e1e1e1;
 	border-bottom:1px solid #e1e1e1;
-	background:url(../images/input_bg.jpg) repeat-x 0 0;
+	background:url(<%=request.getContextPath() %>/backend_static/images/input_bg.jpg) repeat-x 0 0;
 	margin-right:10px;
 }
 .filed .button{
@@ -119,7 +119,7 @@
 	margin:0;
 	padding:0;
 	margin-top:-4px;
-	background:url(../images/button_s.jpg) no-repeat 0 0;
+	background:url(<%=request.getContextPath() %>/backend_static/images/button_s.jpg) no-repeat 0 0;
 }
 .fl{
 	float:left;
@@ -151,7 +151,7 @@
 	width:40px;
 }
 .table th.top_th{
-	background:url(../images/table_th.jpg) repeat-x 0 0;
+	background:url(<%=request.getContextPath() %>/backend_static/images/table_th.jpg) repeat-x 0 0;
 	line-height:31px;
 	height:31px;
 	padding:0;
@@ -165,10 +165,14 @@
 .page ul li{
 	float:left;
 	padding:3px;
+	list-style-type:none;
+}
+.page ul li span{
+	color:#f00;
 }
 .page ul li a {
 	display:block;
-	background:url(../images/page_bg.jpg) no-repeat 0 0;
+	background:url(<%=request.getContextPath() %>/backend_static/images/page_bg.jpg) no-repeat 0 0;
 	padding:1px 3px 1px 3px;
 	border:1px solid #a3a3a3;
 	color:#000;
@@ -200,7 +204,7 @@
 	font-style: normal;
 }
 .table th a span{
-	background:url(../images/line_line.jpg) no-repeat right center;
+	background:url(<%=request.getContextPath() %>/backend_static/images/line_line.jpg) no-repeat right center;
 	width:10px;
 	height:24px;
 	float:right;
@@ -208,31 +212,31 @@
 	
 }
 .table .add{
-	background:url(../images/add_ico_.jpg) no-repeat 0 center;
+	background:url(<%=request.getContextPath() %>/backend_static/images/add_ico_.jpg) no-repeat 0 center;
 }
 .table .edit{
-	background:url(../images/edit_ico.jpg) no-repeat 0 center;
+	background:url(<%=request.getContextPath() %>/backend_static/images/edit_ico.jpg) no-repeat 0 center;
 }
 .table .tongji{
-	background:url(../images/tj_ico_.jpg) no-repeat 0 center;
+	background:url(<%=request.getContextPath() %>/backend_static/images/tj_ico_.jpg) no-repeat 0 center;
 }
 .table .sort{
-	background:url(../images/sort_ico.jpg) no-repeat 0 center;
+	background:url(<%=request.getContextPath() %>/backend_static/images/sort_ico.jpg) no-repeat 0 center;
 }
 .table .sort span{
 	background:none;
 }
 .tablelist{padding-top:23px;}
 </style>
-<script type="text/javascript" src="/js/jquery/jquery-1.8.1.min.js"></script>
-<script type="text/javascript" src="/js/jquery/jquery.blockUI.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/backend_static/js/jquery/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/backend_static/js/jquery/jquery.blockUI.js"></script>
 <script type="text/javascript">
 function popWaitGen(){
-	$.blockUI({ message: "生成中，请稍后...<img src='/../images/loading_32_32.gif'/>",
+	$.blockUI({ message: "生成中，请稍后...<img src='<%=request.getContextPath() %>/backend_static/images/loading_32_32.gif'/>",
 	}); 
 }
 
-$('#div_mask').block({message:'<img src="/../images/loading_32_32.gif"/>'});
+$('#div_mask').block({message:'<img src="<%=request.getContextPath() %>/backend_static/images/loading_32_32.gif"/>'});
 </script>
 </head>
 <body>
@@ -335,22 +339,22 @@ $('#div_mask').block({message:'<img src="/../images/loading_32_32.gif"/>'});
 		</div> -->
 		<div class="page">
 		<ul>
-		<pg:pager maxIndexPages="10" maxPageItems="10" export="currentPageNumber=pageNumber" items="${users.total }">
+		<pg:pager maxIndexPages="5" maxPageItems="5" export="currentPageNumber=pageNumber" items="${users.total }">
 	                <pg:index>
 	                	<pg:first>
-	                		<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?email=${param.email}&username=${param.username}&status=${param.status }">第一页</a></li>
+	                		<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=1&email=${param.email}&username=${param.username}&status=${param.status }">第一页</a></li>
 	                	</pg:first>
 	                	<pg:prev ifnull="true">
 	                	    <c:choose>
-	                	    	<c:when test="${pageNum == 1}"></c:when>
+	                	    	<c:when test="${param.pageNum==null || param.pageNum == 1}"></c:when>
 	                	    	<c:otherwise>
-									<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageNum - 1}&email=${param.email}&username=${param.username}&status=${param.status }">«</a></li>
+									<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${param.pageNum - 1}&email=${param.email}&username=${param.username}&status=${param.status }">«</a></li>
 	                	    	</c:otherwise>
 	                	    </c:choose>
  						</pg:prev>
  						<pg:pages>
 	 						<c:choose>
-	 							<c:when test="${pageNumber eq pageNum}">
+	 							<c:when test="${pageNumber eq param.pageNum}">
 	 							<li><span>${pageNumber}</span></li>
 	 							</c:when>
 	 							<c:otherwise>
@@ -360,9 +364,9 @@ $('#div_mask').block({message:'<img src="/../images/loading_32_32.gif"/>'});
  						</pg:pages>
  						<pg:next ifnull="true">
  						    <c:choose>
- 						    	<c:when test="${pageNum == pageItems}"></c:when>
+ 						    	<c:when test="${param.pageNum == pageItems}"></c:when>
  						    	<c:otherwise>
-		                       		<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageNum + 1 }&email=${param.email}&username=${param.username}&status=${param.status }">»</a></li>
+		                       		<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${param.pageNum + 1 }&email=${param.email}&username=${param.username}&status=${param.status }">»</a></li>
  						    	</c:otherwise>
  						    </c:choose>
                         </pg:next>	

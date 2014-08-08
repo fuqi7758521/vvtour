@@ -44,6 +44,10 @@ public class User extends BaseEntity {
 	private Date lastLoginDate;
 	
 	private String lastLoginDateStr;
+	
+	private Date signUpDate;
+	
+	private String signUpDateStr;
 
 	private Date birthday;
 
@@ -212,6 +216,27 @@ public class User extends BaseEntity {
 	public void setLastLoginDateStr(String lastLoginDateStr) {
 		this.lastLoginDateStr = lastLoginDateStr;
 	}
+
+	public Date getSignUpDate() {
+		return signUpDate;
+	}
+
+	public void setSignUpDate(Date signUpDate) {
+		this.signUpDate = signUpDate;
+	}
+
+	public String getSignUpDateStr() {
+		if(this.signUpDate != null){
+			return DateUtil.formatDateTime(this.signUpDate, DateUtil.FORMAT_ONE);
+		}
+		return "";
+	}
+
+	public void setSignUpDateStr(String signUpDateStr) {
+		this.signUpDateStr = signUpDateStr;
+	}
+	
+	
 
 	
 	

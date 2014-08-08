@@ -108,6 +108,7 @@ public class UserController extends BaseController implements Constant{
 		}
 		user.setPassword(MessageDigestUtil.getMD5(user.getPassword() + Constant.PASSWORD_SALT_KEY));
 		user.setStatus(USER_STATUS_NORMAL);
+		user.setSignUpDate(new Date());
 		userService.addUser(user);
 		AcsUtil.addLoginUserToSession(request, user);
 		updateSignInTime(user.getUserId());
@@ -502,7 +503,7 @@ public class UserController extends BaseController implements Constant{
 	private static final String ADMIN_USER_LIST = "admin/user/list";
 	
 	//用户每页显示数量
-	private static final Integer ADMIN_USER_LIST_PAGESIZE = 10;
+	private static final Integer ADMIN_USER_LIST_PAGESIZE = 5;
 	
 	@RequestMapping("/admin/user/list.htm")
 	public ModelAndView getUserList(UserCriteria criteria, HttpServletRequest request, HttpServletResponse response){
@@ -510,9 +511,23 @@ public class UserController extends BaseController implements Constant{
 			criteria.setStatus(USER_STATUS_NORMAL);
 		}
 		Integer pageNum=RequestUtil.getInteger(request, "pageNum");
-		SearchPagerModel<User> searchPagerModel = new SearchPagerModel<User>(null == pageNum ? 1 : pageNum, ADMIN_USER_LIST_PAGESIZE);
+		if(pageNum == null){
+			pageNum = 1;
+			request.setAttribute("pageNum", pageNum);
+		}
+		SearchPagerModel<User> searchPagerModel = new SearchPagerModel<User>((pageNum-1)*ADMIN_USER_LIST_PAGESIZE, ADMIN_USER_LIST_PAGESIZE);
 		criteria.setPageModel(searchPagerModel);
 		SearchPagerModel<User> users = userService.getUsers(criteria);
+		
+		long totalItems = searchPagerModel.getTotal();
+		long pageItems = 0;
+		if(totalItems % ADMIN_USER_LIST_PAGESIZE != 0){
+			pageItems = totalItems / ADMIN_USER_LIST_PAGESIZE + 1;
+		}else{
+			pageItems = totalItems / ADMIN_USER_LIST_PAGESIZE;
+		}
+		request.setAttribute("pageItems", pageItems);
+		
 		request.setAttribute("users", users);
 		return new ModelAndView(ADMIN_USER_LIST);
 		
