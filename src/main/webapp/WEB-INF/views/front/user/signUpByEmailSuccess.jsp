@@ -27,10 +27,10 @@
 					</div>
 					<div class="zccg_c">
 						<div class="zccg_ca">我们已向您的邮箱发送一封验证邮件，验证邮箱成功后将获得300积分奖励。</div>
-						<div class="zccg_cb">
+						<%-- <div class="zccg_cb">
 							<input name="" type="image" src="<%=request.getContextPath() %>/front/static/img/zccg_07.jpg" />
 							没有收到？<a href="#">再次发送</a>
-						</div>
+						</div> --%>
 					</div>
 					<div class="zccg_d">您现在要去：<a href="#">返回首页</a></div>
 				</div>

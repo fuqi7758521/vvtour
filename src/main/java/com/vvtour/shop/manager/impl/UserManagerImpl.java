@@ -35,6 +35,7 @@ public class UserManagerImpl implements UserManager {
 		final static String BIRTHDAY_MONTH = "monthOfBirthday";
 		final static String BIRTHDAY_DAY = "dayOfBirthday";
 		final static String VALIDATE_EMAIL = "validateEmail";
+		final static String LAST_LOGIN_DATE = "lastLoginDate";
 	}
 
 	@Override
@@ -100,6 +101,12 @@ public class UserManagerImpl implements UserManager {
 		}
 		if (to.getValidateEmail() != null){
 			update.set(UserField.VALIDATE_EMAIL, to.getValidateEmail());
+		}
+		if(to.getLastLoginDate() != null){
+			update.set(UserField.LAST_LOGIN_DATE, to.getLastLoginDate());
+		}
+		if(to.getStatus() != null){
+			update.set(UserField.STATUS, to.getStatus());
 		}
 		userDao.editUser(query, update);
 	}

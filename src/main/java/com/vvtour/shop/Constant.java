@@ -20,4 +20,10 @@ public interface Constant {
 	
 	Integer EMAIL_UNCHECKED = 0;
 	
+	Integer USER_STATUS_NORMAL = 0;
+	
+	Integer USER_STATUS_BANNED = -1;
+	
+	Integer USER_STATUS_REMOVED = -2;
+	
 }

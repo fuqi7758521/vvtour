@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="/WEB-INF/pager-taglib.tld" prefix="pg" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -72,7 +74,7 @@
 }
 
 .title_h2{
-	background:url(images/s_ico.jpg) no-repeat left center;
+	background:url(../images/s_ico.jpg) no-repeat left center;
 	padding:10px 0px 10px 30px;
 	margin-left:10px;
 	font-size:14px;
@@ -107,7 +109,7 @@
 	border-left:1px solid #bebebe;
 	border-right:1px solid #e1e1e1;
 	border-bottom:1px solid #e1e1e1;
-	background:url(images/input_bg.jpg) repeat-x 0 0;
+	background:url(../images/input_bg.jpg) repeat-x 0 0;
 	margin-right:10px;
 }
 .filed .button{
@@ -117,7 +119,7 @@
 	margin:0;
 	padding:0;
 	margin-top:-4px;
-	background:url(images/button_s.jpg) no-repeat 0 0;
+	background:url(../images/button_s.jpg) no-repeat 0 0;
 }
 .fl{
 	float:left;
@@ -149,7 +151,7 @@
 	width:40px;
 }
 .table th.top_th{
-	background:url(images/table_th.jpg) repeat-x 0 0;
+	background:url(../images/table_th.jpg) repeat-x 0 0;
 	line-height:31px;
 	height:31px;
 	padding:0;
@@ -166,7 +168,7 @@
 }
 .page ul li a {
 	display:block;
-	background:url(images/page_bg.jpg) no-repeat 0 0;
+	background:url(../images/page_bg.jpg) no-repeat 0 0;
 	padding:1px 3px 1px 3px;
 	border:1px solid #a3a3a3;
 	color:#000;
@@ -198,7 +200,7 @@
 	font-style: normal;
 }
 .table th a span{
-	background:url(images/line_line.jpg) no-repeat right center;
+	background:url(../images/line_line.jpg) no-repeat right center;
 	width:10px;
 	height:24px;
 	float:right;
@@ -206,16 +208,16 @@
 	
 }
 .table .add{
-	background:url(images/add_ico_.jpg) no-repeat 0 center;
+	background:url(../images/add_ico_.jpg) no-repeat 0 center;
 }
 .table .edit{
-	background:url(images/edit_ico.jpg) no-repeat 0 center;
+	background:url(../images/edit_ico.jpg) no-repeat 0 center;
 }
 .table .tongji{
-	background:url(images/tj_ico_.jpg) no-repeat 0 center;
+	background:url(../images/tj_ico_.jpg) no-repeat 0 center;
 }
 .table .sort{
-	background:url(images/sort_ico.jpg) no-repeat 0 center;
+	background:url(../images/sort_ico.jpg) no-repeat 0 center;
 }
 .table .sort span{
 	background:none;
@@ -226,11 +228,11 @@
 <script type="text/javascript" src="/js/jquery/jquery.blockUI.js"></script>
 <script type="text/javascript">
 function popWaitGen(){
-	$.blockUI({ message: "生成中，请稍后...<img src='/images/loading_32_32.gif'/>",
+	$.blockUI({ message: "生成中，请稍后...<img src='/../images/loading_32_32.gif'/>",
 	}); 
 }
 
-$('#div_mask').block({message:'<img src="/images/loading_32_32.gif"/>'});
+$('#div_mask').block({message:'<img src="/../images/loading_32_32.gif"/>'});
 </script>
 </head>
 <body>
@@ -259,17 +261,21 @@ $('#div_mask').block({message:'<img src="/images/loading_32_32.gif"/>'});
         <div id="Content-Main" class="content_body">
 			<div class="title_h2">搜索</div>
 			<p class="line" style="margin-top:0;"></p>
-			<form action="#" >
+			<form action="<%=request.getContextPath() %>/admin/user/list.htm" method="post">
 				<div class="filed fl">
-					<label>&nbsp;&nbsp;关键词：</label>&nbsp;
-					<input type="text" class="text" size="20"/>
+					<label>&nbsp;&nbsp;用户名：</label>&nbsp;
+					<input name="username" type="text" value="${param.username }" class="text" size="20"/>
 				</div>
 				<div class="filed fl">
-					<label>&nbsp;&nbsp;栏目：</label>
-					<input type="text" class="text" size="20"/>
-					<select name="category" id="category" style="display:none">
-						<option value="1">分类栏目</option>
-						<option value="2">所有分类</option>
+					<label>&nbsp;&nbsp;邮箱：</label>
+					<input name="email" value="${param.email }" type="text" class="text" size="20"/>
+				</div>
+				<div class="filed fl">
+					<label>&nbsp;&nbsp;状态：</label>
+					<select name="status" style="margin-left: 50px;" >
+						<option <c:if test="${param.status == 0 }">selected</c:if> value="0">正常</option>
+						<option <c:if test="${param.status == -1 }">selected</c:if> value="-1">屏蔽</option>
+						<option <c:if test="${param.status == -2 }">selected</c:if> value="-2">删除</option>
 					</select>
 				</div>
 				<div class="filed fl">
@@ -285,26 +291,32 @@ $('#div_mask').block({message:'<img src="/images/loading_32_32.gif"/>'});
 			<th colspan="8" class="top_th"><a href="#" class="add"><em>添加</em><span></span></a><a href="#" class="edit"><em>编辑</em><span></span></a><a href="#" class="tongji"><em>统计</em><span></span></a><a href="#" class="sort"><em>排序</em><span></span></a></th>
 			</tr>
 			<tr>
-				<th>编号</th><th>用户名</th><th>地区</th><th>登录时间</th><th>操作日志</th><th>IP地址</th><th>邮箱</th><th>备注</th>
+				<th>编号</th><th>用户名</th><th>邮箱</th><th>手机号</th><th>最新登录时间</th><th>状态</th><th>操作</th>
 			</tr>
-
-			<tr>
-				<td>01</td><td>admin</td><td>四川成都</td><td>2012-01-02 11:30</td><td>删除系统用户修改密码</td><td>192.168.0.1</td><td>tanufo@126.com</td><td></td>
-			</tr>
-			<tr>
-				<td>01</td><td>admin</td><td>四川成都</td><td>2012-01-02 11:30</td><td>删除系统用户修改密码</td><td>192.168.0.1</td><td>tanufo@126.com</td><td></td>
-			</tr>
-			<tr>
-				<td>01</td><td>admin</td><td>四川成都</td><td>2012-01-02 11:30</td><td>删除系统用户修改密码</td><td>192.168.0.1</td><td>tanufo@126.com</td><td></td>
-			</tr>
-			<tr>
-				<td>01</td><td>admin</td><td>四川成都</td><td>2012-01-02 11:30</td><td>删除系统用户修改密码</td><td>192.168.0.1</td><td>tanufo@126.com</td><td></td>
-			</tr>
+			<c:forEach items="${users.resultList}" var="to" varStatus="v">
+				<tr userid="${to.userId }">
+					<td>${v.index+1 }</td>
+					<td>${to.username }</td>
+					<td>${to.email }</td>
+					<td>${to.mobile }</td>
+					<td>${to.lastLoginDateStr}</td>
+					<td>
+						<c:if test="${to.status == 0}">正常</c:if>
+						<c:if test="${to.status == -1}">屏蔽</c:if>
+						<c:if test="${to.status == -2}">删除</c:if>
+					</td>
+					<td>
+						<a href="javascript:;" onclick="ban(this)">屏蔽</a>
+						<a href="javascript:;" onclick="removeUser(this)">删除</a>
+						<a href="javascript:;" onclick="recovery(this)">恢复</a>
+					</td>
+				</tr>
+			</c:forEach>
 
 		</table>
         </div>
 			<!--  -->
-			<div class="page">
+<!-- 			<div class="page">
 			<ul>
 			<li><a href="#" class="pg_index">首页</a></li>
 			<li><a href="#" class="pg_selected">1</a></li>
@@ -320,11 +332,78 @@ $('#div_mask').block({message:'<img src="/images/loading_32_32.gif"/>'});
 		</ul>
 			<p>共有 265 条数据，当前第 1 页</p>
 
-		</div>
+		</div> -->
+		<div class="page">
+		<ul>
+		<pg:pager maxIndexPages="10" maxPageItems="10" export="currentPageNumber=pageNumber" items="${users.total }">
+	                <pg:index>
+	                	<pg:first>
+	                		<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?email=${param.email}&username=${param.username}&status=${param.status }">第一页</a></li>
+	                	</pg:first>
+	                	<pg:prev ifnull="true">
+	                	    <c:choose>
+	                	    	<c:when test="${pageNum == 1}"></c:when>
+	                	    	<c:otherwise>
+									<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageNum - 1}&email=${param.email}&username=${param.username}&status=${param.status }">«</a></li>
+	                	    	</c:otherwise>
+	                	    </c:choose>
+ 						</pg:prev>
+ 						<pg:pages>
+	 						<c:choose>
+	 							<c:when test="${pageNumber eq pageNum}">
+	 							<li><span>${pageNumber}</span></li>
+	 							</c:when>
+	 							<c:otherwise>
+	 							<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageNumber}&email=${param.email}&username=${param.username}&status=${param.status }">${pageNumber}</a></li>
+	 							</c:otherwise>
+	 						</c:choose>
+ 						</pg:pages>
+ 						<pg:next ifnull="true">
+ 						    <c:choose>
+ 						    	<c:when test="${pageNum == pageItems}"></c:when>
+ 						    	<c:otherwise>
+		                       		<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageNum + 1 }&email=${param.email}&username=${param.username}&status=${param.status }">»</a></li>
+ 						    	</c:otherwise>
+ 						    </c:choose>
+                        </pg:next>	
+                        <pg:last>
+                        	<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageItems}&email=${param.email}&username=${param.username}&status=${param.status }">尾页</a></li>
+                        </pg:last>
+	                </pg:index>
+                </pg:pager>
+                </ul>
+                </div>
 		</div>
     </div>
     <div class="Clear"><!--如何你上面用到float,下面布局开始前最好清除一下。--></div>
     <div id="Footer">Footer</div>
 </div>
+<script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
+<script>
+function ban(obj){
+	var $this = $(obj);
+	var userId = $this.parent().parent().attr("userid");
+	updateUserStatus(userId,-1);
+}
+
+function removeUser(obj){
+	var $this = $(obj);
+	var userId = $this.parent().parent().attr("userid");
+	updateUserStatus(userId,-2);
+}
+
+function recovery(obj){
+	var $this = $(obj);
+	var userId = $this.parent().parent().attr("userid");
+	updateUserStatus(userId,0);
+}
+
+function updateUserStatus(userId, status){
+	var url = "<%=request.getContextPath() %>/admin/user/modifyStatus.htm";
+	$.post(url, {userId:userId,status:status}, function(result){
+		alert(result.msg);
+	});
+}
+</script>
 </body>
 </html>
