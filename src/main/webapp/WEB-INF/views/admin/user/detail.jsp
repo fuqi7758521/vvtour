@@ -223,6 +223,8 @@
 	background:none;
 }
 .tablelist{padding-top:23px;}
+.content_body ul li{margin-bottom:15px;}
+.content_body ul li span{margin-right:20px;}
 </style>
 <script type="text/javascript" src="/js/jquery/jquery-1.8.1.min.js"></script>
 <script type="text/javascript" src="/js/jquery/jquery.blockUI.js"></script>
@@ -259,120 +261,31 @@ $('#div_mask').block({message:'<img src="/../images/loading_32_32.gif"/>'});
 		        <h2><a href="#">交流论坛</a></h2>
 		</div>
         <div id="Content-Main" class="content_body">
-			<div class="title_h2">搜索</div>
-			<p class="line" style="margin-top:0;"></p>
-			<form action="<%=request.getContextPath() %>/admin/user/list.htm" method="post">
-				<div class="filed fl">
-					<label>&nbsp;&nbsp;用户名：</label>&nbsp;
-					<input name="username" type="text" value="${param.username }" class="text" size="20"/>
-				</div>
-				<div class="filed fl">
-					<label>&nbsp;&nbsp;邮箱：</label>
-					<input name="email" value="${param.email }" type="text" class="text" size="20"/>
-				</div>
-				<div class="filed fl">
-					<label>&nbsp;&nbsp;状态：</label>
-					<select name="status" style="margin-left: 50px;" >
-						<option <c:if test="${param.status == 0 }">selected</c:if> value="0">正常</option>
-						<option <c:if test="${param.status == -1 }">selected</c:if> value="-1">屏蔽</option>
-						<option <c:if test="${param.status == -2 }">selected</c:if> value="-2">删除</option>
-					</select>
-				</div>
-				<div class="filed fl">
-					<button class="button"></button>
-				</div>
-			</form>
-			
-			<!--  -->
-			
-        <div class="tablelist">
-		<table class="table">
-			<tr>
-			<th colspan="8" class="top_th"><a href="#" class="add"><em>添加</em><span></span></a><a href="#" class="edit"><em>编辑</em><span></span></a><a href="#" class="tongji"><em>统计</em><span></span></a><a href="#" class="sort"><em>排序</em><span></span></a></th>
-			</tr>
-			<tr>
-				<th>编号</th><th>用户名</th><th>邮箱</th><th>手机号</th><th>最新登录时间</th><th>状态</th><th>操作</th>
-			</tr>
-			<c:forEach items="${users.resultList}" var="to" varStatus="v">
-				<tr userid="${to.userId }">
-					<td>${v.index+1 }</td>
-					<td><a href="<%=request.getContextPath() %>/admin/user/goEdit.htm?userId=${to.userId}">${to.username }</a></td>
-					<td>${to.email }</td>
-					<td>${to.mobile }</td>
-					<td>${to.lastLoginDateStr}</td>
-					<td>
-						<c:if test="${to.status == 0}">正常</c:if>
-						<c:if test="${to.status == -1}">屏蔽</c:if>
-						<c:if test="${to.status == -2}">删除</c:if>
-					</td>
-					<td>
-						<a href="javascript:;" onclick="ban(this)">屏蔽</a>
-						<a href="javascript:;" onclick="removeUser(this)">删除</a>
-						<a href="javascript:;" onclick="recovery(this)">恢复</a>
-					</td>
-				</tr>
-			</c:forEach>
-
-		</table>
-        </div>
-			<!--  -->
-<!-- 			<div class="page">
-			<ul>
-			<li><a href="#" class="pg_index">首页</a></li>
-			<li><a href="#" class="pg_selected">1</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#">1</a></li>
-			<li><a href="#" class="pg_next">下一页</a></li>
-			<li><a href="#" class="pg_last">尾页</a></li>
-		</ul>
-			<p>共有 265 条数据，当前第 1 页</p>
-
-		</div> -->
-		<div class="page">
-		<ul>
-		<pg:pager maxIndexPages="10" maxPageItems="10" export="currentPageNumber=pageNumber" items="${users.total }">
-	                <pg:index>
-	                	<pg:first>
-	                		<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?email=${param.email}&username=${param.username}&status=${param.status }">第一页</a></li>
-	                	</pg:first>
-	                	<pg:prev ifnull="true">
-	                	    <c:choose>
-	                	    	<c:when test="${pageNum == 1}"></c:when>
-	                	    	<c:otherwise>
-									<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageNum - 1}&email=${param.email}&username=${param.username}&status=${param.status }">«</a></li>
-	                	    	</c:otherwise>
-	                	    </c:choose>
- 						</pg:prev>
- 						<pg:pages>
-	 						<c:choose>
-	 							<c:when test="${pageNumber eq pageNum}">
-	 							<li><span>${pageNumber}</span></li>
-	 							</c:when>
-	 							<c:otherwise>
-	 							<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageNumber}&email=${param.email}&username=${param.username}&status=${param.status }">${pageNumber}</a></li>
-	 							</c:otherwise>
-	 						</c:choose>
- 						</pg:pages>
- 						<pg:next ifnull="true">
- 						    <c:choose>
- 						    	<c:when test="${pageNum == pageItems}"></c:when>
- 						    	<c:otherwise>
-		                       		<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageNum + 1 }&email=${param.email}&username=${param.username}&status=${param.status }">»</a></li>
- 						    	</c:otherwise>
- 						    </c:choose>
-                        </pg:next>	
-                        <pg:last>
-                        	<li><a href="<%=request.getContextPath() %>/admin/user/list.htm?pageNum=${pageItems}&email=${param.email}&username=${param.username}&status=${param.status }">尾页</a></li>
-                        </pg:last>
-	                </pg:index>
-                </pg:pager>
-                </ul>
-                </div>
+			<ul userid="${user.userId }">
+				<li><span>用户名:</span><span>${user.username }</span></li>
+				<li><span>邮箱:</span><span>${user.email }</span></li>
+				<li><span>手机号:</span><span>${user.mobile }</span></li>
+				<li><span>性别:</span>
+					<span>
+						<c:if test="${user.sex==1 }">男</c:if>
+						<c:if test="${user.sex==0 }">女</c:if>
+					</span>
+				</li>
+				<li><span>最近登录时间:</span><span>${user.lastLoginDateStr }</span></li>
+				<li><span>状态:</span>
+					<span>
+						<c:if test="${user.status==0 }">正常</c:if>
+						<c:if test="${user.status==-1 }">屏蔽</c:if>
+						<c:if test="${user.status==-2 }">删除</c:if>
+					</span>
+				</li>
+				<li>
+					<a href="javascript:;" onclick="ban(this)">屏蔽</a> 
+				    <a href="javascript:;" onclick="removeUser(this)">删除</a> 
+				    <a href="javascript:;" onclick="recovery(this)">恢复</a>
+				    <a href="<%=request.getContextPath() %>/admin/user/list.htm">返回列表</a>
+				 </li>
+			</ul>
 		</div>
     </div>
     <div class="Clear"><!--如何你上面用到float,下面布局开始前最好清除一下。--></div>
