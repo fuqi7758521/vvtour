@@ -203,6 +203,10 @@ public class UserController extends BaseController implements Constant{
 	//进入密码修改页面
 	@RequestMapping("/user/goChangePassword.htm")
 	public ModelAndView goChangePassword(HttpServletRequest request, HttpServletResponse response){
+		User loginUser = AcsUtil.getLoginUser(request);
+		if(loginUser == null){
+			return new ModelAndView(USER_SIGN_IN);
+		}
 		return new ModelAndView(USER_CHANGE_PASSWORD);
 	}
 	

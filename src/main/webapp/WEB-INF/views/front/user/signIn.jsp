@@ -39,8 +39,8 @@
 						</div>
 						<div class="loginB_bb">
 							<input  id="sso_verifycode1" name="authenticationCode" type="text" class="yhzcLB_c" />
-							<span><img id="image" src="<%=request.getContextPath() %>/common/genVerifyCode.htm" />
-							<a href="javascript:;" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a>
+							<span><img id="image" src="<%=request.getContextPath() %>/common/genVerifyCode.htm" /></span>
+							<span><a href="javascript:;" class="link_blue" onClick="refreshCheckCode('image');return false;">换一张</a></span>
 						</div>
 						<div class="loginB_bc">
 							<input id="loginBtn" name="" type="image" src="<%=request.getContextPath() %>/front/static/img/login_15.jpg" />
@@ -75,9 +75,7 @@
 <script src="<%=request.getContextPath() %>/front/static/js/jquery-1.7.2.js"></script>
 <script src="<%=request.getContextPath() %>/front/static/js/chengtuUI.js"></script>
 <script src="<%=request.getContextPath() %>/front/static/js/l_login.js"></script>
-
 <script>
-
 function refreshCheckCode(s) {
     var elt = document.getElementById(s);
     elt.src = elt.src + "?_=" + (new Date).getTime();
